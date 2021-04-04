@@ -1,5 +1,3 @@
-const tailWindForms = require('@tailwindcss/forms')
-
 module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
@@ -11,5 +9,5 @@ module.exports = {
       opacity: ['disabled'],
     },
   },
-  plugins: [tailWindForms],
+  plugins: [],
 }

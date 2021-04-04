@@ -23,42 +23,29 @@ const Navbar = () => {
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src="../img/svg/logo.svg" alt="Kaldi" style={{ width: '88px' }} />
+              {/* <img src="../img/svg/logo.svg" alt="Kaldi"/> */}
+              <h1 className="font-black text-4xl">EightTree Demo</h1>
             </Link>
-            {/* Hamburger menu */}
-            <div
-              role="button"
-              tabIndex={0}
-              className={`navbar-burger burger ${navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={toggleHamburger}
-              onKeyDown={toggleHamburger}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
           </div>
           <div
             id="navMenu"
             className={`${navBarActiveClass}`}
           >
-            <div className="navbar-start has-text-centered font-black">
-              <button type="button" className="bg-blue-500">piyo</button>
+            <div className="navbar-start has-text-centered">
               <Link className="navbar-item" to="/about">
-                About
+                サイト紹介
               </Link>
               <Link className="navbar-item" to="/products">
-                Products
+                コース紹介
               </Link>
               <Link className="navbar-item" to="/blog">
-                Blog
+                お知らせ
               </Link>
               <Link className="navbar-item" to="/contact">
-                Contact
+                お問い合わせ
               </Link>
               <Link className="navbar-item" to="/contact/examples">
-                Form Examples
+                お申し込み
               </Link>
             </div>
             <div className="navbar-end has-text-centered">
