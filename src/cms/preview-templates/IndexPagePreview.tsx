@@ -1,8 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { IndexPageTemplate } from '../../templates/index-page'
 
-const IndexPagePreview = ({ entry, getAsset }) => {
+type IProps = {
+  entry: {
+    getIn: (any) => any
+  }
+  getAsset: (any) => any
+}
+
+const IndexPagePreview = (props: IProps) => {
+  const { entry, getAsset } = props
   const data = entry.getIn(['data']).toJS()
 
   if (data) {
@@ -17,16 +24,8 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         mainpitch={data.mainpitch || {}}
       />
     )
-  } else {
-    return <div>Loading...</div>
-  }
-}
-
-IndexPagePreview.propTypes = {
-  entry: PropTypes.shape({
-    getIn: PropTypes.func,
-  }),
-  getAsset: PropTypes.func,
+  } 
+  return <div>Loading...</div> 
 }
 
 export default IndexPagePreview

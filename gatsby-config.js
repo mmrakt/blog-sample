@@ -31,6 +31,13 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-typescript',
+    {
+      resolve: 'gatsby-plugin-graphql-codegen',
+      options: {
+        fileName: 'types/graphql-types.d.ts'
+      }
+    },
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -73,5 +80,25 @@ module.exports = {
       },
     }, // must be after other CSS plugins
     'gatsby-plugin-netlify', // make sure to keep it last in the array
+    {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        extensions: ['js', 'jsx', 'ts', 'tsx'],
+        exclude: ['node_modules', '.cache', 'public', '*.sass'],
+        stages: ['develop'],
+        options: {
+          emitWarning: true,
+          failOnError: false
+        }
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /svg/
+        }
+      }
+    }
   ],
 }

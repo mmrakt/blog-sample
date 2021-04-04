@@ -3,14 +3,12 @@ import React from 'react'
 import Layout from '../../components/Layout'
 import BlogRoll from '../../components/BlogRoll'
 
-export default class BlogIndexPage extends React.Component {
-  render() {
-    return (
-      <Layout>
+const BlogIndexPage = () => (
+    <Layout>
         <div
           className="full-width-image-container margin-top-0"
           style={{
-            backgroundImage: `url('/img/blog-index.jpg')`,
+            backgroundImage: 'url(\'/img/blog-index.jpg\')',
           }}
         >
           <h1
@@ -33,6 +31,6 @@ export default class BlogIndexPage extends React.Component {
           </div>
         </section>
       </Layout>
-    )
-  }
-}
+  )
+
+export default BlogIndexPage

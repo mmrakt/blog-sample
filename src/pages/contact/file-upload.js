@@ -64,17 +64,17 @@ export default class Contact extends React.Component {
                   </label>
                 </div>
                 <div className="field">
-                  <label className="label" htmlFor={'name'}>
+                  <label className="label" htmlFor="name">
                     Your name
                   </label>
                   <div className="control">
                     <input
                       className="input"
-                      type={'text'}
-                      name={'name'}
+                      type="text"
+                      name="name"
                       onChange={this.handleChange}
-                      id={'name'}
-                      required={true}
+                      id="name"
+                      required
                     />
                   </div>
                 </div>
