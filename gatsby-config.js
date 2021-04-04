@@ -99,6 +99,7 @@ module.exports = {
           include: /svg/
         }
       }
-    }
+    },
+    'gatsby-plugin-postcss'
   ],
 }

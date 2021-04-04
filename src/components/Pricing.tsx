@@ -1,19 +1,15 @@
 import React from 'react'
 
 type IProps = {
-  prices: {
-    plan: string
-    price: string | number
-    description: string
-    items: string[]
-  }[]
+  plan: string
+  price: string | number
+  description: string
+  items: string[]
 }
 
-const Pricing = (props: IProps) => {
-  const {prices} = props
-  return (
+const Pricing = ({prices}: {prices: IProps[]}) => (
     <div className="columns">
-    {prices.map((price) => (
+    {prices && prices.map((price) => (
       <div key={price.plan} className="column">
         <section className="section">
           <h4 className="has-text-centered has-text-weight-semibold">
@@ -35,6 +31,5 @@ const Pricing = (props: IProps) => {
     ))}
   </div>
   )
-}
 
 export default Pricing

@@ -41,9 +41,10 @@ const Navbar = () => {
           </div>
           <div
             id="navMenu"
-            className={`navbar-menu ${navBarActiveClass}`}
+            className={`${navBarActiveClass}`}
           >
-            <div className="navbar-start has-text-centered">
+            <div className="navbar-start has-text-centered font-black">
+              <button type="button" className="bg-blue-500">piyo</button>
               <Link className="navbar-item" to="/about">
                 About
               </Link>

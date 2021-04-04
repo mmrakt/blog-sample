@@ -728,6 +728,7 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___id'
   | 'childrenMarkdownRemark___frontmatter___title'
   | 'childrenMarkdownRemark___frontmatter___templateKey'
+  | 'childrenMarkdownRemark___frontmatter___path'
   | 'childrenMarkdownRemark___frontmatter___image___sourceInstanceName'
   | 'childrenMarkdownRemark___frontmatter___image___absolutePath'
   | 'childrenMarkdownRemark___frontmatter___image___relativePath'
@@ -767,16 +768,12 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___image___id'
   | 'childrenMarkdownRemark___frontmatter___image___children'
   | 'childrenMarkdownRemark___frontmatter___heading'
-  | 'childrenMarkdownRemark___frontmatter___subheading'
-  | 'childrenMarkdownRemark___frontmatter___mainpitch___title'
-  | 'childrenMarkdownRemark___frontmatter___mainpitch___description'
   | 'childrenMarkdownRemark___frontmatter___description'
   | 'childrenMarkdownRemark___frontmatter___intro___blurbs'
   | 'childrenMarkdownRemark___frontmatter___intro___heading'
   | 'childrenMarkdownRemark___frontmatter___intro___description'
   | 'childrenMarkdownRemark___frontmatter___main___heading'
   | 'childrenMarkdownRemark___frontmatter___main___description'
-  | 'childrenMarkdownRemark___frontmatter___path'
   | 'childrenMarkdownRemark___frontmatter___testimonials'
   | 'childrenMarkdownRemark___frontmatter___testimonials___author'
   | 'childrenMarkdownRemark___frontmatter___testimonials___quote'
@@ -821,6 +818,9 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___pricing___heading'
   | 'childrenMarkdownRemark___frontmatter___pricing___description'
   | 'childrenMarkdownRemark___frontmatter___pricing___plans'
+  | 'childrenMarkdownRemark___frontmatter___subheading'
+  | 'childrenMarkdownRemark___frontmatter___mainpitch___title'
+  | 'childrenMarkdownRemark___frontmatter___mainpitch___description'
   | 'childrenMarkdownRemark___frontmatter___date'
   | 'childrenMarkdownRemark___frontmatter___featuredpost'
   | 'childrenMarkdownRemark___frontmatter___featuredimage___sourceInstanceName'
@@ -918,6 +918,7 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___templateKey'
+  | 'childMarkdownRemark___frontmatter___path'
   | 'childMarkdownRemark___frontmatter___image___sourceInstanceName'
   | 'childMarkdownRemark___frontmatter___image___absolutePath'
   | 'childMarkdownRemark___frontmatter___image___relativePath'
@@ -957,16 +958,12 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___image___id'
   | 'childMarkdownRemark___frontmatter___image___children'
   | 'childMarkdownRemark___frontmatter___heading'
-  | 'childMarkdownRemark___frontmatter___subheading'
-  | 'childMarkdownRemark___frontmatter___mainpitch___title'
-  | 'childMarkdownRemark___frontmatter___mainpitch___description'
   | 'childMarkdownRemark___frontmatter___description'
   | 'childMarkdownRemark___frontmatter___intro___blurbs'
   | 'childMarkdownRemark___frontmatter___intro___heading'
   | 'childMarkdownRemark___frontmatter___intro___description'
   | 'childMarkdownRemark___frontmatter___main___heading'
   | 'childMarkdownRemark___frontmatter___main___description'
-  | 'childMarkdownRemark___frontmatter___path'
   | 'childMarkdownRemark___frontmatter___testimonials'
   | 'childMarkdownRemark___frontmatter___testimonials___author'
   | 'childMarkdownRemark___frontmatter___testimonials___quote'
@@ -1011,6 +1008,9 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___pricing___heading'
   | 'childMarkdownRemark___frontmatter___pricing___description'
   | 'childMarkdownRemark___frontmatter___pricing___plans'
+  | 'childMarkdownRemark___frontmatter___subheading'
+  | 'childMarkdownRemark___frontmatter___mainpitch___title'
+  | 'childMarkdownRemark___frontmatter___mainpitch___description'
   | 'childMarkdownRemark___frontmatter___date'
   | 'childMarkdownRemark___frontmatter___featuredpost'
   | 'childMarkdownRemark___frontmatter___featuredimage___sourceInstanceName'
@@ -1958,6 +1958,7 @@ export type MarkdownRemarkFieldsEnum =
   | 'id'
   | 'frontmatter___title'
   | 'frontmatter___templateKey'
+  | 'frontmatter___path'
   | 'frontmatter___image___sourceInstanceName'
   | 'frontmatter___image___absolutePath'
   | 'frontmatter___image___relativePath'
@@ -2037,9 +2038,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___image___internal___owner'
   | 'frontmatter___image___internal___type'
   | 'frontmatter___heading'
-  | 'frontmatter___subheading'
-  | 'frontmatter___mainpitch___title'
-  | 'frontmatter___mainpitch___description'
   | 'frontmatter___description'
   | 'frontmatter___intro___blurbs'
   | 'frontmatter___intro___blurbs___text'
@@ -2050,7 +2048,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___main___image1___alt'
   | 'frontmatter___main___image2___alt'
   | 'frontmatter___main___image3___alt'
-  | 'frontmatter___path'
   | 'frontmatter___testimonials'
   | 'frontmatter___testimonials___author'
   | 'frontmatter___testimonials___quote'
@@ -2139,6 +2136,9 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___pricing___plans___items'
   | 'frontmatter___pricing___plans___plan'
   | 'frontmatter___pricing___plans___price'
+  | 'frontmatter___subheading'
+  | 'frontmatter___mainpitch___title'
+  | 'frontmatter___mainpitch___description'
   | 'frontmatter___date'
   | 'frontmatter___featuredpost'
   | 'frontmatter___featuredimage___sourceInstanceName'
@@ -2352,17 +2352,17 @@ export type MarkdownRemarkFilterListInput = {
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
   templateKey?: Maybe<Scalars['String']>;
+  path?: Maybe<Scalars['String']>;
   image?: Maybe<File>;
   heading?: Maybe<Scalars['String']>;
-  subheading?: Maybe<Scalars['String']>;
-  mainpitch?: Maybe<MarkdownRemarkFrontmatterMainpitch>;
   description?: Maybe<Scalars['String']>;
   intro?: Maybe<MarkdownRemarkFrontmatterIntro>;
   main?: Maybe<MarkdownRemarkFrontmatterMain>;
-  path?: Maybe<Scalars['String']>;
   testimonials?: Maybe<Array<Maybe<MarkdownRemarkFrontmatterTestimonials>>>;
   full_image?: Maybe<File>;
   pricing?: Maybe<MarkdownRemarkFrontmatterPricing>;
+  subheading?: Maybe<Scalars['String']>;
+  mainpitch?: Maybe<MarkdownRemarkFrontmatterMainpitch>;
   date?: Maybe<Scalars['Date']>;
   featuredpost?: Maybe<Scalars['Boolean']>;
   featuredimage?: Maybe<File>;
@@ -2380,17 +2380,17 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   templateKey?: Maybe<StringQueryOperatorInput>;
+  path?: Maybe<StringQueryOperatorInput>;
   image?: Maybe<FileFilterInput>;
   heading?: Maybe<StringQueryOperatorInput>;
-  subheading?: Maybe<StringQueryOperatorInput>;
-  mainpitch?: Maybe<MarkdownRemarkFrontmatterMainpitchFilterInput>;
   description?: Maybe<StringQueryOperatorInput>;
   intro?: Maybe<MarkdownRemarkFrontmatterIntroFilterInput>;
   main?: Maybe<MarkdownRemarkFrontmatterMainFilterInput>;
-  path?: Maybe<StringQueryOperatorInput>;
   testimonials?: Maybe<MarkdownRemarkFrontmatterTestimonialsFilterListInput>;
   full_image?: Maybe<FileFilterInput>;
   pricing?: Maybe<MarkdownRemarkFrontmatterPricingFilterInput>;
+  subheading?: Maybe<StringQueryOperatorInput>;
+  mainpitch?: Maybe<MarkdownRemarkFrontmatterMainpitchFilterInput>;
   date?: Maybe<DateQueryOperatorInput>;
   featuredpost?: Maybe<BooleanQueryOperatorInput>;
   featuredimage?: Maybe<FileFilterInput>;
