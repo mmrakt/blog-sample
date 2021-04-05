@@ -1,19 +1,30 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { kebabCase } from 'lodash'
 import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import { MarkdownRemark } from '../../types/graphql-types.d'
 
-export const BlogPostTemplate = ({
-  content,
-  contentComponent,
-  description,
-  tags,
-  title,
-  helmet,
-}) => {
+
+type ITemplateProps = {
+  content: string
+  contentComponent: (any) => any
+  description: string
+  tags: any[]
+  title: string
+  helmet: any
+}
+
+export const BlogPostTemplate = (props: ITemplateProps) => {
+  const {
+    content,
+    contentComponent,
+    description,
+    tags,
+    title,
+    helmet,
+  } = props
   const PostContent = contentComponent || Content
 
   return (
@@ -46,16 +57,14 @@ export const BlogPostTemplate = ({
   )
 }
 
-BlogPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string,
-  helmet: PropTypes.object,
+type IProps = {
+  data: {
+    post: MarkdownRemark
+  }
 }
 
-const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
+const BlogPost = ({data}: IProps) => {
+  const { post } = data
 
   return (
     <Layout>
@@ -77,12 +86,6 @@ const BlogPost = ({ data }) => {
       />
     </Layout>
   )
-}
-
-BlogPost.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
 }
 
 export default BlogPost

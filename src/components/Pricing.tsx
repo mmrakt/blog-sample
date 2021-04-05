@@ -5,6 +5,7 @@ type IProps = {
   price: string | number
   description: string
   items: string[]
+  data: any
 }
 
 const Pricing = ({prices}: {prices: IProps[]}) => (
