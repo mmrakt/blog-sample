@@ -11,13 +11,7 @@ type IProps = {
 const AboutPagePreview = (props: IProps) => {
   const { entry, widgetFor } = props
 
-  return (
-    <AboutPageTemplate
-    title={entry.getIn(['data', 'title'])}
-    content={widgetFor('body')}
-  />
-  )
-
+  return <AboutPageTemplate />
 }
 
 export default AboutPagePreview

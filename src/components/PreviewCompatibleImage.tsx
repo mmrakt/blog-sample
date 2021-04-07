@@ -3,7 +3,7 @@ import Img, {FluidObject} from 'gatsby-image'
 
 type IProps = {
   alt: string
-  childImageSharp: {
+  childImageSharp?: {
     fluid: FluidObject | FluidObject[]
   }
   image: {
@@ -11,7 +11,7 @@ type IProps = {
       fluid: FluidObject | FluidObject[]
     }
   }
-  style: {string}
+  style?: {string}
 }
 
 const PreviewCompatibleImage = ({ imageInfo }: {imageInfo: IProps}) => {

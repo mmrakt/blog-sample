@@ -1,69 +1,52 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
-// import github from './github-icon'
-// import logo from '../img/logo.svg'
+import NavbarItem from './NavbarItem'
 
 const Navbar = () => {
   const [active, setActive] = useState(false)
-  const [navBarActiveClass, setNavBarActiveClass] = useState('')
+  const navbarItemList = [
+    {
+      name: 'サイト紹介',
+      to: 'about',
+    },
+    {
+      name: 'コース紹介',
+      to: 'courses',
+    },
+    {
+      name: 'お知らせ',
+      to: 'blogs',
+    },
+    {
+      name: 'お問い合わせ',
+      to: 'contact',
+    },
+    {
+      name: 'お申し込み',
+      to: 'contact/example',
+    },
+  ]
 
-  const toggleHamburger = () => {
-    setActive(!active)
-    if (active) {
-      setNavBarActiveClass('is-active')
-    }
-  }
-
-    return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              {/* <img src="../img/svg/logo.svg" alt="Kaldi"/> */}
-              <h1 className="font-black text-4xl">EightTree Demo</h1>
-            </Link>
-          </div>
-          <div
-            id="navMenu"
-            className={`${navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                サイト紹介
-              </Link>
-              <Link className="navbar-item" to="/products">
-                コース紹介
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                お知らせ
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                お問い合わせ
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                お申し込み
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src="../img/svg/github-icon.svg" alt="Github" />
-                </span>
-              </a>
-            </div>
-          </div>
+  return (
+    <nav
+      className="navbar is-transparent"
+      role="navigation"
+      aria-label="main-navigation"
+    >
+      <div className="">
+        <div className="navbar-brand mt-5">
+          <Link to="/" className="navbar-item" title="Logo">
+            <h1 className="font-black text-4xl mt-3">EightTree Demo</h1>
+          </Link>
         </div>
-      </nav>
-    )
+        <div className="navbar-start mt-5 h-14 bg-blue-400 w-text-center flex justify-center">
+          {navbarItemList.map((item) => (
+            <NavbarItem key={item.name} name={item.name} to={item.to} />
+          ))}
+        </div>
+      </div>
+    </nav>
+  )
 }
 
 export default Navbar

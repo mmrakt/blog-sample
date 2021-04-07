@@ -4,5 +4,5 @@
   "endOfLine": "auto",
   "singleQuote": true,
   "htmlWhitespaceSensitivity": "ignore",
-  "tabWidth": 4
+  "tabWidth": 2
 }

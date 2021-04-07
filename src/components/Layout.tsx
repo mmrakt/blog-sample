@@ -5,12 +5,13 @@ import Navbar from './Navbar'
 // import './all.sass'
 
 const TemplateWrapper = ({ children }) => (
-    <div>
-      <Head />
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
-    </div>
-  )
+  <div>
+    <Head />
+    <Navbar />
+    <main>{children}</main>
+    <hr />
+    <Footer />
+  </div>
+)
 
 export default TemplateWrapper

@@ -1,64 +1,19 @@
 import React from 'react'
-import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
-import { MarkdownRemark } from '../../types/graphql-types.d'
+import MiddleHeading from '../components/MiddleHeading'
 
-type ITemplateProps = {
-  title: string
-  content: string
-  contentComponent: (any) => any
-}
-
-export const AboutPageTemplate = (props: ITemplateProps) => {
-  const {title, content, contentComponent} = props
-  const PageContent = contentComponent || Content
-
-  return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
+export const AboutPageTemplate = () => (
+  <Layout>
+    <div className="mt-5">
+      <div className="text-3xl mt-5 text-center">
+        サロン・ド・エイツリー帝塚山について
       </div>
-    </section>
-  )
-}
+      <MiddleHeading title="コンセプト" />
+      <div className="text-lg text-center mt-5">
+        カラーセラピー、パーソナルカラー診断、ワイヤービジューバッグ、パーソナルコーチング(小中学生の個人学習指導)、ダイエット講座、絵本の読み聞かせと色育…など、8つのコンテンツで、人と人の繋がりを大切に、なりたい自分になるための空間作りを目指す
+      </div>
+    </div>
+  </Layout>
+)
 
-type IProps = {
-  post: MarkdownRemark
-}
-
-const AboutPage = ({ data }: {data: IProps}) => {
-  const { post } = data
-
-  return (
-    <Layout>
-      <AboutPageTemplate
-        contentComponent={HTMLContent}
-        title={post?.frontmatter.title}
-        content={post?.html}
-      />
-    </Layout>
-  )
-}
-
-export default AboutPage
-
-export const aboutPageQuery = graphql`
-  query AboutPage($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
-      frontmatter {
-        title
-      }
-    }
-  }
-`
+export default AboutPageTemplate

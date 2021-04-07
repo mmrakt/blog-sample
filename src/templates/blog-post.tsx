@@ -6,7 +6,6 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import { MarkdownRemark } from '../../types/graphql-types.d'
 
-
 type ITemplateProps = {
   content: string
   contentComponent: (any) => any
@@ -17,14 +16,7 @@ type ITemplateProps = {
 }
 
 export const BlogPostTemplate = (props: ITemplateProps) => {
-  const {
-    content,
-    contentComponent,
-    description,
-    tags,
-    title,
-    helmet,
-  } = props
+  const { content, contentComponent, description, tags, title, helmet } = props
   const PostContent = contentComponent || Content
 
   return (
@@ -43,7 +35,7 @@ export const BlogPostTemplate = (props: ITemplateProps) => {
                 <h4>Tags</h4>
                 <ul className="taglist">
                   {tags.map((tag) => (
-                    <li key={`${tag  }tag`}>
+                    <li key={`${tag}tag`}>
                       <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
                     </li>
                   ))}
@@ -63,7 +55,7 @@ type IProps = {
   }
 }
 
-const BlogPost = ({data}: IProps) => {
+const BlogPost = ({ data }: IProps) => {
   const { post } = data
 
   return (
