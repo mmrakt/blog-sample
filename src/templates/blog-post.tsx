@@ -46,14 +46,6 @@ export const BlogPostTemplate = ({
   )
 }
 
-BlogPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
-  description: PropTypes.string,
-  title: PropTypes.string,
-  helmet: PropTypes.object,
-}
-
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
 
@@ -78,13 +70,6 @@ const BlogPost = ({ data }) => {
     </Layout>
   )
 }
-
-BlogPost.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.object,
-  }),
-}
-
 export default BlogPost
 
 export const pageQuery = graphql`

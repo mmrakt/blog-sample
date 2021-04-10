@@ -15,7 +15,7 @@ const Navbar = () => {
     },
     {
       name: 'お知らせ',
-      to: 'blogs',
+      to: 'blog',
     },
     {
       name: 'お問い合わせ',
