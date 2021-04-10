@@ -13,7 +13,7 @@ export const BlogPageIndex = () => {
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
+              excerpt(pruneLength: 100, truncate: true)
               id
               fields {
                 slug
@@ -38,6 +38,7 @@ export const BlogPageIndex = () => {
     `
   )
   const { edges: posts } = data.allMarkdownRemark
+  console.log(posts)
 
   return (
     <Layout>

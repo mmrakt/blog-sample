@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import Img from 'gatsby-image'
 import { kebabCase } from 'lodash'
 import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
@@ -10,36 +10,36 @@ export const BlogPostTemplate = ({
   content,
   contentComponent,
   description,
+  date,
   tags,
   title,
   helmet,
+  image,
 }) => {
   const PostContent = contentComponent || Content
 
   return (
-    <section className="section">
+    <section className="section w-5/6 mx-auto">
       {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: '4rem' }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag) => (
-                    <li key={`${tag}tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
+      {tags && tags.length ? (
+        <div style={{ marginTop: '4rem' }}>
+          <ul className="taglist">
+            {tags.map((tag) => (
+              <li key={`${tag}tag`}>
+                <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+              </li>
+            ))}
+            <p className="text-right">{date}</p>
+          </ul>
+        </div>
+      ) : null}
+      <div className="text-3xl mt-5">{title}</div>
+      <div className="mt-5">
+        <div className="text-center">
+          <Img fixed={image.childImageSharp.fixed} />
+        </div>
+        <div className="text-left">
+          <PostContent content={content} />
         </div>
       </div>
     </section>
@@ -64,8 +64,10 @@ const BlogPost = ({ data }) => {
             />
           </Helmet>
         }
+        date={post.frontmatter.date}
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        image={post.frontmatter.image}
       />
     </Layout>
   )
@@ -78,10 +80,17 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "YYYY年MM月DD日")
         title
         description
         tags
+        image {
+          childImageSharp {
+            fixed(width: 1000) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
       }
     }
   }

@@ -25,7 +25,7 @@ export const CoursesPageTemplate = () => {
       <div className="mt-5 w-5/6 mx-auto">
         <div className="text-3xl mt-5 text-center">講座について</div>
         <MiddleHeading title="カラーセラピー" />
-        <Img fluid={image?.file?.childImageSharp?.fluid} />
+        <Img fluid={image.file.childImageSharp.fluid} />
         <div className="text-lg text-center mt-5">
           カラーセラピーとは、色の生理的、心理的効果を活用して、心身のバランスを整える色彩療法のことです。
           「16（シックスティーン）タイプカラーメソッド®」の16タイプ・カラーセラピーは、16枚の5色配色カードの中から選ぶ配色によって、本質的な性格、人間関係、心身の状態、表現したい自分がわかります。
