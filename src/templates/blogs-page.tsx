@@ -53,11 +53,12 @@ export const BlogsPageTemplate = () => {
                   </Link>
                 </div>
                 <div className="flex-2">
-                  <div className="pt-5 pl-5 text-xl font-bold">
+                  <div className="pt-5 pl-5 text-xl font-bold flex-1">
                     <Link to={post.fields.slug}>
                       <span>{post.frontmatter.title}</span>
                     </Link>
                   </div>
+                  <p className="text-right">{post.frontmatter.date}</p>
                   <div className="pt-5 pl-5">{post.excerpt}</div>
                 </div>
               </div>
