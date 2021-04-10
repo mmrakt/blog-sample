@@ -9,7 +9,7 @@ type IProps = {
 }
 
 const TagRoute = (props: IProps) => {
-  const {data, pageContext} = props
+  const { data, pageContext } = props
   const posts = data.allMarkdownRemark.edges
   const postLinks = posts.map((post) => (
     <li key={post.node.fields.slug}>
@@ -18,13 +18,12 @@ const TagRoute = (props: IProps) => {
       </Link>
     </li>
   ))
-  const {tag} = pageContext
-  const {title} = data.site.siteMetadata
-  const {totalCount} = data.allMarkdownRemark
+  const { tag } = pageContext
+  const { title } = data.site.siteMetadata
+  const { totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
     totalCount === 1 ? '' : 's'
   } tagged with “${tag}”`
-
 
   return (
     <Layout>

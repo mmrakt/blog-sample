@@ -94,7 +94,7 @@ export const ProductPageTemplate = ({
                 {pricing.heading}
               </h2>
               <p className="is-size-5">{pricing.description}</p>
-              <Pricing prices={pricing.plans}/>
+              <Pricing prices={pricing.plans} />
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Img, {FluidObject} from 'gatsby-image'
+import Img, { FluidObject } from 'gatsby-image'
 
 type IProps = {
   alt: string
@@ -11,10 +11,10 @@ type IProps = {
       fluid: FluidObject | FluidObject[]
     }
   }
-  style?: {string}
+  style?: { string }
 }
 
-const PreviewCompatibleImage = ({ imageInfo }: {imageInfo: IProps}) => {
+const PreviewCompatibleImage = ({ imageInfo }: { imageInfo: IProps }) => {
   const imageStyle = { borderRadius: '5px' }
   const { alt = '', childImageSharp, image } = imageInfo
 

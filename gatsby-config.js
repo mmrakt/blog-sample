@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: 'eigthtee-demo',
-    description:
-      'eigthtee demo',
+    description: 'eigthtee demo',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -80,17 +79,17 @@ module.exports = {
         stages: ['develop'],
         options: {
           emitWarning: true,
-          failOnError: false
-        }
-      }
+          failOnError: false,
+        },
+      },
     },
     {
       resolve: 'gatsby-plugin-react-svg',
       options: {
         rule: {
-          include: /svg/
-        }
-      }
+          include: /svg/,
+        },
+      },
     },
     'gatsby-plugin-postcss',
     {
