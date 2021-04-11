@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: 'eigthtee-demo',
@@ -113,6 +117,13 @@ module.exports = {
             cache: true,
           },
         },
+      },
+    },
+    {
+      resolve: 'gatsby-source-graphcms',
+      options: {
+        endpoint: process.env.GRAPHCMS_ENDPOINT,
+        locales: ['ja'],
       },
     },
   ],
