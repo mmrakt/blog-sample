@@ -8,7 +8,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark: allMarkdownRemark(limit: 1000) {
         edges {
           node {
             id
@@ -22,6 +22,12 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+      allGraphCmsPost: allGraphCmsPost {
+        nodes {
+          id: remoteId
+          slug
+        }
+      }
     }
   `).then((result) => {
     if (result.errors) {
@@ -29,6 +35,7 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges
+    const cmsPosts = result.data.allGraphCmsPost.nodes
 
     posts.forEach((edge) => {
       const { id } = edge.node
@@ -38,10 +45,18 @@ exports.createPages = ({ actions, graphql }) => {
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
         ),
-        // additional data can be passed via context
+        // pageQueryのデフォルトの引数はid
         context: {
           id,
         },
+      })
+    })
+
+    cmsPosts.forEach(({ id, slug }) => {
+      createPage({
+        path: slug,
+        component: path.resolve('src/templates/blog-post.tsx'),
+        context: { id },
       })
     })
 

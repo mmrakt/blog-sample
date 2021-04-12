@@ -1,7 +1,5 @@
 import React from 'react'
-import Img from 'gatsby-image'
 import { kebabCase } from 'lodash'
-import { Helmet } from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
@@ -9,18 +7,15 @@ import Content, { HTMLContent } from '../components/Content'
 export const BlogPostTemplate = ({
   content,
   contentComponent,
-  description,
   date,
   tags,
   title,
-  helmet,
   image,
 }) => {
   const PostContent = contentComponent || Content
 
   return (
     <section className="section w-5/6 mx-auto">
-      {helmet || ''}
       {tags && tags.length ? (
         <div style={{ marginTop: '4rem' }}>
           <ul className="taglist">
@@ -36,7 +31,7 @@ export const BlogPostTemplate = ({
       <div className="text-3xl mt-5">{title}</div>
       <div className="mt-5">
         <div className="text-center">
-          <Img fixed={image.childImageSharp.fixed} />
+          <img src={image.url} alt="カバー画像" className="w-96" />
         </div>
         <div className="text-left">
           <PostContent content={content} />
@@ -47,27 +42,18 @@ export const BlogPostTemplate = ({
 }
 
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { graphCmsPost } = data
+  console.log(graphCmsPost.content.html)
 
   return (
     <Layout>
       <BlogPostTemplate
-        content={post.html}
+        content={graphCmsPost.content.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
-        helmet={
-          <Helmet titleTemplate="%s | Blog">
-            <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
-          </Helmet>
-        }
-        date={post.frontmatter.date}
-        tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
-        image={post.frontmatter.image}
+        date={graphCmsPost.date}
+        tags={graphCmsPost.tags}
+        title={graphCmsPost.title}
+        image={graphCmsPost.coverImage}
       />
     </Layout>
   )
@@ -75,23 +61,19 @@ const BlogPost = ({ data }) => {
 export default BlogPost
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      id
-      html
-      frontmatter {
-        date(formatString: "YYYY年MM月DD日")
-        title
-        description
-        tags
-        image {
-          childImageSharp {
-            fixed(width: 1000) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
+  query BlogPostByID($id: ID!) {
+    graphCmsPost(remoteId: { eq: $id }) {
+      content {
+        html
       }
+      coverImage {
+        url
+      }
+      id
+      date
+      slug
+      title
+      tags
     }
   }
 `
