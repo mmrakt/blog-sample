@@ -4,6 +4,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 import Layout from '../../components/Layout'
 
 export const BlogPageIndex = () => {
+  // id = Post:ckncsw4mo2nm40b889j5rbw9l:PUBLISHED
   const data = useStaticQuery(
     graphql`
       query BlogRollQuery {

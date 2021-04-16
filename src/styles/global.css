@@ -1,3 +1,18 @@
 @tailwind base;
+h1 {
+  @apply text-2xl;
+}
+h2 {
+  @apply text-xl;
+}
+h3 {
+  @apply text-lg;
+}
+ol,
+ul {
+  @apply list-disc;
+  @apply pl-6;
+}
+
 @tailwind components;
 @tailwind utilities;

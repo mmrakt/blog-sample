@@ -124,7 +124,9 @@ module.exports = {
       options: {
         endpoint: process.env.GRAPHCMS_ENDPOINT,
         locales: ['ja'],
+        buildMarkdownNodes: true,
       },
     },
+    'gatsby-plugin-mdx',
   ],
 }
