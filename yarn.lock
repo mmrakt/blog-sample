@@ -8313,10 +8313,10 @@ gatsby-source-filesystem@2.11.1, gatsby-source-filesystem@^2.2.5:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-source-graphcms@^2.5.1:
-  version "2.5.1"
-  resolved "https://registry.yarnpkg.com/gatsby-source-graphcms/-/gatsby-source-graphcms-2.5.1.tgz#f88b7aa351536338b92e096078ad107183d1b0f9"
-  integrity sha512-DLNsTyWAw3rzAWI6LQ8oX2lp0t+RKxjTzqvtJRAmt3K/Fnl/776prPxBn8xX7ZVpRIBnlXQcfvlVlLqdQK4pmw==
+gatsby-source-graphcms@^2.5.0-next.3:
+  version "2.5.0-next.3"
+  resolved "https://registry.yarnpkg.com/gatsby-source-graphcms/-/gatsby-source-graphcms-2.5.0-next.3.tgz#a5d966b6a2e03943a6e3bacee7da71f04adadea2"
+  integrity sha512-r032BKKoH9C5fKQMo9iZMOK3eSJkd7IBYoz10Eh8YRuyT+14jXKFxiF8bJsZnZI27SkoyWhRtPcS8Nd1aFp+qA==
   dependencies:
     "@babel/runtime" "7.12.5"
     gatsby-core-utils "2.1.0"

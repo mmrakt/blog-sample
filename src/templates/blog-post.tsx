@@ -39,8 +39,6 @@ export const BlogPostTemplate = ({
           <img src={image.url} alt="カバー画像" className="w-96" />
         </div>
         <div className="text-left">
-          {/* <PostContent content={content} /> */}
-          {/* <PostContent content={hoge} /> */}
           <MDXRenderer>{content}</MDXRenderer>
         </div>
       </div>
@@ -50,7 +48,6 @@ export const BlogPostTemplate = ({
 
 const BlogPost = ({ data }) => {
   const { graphCmsPost } = data
-  console.log(graphCmsPost.content.html)
 
   return (
     <Layout>

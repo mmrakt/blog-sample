@@ -8,6 +8,15 @@ module.exports = {
     description: 'eigthtee demo',
   },
   plugins: [
+    'gatsby-plugin-mdx',
+    {
+      resolve: 'gatsby-source-graphcms',
+      options: {
+        endpoint: process.env.GRAPHCMS_ENDPOINT,
+        locales: ['ja'],
+        buildMarkdownNodes: true,
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
@@ -119,14 +128,5 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: 'gatsby-source-graphcms',
-      options: {
-        endpoint: process.env.GRAPHCMS_ENDPOINT,
-        locales: ['ja'],
-        buildMarkdownNodes: true,
-      },
-    },
-    'gatsby-plugin-mdx',
   ],
 }
