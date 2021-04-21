@@ -8,7 +8,6 @@ module.exports = {
     description: 'eigthtee demo',
   },
   plugins: [
-    'gatsby-plugin-mdx',
     {
       resolve: 'gatsby-source-graphcms',
       options: {
@@ -43,12 +42,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-typescript',
-    // {
-    //   resolve: 'gatsby-plugin-graphql-codegen',
-    //   options: {
-    //     fileName: 'types/graphql-types.d.ts'
-    //   }
-    // },
     {
       resolve: 'gatsby-transformer-remark',
       options: {

@@ -1,17 +1,23 @@
 @tailwind base;
 h1 {
   @apply text-2xl;
+  @apply mt-3;
 }
 h2 {
   @apply text-xl;
+  @apply mt-3;
 }
 h3 {
   @apply text-lg;
+  @apply mt-3;
 }
 ol,
 ul {
   @apply list-disc;
   @apply pl-6;
+}
+p {
+  @apply mt-3;
 }
 
 @tailwind components;
