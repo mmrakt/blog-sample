@@ -28,11 +28,7 @@ const Navbar = () => {
   ]
 
   return (
-    <nav
-      className="navbar is-transparent"
-      role="navigation"
-      aria-label="main-navigation"
-    >
+    <nav role="navigation" aria-label="main-navigation">
       <div className="">
         <div className="navbar-brand mt-5">
           <Link to="/" className="navbar-item" title="Logo">

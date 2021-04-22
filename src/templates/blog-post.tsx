@@ -13,14 +13,16 @@ export const BlogPostTemplate = ({
   const PostContent = contentComponent || Content
 
   return (
-    <section className="section w-5/6 mx-auto">
-      <div className="text-3xl mt-5">{title}</div>
-      <p className="text-right">{date}</p>
+    <section className="p-10">
       <div className="mt-5">
-        <div className="">
-          <img src={image.url} alt="カバー画像" className="w-96 mx-auto" />
-        </div>
-        <div className="text-left">
+        <p className="text-3xl">{title}</p>
+        <p className="text-right text-xl">{date}</p>
+      </div>
+      <div className="mt-10">
+        <img src={image.url} alt="カバー画像" className="w-768 object-cover" />
+      </div>
+      <div className="mt-10">
+        <div className="text-left leading-loose">
           <PostContent content={content} />
         </div>
       </div>
