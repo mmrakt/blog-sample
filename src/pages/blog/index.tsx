@@ -2,6 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Layout from '../../components/Layout'
+import PageTitle from '../../components/PageTitle'
 
 export const BlogPageIndex = () => {
   // id = Post:ckncsw4mo2nm40b889j5rbw9l:PUBLISHED
@@ -28,17 +29,17 @@ export const BlogPageIndex = () => {
   return (
     <Layout>
       <div className="mt-5">
-        <div className="text-3xl mt-5 text-center">お知らせ一覧</div>
-        <div className="w-5/6 mx-auto">
+        <PageTitle title="お知らせ一覧" />
+        <div className="w-5/6 mx-auto mt-10">
           {nodes.map((node) => (
             <div key={node.id}>
-              <div className="flex mt-5">
-                <div className="flex-2">
+              <div className="flex">
+                <div className="flex-2 p-5">
                   <Link to={node.slug}>
                     <img
                       src={node.coverImage.url}
                       alt="カバー画像"
-                      className="w-96"
+                      className="max-w-sm"
                     />
                   </Link>
                 </div>

@@ -3,6 +3,7 @@ import Img from 'gatsby-image'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/Layout'
 import MiddleHeading from '../components/MiddleHeading'
+import PageTitle from '../components/PageTitle'
 
 export const CoursesPageTemplate = () => {
   const image = useStaticQuery(
@@ -23,7 +24,7 @@ export const CoursesPageTemplate = () => {
   return (
     <Layout>
       <div className="mt-5 w-5/6 mx-auto">
-        <div className="text-3xl mt-5 text-center">講座について</div>
+        <PageTitle title="開講コース紹介" />
         <MiddleHeading title="カラーセラピー" />
         <Img fluid={image.file.childImageSharp.fluid} />
         <div className="text-lg text-center mt-5">

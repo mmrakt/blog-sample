@@ -30,3 +30,21 @@ export const IndexPage = () => {
 }
 
 export default IndexPage
+
+// export const pageQuery = graphql`
+//   query BlogPostByID($id: ID!) {
+//     graphCmsPost(remoteId: { eq: $id }) {
+//       content {
+//         html
+//       }
+//       coverImage {
+//         url
+//       }
+//       id
+//       date
+//       slug
+//       title
+//       tags
+//     }
+//   }
+// `
