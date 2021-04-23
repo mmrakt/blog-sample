@@ -16,7 +16,6 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              tags
               templateKey
             }
           }
@@ -42,7 +41,6 @@ exports.createPages = ({ actions, graphql }) => {
       if (edge.node.fields) {
         createPage({
           path: edge.node.fields.slug,
-          tags: edge.node.frontmatter.tags,
           component: path.resolve(
             `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
           ),
@@ -59,30 +57,6 @@ exports.createPages = ({ actions, graphql }) => {
         path: slug,
         component: path.resolve('src/templates/blog-post.tsx'),
         context: { id },
-      })
-    })
-
-    // Tag pages:
-    let tags = []
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach((edge) => {
-      if (_.get(edge, 'node.frontmatter.tags')) {
-        tags = tags.concat(edge.node.frontmatter.tags)
-      }
-    })
-    // Eliminate duplicate tags
-    tags = _.uniq(tags)
-
-    // Make tag pages
-    tags.forEach((tag) => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
-
-      createPage({
-        path: tagPath,
-        component: path.resolve('src/templates/tags.tsx'),
-        context: {
-          tag,
-        },
       })
     })
   })

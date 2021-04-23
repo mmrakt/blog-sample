@@ -1,11 +1,11 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import Layout from '../components/Layout'
-import MiddleHeading from '../components/MiddleHeading'
-import PageTitle from '../components/PageTitle'
+import Layout from '../../components/Layout'
+import MiddleHeading from '../../components/MiddleHeading'
+import PageTitle from '../../components/PageTitle'
 
-export const CoursesPageTemplate = () => {
+export const CoursePageIndex = () => {
   const image = useStaticQuery(
     graphql`
       query {
@@ -60,4 +60,4 @@ export const CoursesPageTemplate = () => {
   )
 }
 
-export default CoursesPageTemplate
+export default CoursePageIndex

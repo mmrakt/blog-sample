@@ -11,7 +11,7 @@ const Navbar = () => {
     },
     {
       name: 'コース紹介',
-      to: 'courses',
+      to: 'course',
     },
     {
       name: 'お知らせ',
