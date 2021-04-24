@@ -36,9 +36,18 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-start mt-5 h-14 bg-blue-400 w-text-center flex justify-center">
-          {navbarItemList.map((item) => (
-            <NavbarItem key={item.name} name={item.name} to={item.to} />
-          ))}
+          {navbarItemList.map((item) =>
+            item.name === 'コース紹介' ? (
+              <NavbarItem
+                key={item.name}
+                name={item.name}
+                to={item.to}
+                isDropdown
+              />
+            ) : (
+              <NavbarItem key={item.name} name={item.name} to={item.to} />
+            )
+          )}
         </div>
       </div>
     </nav>
