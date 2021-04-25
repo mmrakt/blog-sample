@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import NavbarItem from './NavbarItem'
 
 const Navbar = () => {
@@ -55,3 +55,17 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+// export const pageQuery = graphql`
+//   query allCoursePages {
+//   allGraphCmsPage {
+//     edges {
+//       node {
+//         id
+//         slug
+//         title
+//       }
+//     }
+//   }
+// }
+// `

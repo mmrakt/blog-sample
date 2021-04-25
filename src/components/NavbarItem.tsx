@@ -1,12 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Menu from 'material-ui-popup-state/HoverMenu'
-import MenuItem from '@material-ui/core/MenuItem'
-import {
-  usePopupState,
-  bindHover,
-  bindMenu,
-} from 'material-ui-popup-state/hooks'
+import { usePopupState, bindHover } from 'material-ui-popup-state/hooks'
+import CourseMenu from './CourseMenu'
 
 type IProps = {
   name: string
@@ -30,20 +25,7 @@ const NavbarItem = (props: IProps) => {
           >
             {name}
           </div>
-          <Menu
-            /* eslint-disable react/jsx-props-no-spreading */
-            {...bindMenu(popupState)}
-            getContentAnchorEl={null}
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-          >
-            <MenuItem onClick={popupState.close}>カラーセラピー</MenuItem>
-            <MenuItem onClick={popupState.close}>パーソナルカラー診断</MenuItem>
-            <MenuItem onClick={popupState.close}>
-              ワイヤービジューバッグ
-            </MenuItem>
-            <MenuItem onClick={popupState.close}>ダイエット</MenuItem>
-          </Menu>
+          <CourseMenu popupState={popupState} />
         </>
       ) : (
         <div className="navbar-item hover:bg-blue-300 flex-1 flex text-lg ext-white items-center justify-center">
