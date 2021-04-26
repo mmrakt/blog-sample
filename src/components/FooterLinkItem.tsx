@@ -8,7 +8,10 @@ type IProps = {
 const FooterLinkItem = (props: IProps) => {
   const { name, to } = props
   return (
-    <Link className="navbar-item ml-3" to={`/${to}`}>
+    <Link
+      className="navbar-item ml-3 hover:underline hover:text-gray-600"
+      to={`/${to}`}
+    >
       {name}
     </Link>
   )

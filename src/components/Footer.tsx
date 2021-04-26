@@ -8,10 +8,6 @@ const Footer = () => {
       to: 'about',
     },
     {
-      name: 'コース紹介',
-      to: 'products',
-    },
-    {
       name: 'お知らせ',
       to: 'blog',
     },
