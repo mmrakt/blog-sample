@@ -9,6 +9,14 @@ fragment Page on Page {
       stage
     }
   }
+  coverImage {
+    ... on Asset {
+      remoteTypeName: __typename
+      remoteId: id
+      locale
+      stage
+    }
+  }
   updatedAt
   updatedBy {
     ... on User {

@@ -13,28 +13,22 @@ const NavbarItem = (props: IProps) => {
   const { name, to, isDropdown } = props
   const popupState = usePopupState({ variant: 'popover', popupId: 'demoMenu' })
 
-  return (
+  return isDropdown ? (
     <>
-      {isDropdown ? (
-        <>
-          <div
-            className="navbar-item hover:bg-blue-300 flex-1 flex text-lg ext-white items-center justify-center"
-            /* eslint-disable react/jsx-props-no-spreading */ {...bindHover(
-              popupState
-            )}
-          >
-            {name}
-          </div>
-          <CourseMenu popupState={popupState} />
-        </>
-      ) : (
-        <div className="navbar-item hover:bg-blue-300 flex-1 flex text-lg ext-white items-center justify-center">
-          <Link to={`/${to}`}>
-            <span>{name}</span>
-          </Link>
-        </div>
-      )}
+      <div
+        className="navbar-item hover:bg-blue-300 flex-1 flex text-lg ext-white items-center justify-center"
+        /* eslint-disable react/jsx-props-no-spreading */ {...bindHover(
+          popupState
+        )}
+      >
+        {name}
+      </div>
+      <CourseMenu popupState={popupState} />
     </>
+  ) : (
+    <div className="navbar-item hover:bg-blue-300 flex-1 flex text-lg ext-white items-center justify-center">
+      <Link to={`/${to}`}>{name}</Link>
+    </div>
   )
 }
 

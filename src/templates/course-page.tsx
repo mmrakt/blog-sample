@@ -6,7 +6,6 @@ import Content, { HTMLContent } from '../components/Content'
 export const CoursePageTemplate = ({
   content,
   contentComponent,
-  date,
   title,
   image,
 }) => {
@@ -16,7 +15,6 @@ export const CoursePageTemplate = ({
     <section className="p-10">
       <div className="mt-5">
         <p className="text-3xl">{title}</p>
-        <p className="text-right text-xl">{date}</p>
       </div>
       <div className="mt-10">
         <img src={image.url} alt="カバー画像" className="w-768 object-cover" />
@@ -30,37 +28,32 @@ export const CoursePageTemplate = ({
   )
 }
 
-const BlogPost = ({ data }) => {
-  const { graphCmsPost } = data
+const CoursePage = ({ data }) => {
+  const { graphCmsPage } = data
 
   return (
     <Layout>
       <CoursePageTemplate
-        content={graphCmsPost.content.html}
+        content={graphCmsPage.content.html}
         contentComponent={HTMLContent}
-        date={graphCmsPost.date}
-        title={graphCmsPost.title}
-        image={graphCmsPost.coverImage}
+        title={graphCmsPage.title}
+        image={graphCmsPage.coverImage}
       />
     </Layout>
   )
 }
-export default BlogPost
+export default CoursePage
 
 export const pageQuery = graphql`
   query CoursePageByID($id: ID!) {
-    graphCmsPost(remoteId: { eq: $id }) {
+    graphCmsPage(remoteId: { eq: $id }) {
       content {
         html
       }
       coverImage {
         url
       }
-      id
-      date
-      slug
       title
-      tags
     }
   }
 `
