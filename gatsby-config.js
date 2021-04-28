@@ -14,6 +14,7 @@ module.exports = {
         endpoint: process.env.GRAPHCMS_ENDPOINT,
         locales: ['ja'],
         buildMarkdownNodes: true,
+        downloadLocalImages: true,
       },
     },
     'gatsby-plugin-react-helmet',
@@ -39,6 +40,7 @@ module.exports = {
         name: 'images',
       },
     },
+    'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-typescript',
@@ -133,6 +135,11 @@ module.exports = {
         extensions: ['js', 'jsx', 'ts', 'tsx'],
       },
     },
-    'gatsby-plugin-graphql-codegen',
+    {
+      resolve: 'gatsby-plugin-graphql-codegen',
+      options: {
+        fileName: 'types/graphql-types.d.ts',
+      },
+    },
   ],
 }
