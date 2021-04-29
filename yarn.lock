@@ -5704,6 +5704,11 @@ d@1, d@^1.0.1:
     es5-ext "^0.10.50"
     type "^1.0.1"
 
+daisyui@^0.20.1:
+  version "0.20.1"
+  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-0.20.1.tgz#a9cf9a6ff7036756c6e5aeb765b64b3e03ff333f"
+  integrity sha512-ayfdkiOd4hCog/y8VmLmdyfQ8S+R3InvX4JzxJ6FpzIV4KizPTueyVPKQpt5ydlrfman4qmth9GHZCvGO6p1hg==
+
 damerau-levenshtein@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/damerau-levenshtein/-/damerau-levenshtein-1.0.6.tgz"

@@ -6,11 +6,18 @@ import HamburgerMenu from './HamburgerMenu'
 
 const Header: React.VFC = () => (
   <div className="">
-    <Title />
     <MediaQuery query="(max-width: 360px)">
-      <HamburgerMenu />
+      <div className="flex items-center">
+        <div className="flex-1">
+          <Title />
+        </div>
+        <div className="">
+          <HamburgerMenu />
+        </div>
+      </div>
     </MediaQuery>
     <MediaQuery query="(min-width: 361px)">
+      <Title />
       <Navbar />
     </MediaQuery>
   </div>

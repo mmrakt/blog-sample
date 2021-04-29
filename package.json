@@ -24,6 +24,7 @@
     "autoprefixer": "^10.2.5",
     "bulma": "^0.9.0",
     "classnames": "^2.3.1",
+    "daisyui": "^0.20.1",
     "dotenv": "^8.2.0",
     "gatsby": "^2.20.35",
     "gatsby-image": "^3.2.0",
