@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
-import { Link, graphql } from 'gatsby'
+import React from 'react'
 import NavbarItem from './NavbarItem'
 
 const Navbar = () => {
-  const [active, setActive] = useState(false)
   const navbarItemList = [
     {
       name: 'サロン紹介',
@@ -29,43 +27,22 @@ const Navbar = () => {
 
   return (
     <nav role="navigation" aria-label="main-navigation">
-      <div className="">
-        <div className="navbar-brand mt-5">
-          <Link to="/" className="navbar-item" title="Logo">
-            <h1 className="font-black text-4xl mt-3">EightTree Demo</h1>
-          </Link>
-        </div>
-        <div className="navbar-start mt-5 h-14 bg-blue-400 w-text-center flex justify-center">
-          {navbarItemList.map((item) =>
-            item.name === 'コース紹介' ? (
-              <NavbarItem
-                key={item.name}
-                name={item.name}
-                to={item.to}
-                isDropdown
-              />
-            ) : (
-              <NavbarItem key={item.name} name={item.name} to={item.to} />
-            )
-          )}
-        </div>
+      <div className="navbar-start mt-5 h-14 bg-blue-400 w-text-center flex justify-center">
+        {navbarItemList.map((item) =>
+          item.name === 'コース紹介' ? (
+            <NavbarItem
+              key={item.name}
+              name={item.name}
+              to={item.to}
+              isDropdown
+            />
+          ) : (
+            <NavbarItem key={item.name} name={item.name} to={item.to} />
+          )
+        )}
       </div>
     </nav>
   )
 }
 
 export default Navbar
-
-// export const pageQuery = graphql`
-//   query allCoursePages {
-//   allGraphCmsPage {
-//     edges {
-//       node {
-//         id
-//         slug
-//         title
-//       }
-//     }
-//   }
-// }
-// `
