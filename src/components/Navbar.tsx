@@ -6,7 +6,7 @@ const Navbar = () => {
   const [active, setActive] = useState(false)
   const navbarItemList = [
     {
-      name: 'サイト紹介',
+      name: 'サロン紹介',
       to: 'about',
     },
     {

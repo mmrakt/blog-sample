@@ -19,7 +19,7 @@ export const BlogPostTemplate = ({
         <p className="text-right text-xl">{date}</p>
       </div>
       <div className="mt-10">
-        <img src={image.url} alt="カバー画像" className="w-768 object-cover" />
+        <img src={image.url} alt="カバー画像" className="w-768" />
       </div>
       <div className="mt-10">
         <div className="text-left leading-loose">

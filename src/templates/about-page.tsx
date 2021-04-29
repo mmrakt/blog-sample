@@ -1,9 +1,10 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
 import PageTitle from '../components/PageTitle'
 import Layout from '../components/Layout'
+import CoverImage from '../components/CoverImage'
 import MiddleHeading from '../components/MiddleHeading'
+import AboutInfo from '../components/AboutInfo'
 
 export const AboutPageTemplate = () => {
   const data = useStaticQuery(
@@ -21,11 +22,20 @@ export const AboutPageTemplate = () => {
     <Layout>
       <div className="mt-5">
         <PageTitle title="サロン・ド・エイツリー帝塚山について" />
-        <GatsbyImage image={image} alt="カバー画像" />
-        {/* <img src={url} alt="カバー画像" className="w-768 object-cover" /> */}
-        <MiddleHeading title="コンセプト" />
-        <div className="text-lg text-center mt-5">
+        <div className="mt-10 items-center">
+          <CoverImage image={image} />
+        </div>
+        <div className="mt-10">
+          <MiddleHeading title="コンセプト" />
+        </div>
+        <div className="text-lg text-center mt-10 leading-loose">
           カラーセラピー、パーソナルカラー診断、ワイヤービジューバッグ、パーソナルコーチング(小中学生の個人学習指導)、ダイエット講座、絵本の読み聞かせと色育…など、8つのコンテンツで、人と人の繋がりを大切に、なりたい自分になるための空間作りを目指す
+        </div>
+        <div className="mt-10">
+          <MiddleHeading title="サロン情報" />
+        </div>
+        <div className="mt-10">
+          <AboutInfo />
         </div>
       </div>
     </Layout>
