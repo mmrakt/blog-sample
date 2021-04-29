@@ -2,7 +2,7 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Layout from '../../components/Layout'
-import PageTitle from '../../components/PageTitle'
+import PageTitle from '../../components/common/PageTitle'
 
 export const BlogPageIndex = () => {
   // id = Post:ckncsw4mo2nm40b889j5rbw9l:PUBLISHED

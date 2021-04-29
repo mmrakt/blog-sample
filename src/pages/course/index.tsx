@@ -2,8 +2,8 @@ import React from 'react'
 import Img from 'gatsby-image'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Layout from '../../components/Layout'
-import MiddleHeading from '../../components/MiddleHeading'
-import PageTitle from '../../components/PageTitle'
+import MiddleHeading from '../../components/common/MiddleHeading'
+import PageTitle from '../../components/common/PageTitle'
 
 export const CoursePageIndex = () => {
   const image = useStaticQuery(

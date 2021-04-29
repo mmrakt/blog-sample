@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { usePopupState, bindHover } from 'material-ui-popup-state/hooks'
-import CourseMenu from './CourseMenu'
+import CourseMenu from '../CourseMenu'
 
 type IProps = {
   name: string
