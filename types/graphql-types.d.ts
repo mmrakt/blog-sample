@@ -396,10 +396,6 @@ export type File = Node & {
   childrenImageSharp?: Maybe<Array<Maybe<ImageSharp>>>
   /** Returns the first child node of type ImageSharp or null if there are no children of given type on this node */
   childImageSharp?: Maybe<ImageSharp>
-  /** Returns all children nodes filtered by type MarkdownRemark */
-  childrenMarkdownRemark?: Maybe<Array<Maybe<MarkdownRemark>>>
-  /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
-  childMarkdownRemark?: Maybe<MarkdownRemark>
   id: Scalars['ID']
   parent?: Maybe<Node>
   children: Array<Node>
@@ -701,121 +697,6 @@ export type FileFieldsEnum =
   | 'childImageSharp___internal___mediaType'
   | 'childImageSharp___internal___owner'
   | 'childImageSharp___internal___type'
-  | 'childrenMarkdownRemark'
-  | 'childrenMarkdownRemark___id'
-  | 'childrenMarkdownRemark___frontmatter___title'
-  | 'childrenMarkdownRemark___frontmatter___templateKey'
-  | 'childrenMarkdownRemark___frontmatter___path'
-  | 'childrenMarkdownRemark___excerpt'
-  | 'childrenMarkdownRemark___rawMarkdownBody'
-  | 'childrenMarkdownRemark___fileAbsolutePath'
-  | 'childrenMarkdownRemark___fields___slug'
-  | 'childrenMarkdownRemark___html'
-  | 'childrenMarkdownRemark___htmlAst'
-  | 'childrenMarkdownRemark___excerptAst'
-  | 'childrenMarkdownRemark___headings'
-  | 'childrenMarkdownRemark___headings___id'
-  | 'childrenMarkdownRemark___headings___value'
-  | 'childrenMarkdownRemark___headings___depth'
-  | 'childrenMarkdownRemark___timeToRead'
-  | 'childrenMarkdownRemark___tableOfContents'
-  | 'childrenMarkdownRemark___wordCount___paragraphs'
-  | 'childrenMarkdownRemark___wordCount___sentences'
-  | 'childrenMarkdownRemark___wordCount___words'
-  | 'childrenMarkdownRemark___parent___id'
-  | 'childrenMarkdownRemark___parent___parent___id'
-  | 'childrenMarkdownRemark___parent___parent___children'
-  | 'childrenMarkdownRemark___parent___children'
-  | 'childrenMarkdownRemark___parent___children___id'
-  | 'childrenMarkdownRemark___parent___children___children'
-  | 'childrenMarkdownRemark___parent___internal___content'
-  | 'childrenMarkdownRemark___parent___internal___contentDigest'
-  | 'childrenMarkdownRemark___parent___internal___description'
-  | 'childrenMarkdownRemark___parent___internal___fieldOwners'
-  | 'childrenMarkdownRemark___parent___internal___ignoreType'
-  | 'childrenMarkdownRemark___parent___internal___mediaType'
-  | 'childrenMarkdownRemark___parent___internal___owner'
-  | 'childrenMarkdownRemark___parent___internal___type'
-  | 'childrenMarkdownRemark___children'
-  | 'childrenMarkdownRemark___children___id'
-  | 'childrenMarkdownRemark___children___parent___id'
-  | 'childrenMarkdownRemark___children___parent___children'
-  | 'childrenMarkdownRemark___children___children'
-  | 'childrenMarkdownRemark___children___children___id'
-  | 'childrenMarkdownRemark___children___children___children'
-  | 'childrenMarkdownRemark___children___internal___content'
-  | 'childrenMarkdownRemark___children___internal___contentDigest'
-  | 'childrenMarkdownRemark___children___internal___description'
-  | 'childrenMarkdownRemark___children___internal___fieldOwners'
-  | 'childrenMarkdownRemark___children___internal___ignoreType'
-  | 'childrenMarkdownRemark___children___internal___mediaType'
-  | 'childrenMarkdownRemark___children___internal___owner'
-  | 'childrenMarkdownRemark___children___internal___type'
-  | 'childrenMarkdownRemark___internal___content'
-  | 'childrenMarkdownRemark___internal___contentDigest'
-  | 'childrenMarkdownRemark___internal___description'
-  | 'childrenMarkdownRemark___internal___fieldOwners'
-  | 'childrenMarkdownRemark___internal___ignoreType'
-  | 'childrenMarkdownRemark___internal___mediaType'
-  | 'childrenMarkdownRemark___internal___owner'
-  | 'childrenMarkdownRemark___internal___type'
-  | 'childMarkdownRemark___id'
-  | 'childMarkdownRemark___frontmatter___title'
-  | 'childMarkdownRemark___frontmatter___templateKey'
-  | 'childMarkdownRemark___frontmatter___path'
-  | 'childMarkdownRemark___excerpt'
-  | 'childMarkdownRemark___rawMarkdownBody'
-  | 'childMarkdownRemark___fileAbsolutePath'
-  | 'childMarkdownRemark___fields___slug'
-  | 'childMarkdownRemark___html'
-  | 'childMarkdownRemark___htmlAst'
-  | 'childMarkdownRemark___excerptAst'
-  | 'childMarkdownRemark___headings'
-  | 'childMarkdownRemark___headings___id'
-  | 'childMarkdownRemark___headings___value'
-  | 'childMarkdownRemark___headings___depth'
-  | 'childMarkdownRemark___timeToRead'
-  | 'childMarkdownRemark___tableOfContents'
-  | 'childMarkdownRemark___wordCount___paragraphs'
-  | 'childMarkdownRemark___wordCount___sentences'
-  | 'childMarkdownRemark___wordCount___words'
-  | 'childMarkdownRemark___parent___id'
-  | 'childMarkdownRemark___parent___parent___id'
-  | 'childMarkdownRemark___parent___parent___children'
-  | 'childMarkdownRemark___parent___children'
-  | 'childMarkdownRemark___parent___children___id'
-  | 'childMarkdownRemark___parent___children___children'
-  | 'childMarkdownRemark___parent___internal___content'
-  | 'childMarkdownRemark___parent___internal___contentDigest'
-  | 'childMarkdownRemark___parent___internal___description'
-  | 'childMarkdownRemark___parent___internal___fieldOwners'
-  | 'childMarkdownRemark___parent___internal___ignoreType'
-  | 'childMarkdownRemark___parent___internal___mediaType'
-  | 'childMarkdownRemark___parent___internal___owner'
-  | 'childMarkdownRemark___parent___internal___type'
-  | 'childMarkdownRemark___children'
-  | 'childMarkdownRemark___children___id'
-  | 'childMarkdownRemark___children___parent___id'
-  | 'childMarkdownRemark___children___parent___children'
-  | 'childMarkdownRemark___children___children'
-  | 'childMarkdownRemark___children___children___id'
-  | 'childMarkdownRemark___children___children___children'
-  | 'childMarkdownRemark___children___internal___content'
-  | 'childMarkdownRemark___children___internal___contentDigest'
-  | 'childMarkdownRemark___children___internal___description'
-  | 'childMarkdownRemark___children___internal___fieldOwners'
-  | 'childMarkdownRemark___children___internal___ignoreType'
-  | 'childMarkdownRemark___children___internal___mediaType'
-  | 'childMarkdownRemark___children___internal___owner'
-  | 'childMarkdownRemark___children___internal___type'
-  | 'childMarkdownRemark___internal___content'
-  | 'childMarkdownRemark___internal___contentDigest'
-  | 'childMarkdownRemark___internal___description'
-  | 'childMarkdownRemark___internal___fieldOwners'
-  | 'childMarkdownRemark___internal___ignoreType'
-  | 'childMarkdownRemark___internal___mediaType'
-  | 'childMarkdownRemark___internal___owner'
-  | 'childMarkdownRemark___internal___type'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -941,8 +822,6 @@ export type FileFilterInput = {
   publicURL?: Maybe<StringQueryOperatorInput>
   childrenImageSharp?: Maybe<ImageSharpFilterListInput>
   childImageSharp?: Maybe<ImageSharpFilterInput>
-  childrenMarkdownRemark?: Maybe<MarkdownRemarkFilterListInput>
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>
   id?: Maybe<StringQueryOperatorInput>
   parent?: Maybe<NodeFilterInput>
   children?: Maybe<NodeFilterListInput>
@@ -1216,73 +1095,6 @@ export type GraphCms_AssetFieldsEnum =
   | 'localFile___childImageSharp___internal___mediaType'
   | 'localFile___childImageSharp___internal___owner'
   | 'localFile___childImageSharp___internal___type'
-  | 'localFile___childrenMarkdownRemark'
-  | 'localFile___childrenMarkdownRemark___id'
-  | 'localFile___childrenMarkdownRemark___frontmatter___title'
-  | 'localFile___childrenMarkdownRemark___frontmatter___templateKey'
-  | 'localFile___childrenMarkdownRemark___frontmatter___path'
-  | 'localFile___childrenMarkdownRemark___excerpt'
-  | 'localFile___childrenMarkdownRemark___rawMarkdownBody'
-  | 'localFile___childrenMarkdownRemark___fileAbsolutePath'
-  | 'localFile___childrenMarkdownRemark___fields___slug'
-  | 'localFile___childrenMarkdownRemark___html'
-  | 'localFile___childrenMarkdownRemark___htmlAst'
-  | 'localFile___childrenMarkdownRemark___excerptAst'
-  | 'localFile___childrenMarkdownRemark___headings'
-  | 'localFile___childrenMarkdownRemark___headings___id'
-  | 'localFile___childrenMarkdownRemark___headings___value'
-  | 'localFile___childrenMarkdownRemark___headings___depth'
-  | 'localFile___childrenMarkdownRemark___timeToRead'
-  | 'localFile___childrenMarkdownRemark___tableOfContents'
-  | 'localFile___childrenMarkdownRemark___wordCount___paragraphs'
-  | 'localFile___childrenMarkdownRemark___wordCount___sentences'
-  | 'localFile___childrenMarkdownRemark___wordCount___words'
-  | 'localFile___childrenMarkdownRemark___parent___id'
-  | 'localFile___childrenMarkdownRemark___parent___children'
-  | 'localFile___childrenMarkdownRemark___children'
-  | 'localFile___childrenMarkdownRemark___children___id'
-  | 'localFile___childrenMarkdownRemark___children___children'
-  | 'localFile___childrenMarkdownRemark___internal___content'
-  | 'localFile___childrenMarkdownRemark___internal___contentDigest'
-  | 'localFile___childrenMarkdownRemark___internal___description'
-  | 'localFile___childrenMarkdownRemark___internal___fieldOwners'
-  | 'localFile___childrenMarkdownRemark___internal___ignoreType'
-  | 'localFile___childrenMarkdownRemark___internal___mediaType'
-  | 'localFile___childrenMarkdownRemark___internal___owner'
-  | 'localFile___childrenMarkdownRemark___internal___type'
-  | 'localFile___childMarkdownRemark___id'
-  | 'localFile___childMarkdownRemark___frontmatter___title'
-  | 'localFile___childMarkdownRemark___frontmatter___templateKey'
-  | 'localFile___childMarkdownRemark___frontmatter___path'
-  | 'localFile___childMarkdownRemark___excerpt'
-  | 'localFile___childMarkdownRemark___rawMarkdownBody'
-  | 'localFile___childMarkdownRemark___fileAbsolutePath'
-  | 'localFile___childMarkdownRemark___fields___slug'
-  | 'localFile___childMarkdownRemark___html'
-  | 'localFile___childMarkdownRemark___htmlAst'
-  | 'localFile___childMarkdownRemark___excerptAst'
-  | 'localFile___childMarkdownRemark___headings'
-  | 'localFile___childMarkdownRemark___headings___id'
-  | 'localFile___childMarkdownRemark___headings___value'
-  | 'localFile___childMarkdownRemark___headings___depth'
-  | 'localFile___childMarkdownRemark___timeToRead'
-  | 'localFile___childMarkdownRemark___tableOfContents'
-  | 'localFile___childMarkdownRemark___wordCount___paragraphs'
-  | 'localFile___childMarkdownRemark___wordCount___sentences'
-  | 'localFile___childMarkdownRemark___wordCount___words'
-  | 'localFile___childMarkdownRemark___parent___id'
-  | 'localFile___childMarkdownRemark___parent___children'
-  | 'localFile___childMarkdownRemark___children'
-  | 'localFile___childMarkdownRemark___children___id'
-  | 'localFile___childMarkdownRemark___children___children'
-  | 'localFile___childMarkdownRemark___internal___content'
-  | 'localFile___childMarkdownRemark___internal___contentDigest'
-  | 'localFile___childMarkdownRemark___internal___description'
-  | 'localFile___childMarkdownRemark___internal___fieldOwners'
-  | 'localFile___childMarkdownRemark___internal___ignoreType'
-  | 'localFile___childMarkdownRemark___internal___mediaType'
-  | 'localFile___childMarkdownRemark___internal___owner'
-  | 'localFile___childMarkdownRemark___internal___type'
   | 'localFile___id'
   | 'localFile___parent___id'
   | 'localFile___parent___parent___id'
@@ -1591,7 +1403,6 @@ export type GraphCms_AssetFieldsEnum =
   | 'coverImagePost___coverImage___localFile___url'
   | 'coverImagePost___coverImage___localFile___publicURL'
   | 'coverImagePost___coverImage___localFile___childrenImageSharp'
-  | 'coverImagePost___coverImage___localFile___childrenMarkdownRemark'
   | 'coverImagePost___coverImage___localFile___id'
   | 'coverImagePost___coverImage___localFile___children'
   | 'coverImagePost___coverImage___remoteTypeName'
@@ -2018,7 +1829,6 @@ export type GraphCms_AssetFieldsEnum =
   | 'authorAvatar___picture___localFile___url'
   | 'authorAvatar___picture___localFile___publicURL'
   | 'authorAvatar___picture___localFile___childrenImageSharp'
-  | 'authorAvatar___picture___localFile___childrenMarkdownRemark'
   | 'authorAvatar___picture___localFile___id'
   | 'authorAvatar___picture___localFile___children'
   | 'authorAvatar___picture___remoteTypeName'
@@ -2382,7 +2192,6 @@ export type GraphCms_AssetFieldsEnum =
   | 'seoImage___image___localFile___url'
   | 'seoImage___image___localFile___publicURL'
   | 'seoImage___image___localFile___childrenImageSharp'
-  | 'seoImage___image___localFile___childrenMarkdownRemark'
   | 'seoImage___image___localFile___id'
   | 'seoImage___image___localFile___children'
   | 'seoImage___image___remoteTypeName'
@@ -2890,29 +2699,6 @@ export type GraphCms_AuthorFieldsEnum =
   | 'picture___localFile___childImageSharp___gatsbyImageData'
   | 'picture___localFile___childImageSharp___id'
   | 'picture___localFile___childImageSharp___children'
-  | 'picture___localFile___childrenMarkdownRemark'
-  | 'picture___localFile___childrenMarkdownRemark___id'
-  | 'picture___localFile___childrenMarkdownRemark___excerpt'
-  | 'picture___localFile___childrenMarkdownRemark___rawMarkdownBody'
-  | 'picture___localFile___childrenMarkdownRemark___fileAbsolutePath'
-  | 'picture___localFile___childrenMarkdownRemark___html'
-  | 'picture___localFile___childrenMarkdownRemark___htmlAst'
-  | 'picture___localFile___childrenMarkdownRemark___excerptAst'
-  | 'picture___localFile___childrenMarkdownRemark___headings'
-  | 'picture___localFile___childrenMarkdownRemark___timeToRead'
-  | 'picture___localFile___childrenMarkdownRemark___tableOfContents'
-  | 'picture___localFile___childrenMarkdownRemark___children'
-  | 'picture___localFile___childMarkdownRemark___id'
-  | 'picture___localFile___childMarkdownRemark___excerpt'
-  | 'picture___localFile___childMarkdownRemark___rawMarkdownBody'
-  | 'picture___localFile___childMarkdownRemark___fileAbsolutePath'
-  | 'picture___localFile___childMarkdownRemark___html'
-  | 'picture___localFile___childMarkdownRemark___htmlAst'
-  | 'picture___localFile___childMarkdownRemark___excerptAst'
-  | 'picture___localFile___childMarkdownRemark___headings'
-  | 'picture___localFile___childMarkdownRemark___timeToRead'
-  | 'picture___localFile___childMarkdownRemark___tableOfContents'
-  | 'picture___localFile___childMarkdownRemark___children'
   | 'picture___localFile___id'
   | 'picture___localFile___parent___id'
   | 'picture___localFile___parent___children'
@@ -3438,7 +3224,6 @@ export type GraphCms_AuthorFieldsEnum =
   | 'posts___coverImage___localFile___url'
   | 'posts___coverImage___localFile___publicURL'
   | 'posts___coverImage___localFile___childrenImageSharp'
-  | 'posts___coverImage___localFile___childrenMarkdownRemark'
   | 'posts___coverImage___localFile___id'
   | 'posts___coverImage___localFile___children'
   | 'posts___coverImage___remoteTypeName'
@@ -3928,12 +3713,8 @@ export type GraphCms_MarkdownNodeFieldsEnum =
   | 'childrenMarkdownRemark'
   | 'childrenMarkdownRemark___id'
   | 'childrenMarkdownRemark___frontmatter___title'
-  | 'childrenMarkdownRemark___frontmatter___templateKey'
-  | 'childrenMarkdownRemark___frontmatter___path'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
-  | 'childrenMarkdownRemark___fileAbsolutePath'
-  | 'childrenMarkdownRemark___fields___slug'
   | 'childrenMarkdownRemark___html'
   | 'childrenMarkdownRemark___htmlAst'
   | 'childrenMarkdownRemark___excerptAst'
@@ -3985,12 +3766,8 @@ export type GraphCms_MarkdownNodeFieldsEnum =
   | 'childrenMarkdownRemark___internal___type'
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
-  | 'childMarkdownRemark___frontmatter___templateKey'
-  | 'childMarkdownRemark___frontmatter___path'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
-  | 'childMarkdownRemark___fileAbsolutePath'
-  | 'childMarkdownRemark___fields___slug'
   | 'childMarkdownRemark___html'
   | 'childMarkdownRemark___htmlAst'
   | 'childMarkdownRemark___excerptAst'
@@ -4290,29 +4067,6 @@ export type GraphCms_PageFieldsEnum =
   | 'coverImage___localFile___childImageSharp___gatsbyImageData'
   | 'coverImage___localFile___childImageSharp___id'
   | 'coverImage___localFile___childImageSharp___children'
-  | 'coverImage___localFile___childrenMarkdownRemark'
-  | 'coverImage___localFile___childrenMarkdownRemark___id'
-  | 'coverImage___localFile___childrenMarkdownRemark___excerpt'
-  | 'coverImage___localFile___childrenMarkdownRemark___rawMarkdownBody'
-  | 'coverImage___localFile___childrenMarkdownRemark___fileAbsolutePath'
-  | 'coverImage___localFile___childrenMarkdownRemark___html'
-  | 'coverImage___localFile___childrenMarkdownRemark___htmlAst'
-  | 'coverImage___localFile___childrenMarkdownRemark___excerptAst'
-  | 'coverImage___localFile___childrenMarkdownRemark___headings'
-  | 'coverImage___localFile___childrenMarkdownRemark___timeToRead'
-  | 'coverImage___localFile___childrenMarkdownRemark___tableOfContents'
-  | 'coverImage___localFile___childrenMarkdownRemark___children'
-  | 'coverImage___localFile___childMarkdownRemark___id'
-  | 'coverImage___localFile___childMarkdownRemark___excerpt'
-  | 'coverImage___localFile___childMarkdownRemark___rawMarkdownBody'
-  | 'coverImage___localFile___childMarkdownRemark___fileAbsolutePath'
-  | 'coverImage___localFile___childMarkdownRemark___html'
-  | 'coverImage___localFile___childMarkdownRemark___htmlAst'
-  | 'coverImage___localFile___childMarkdownRemark___excerptAst'
-  | 'coverImage___localFile___childMarkdownRemark___headings'
-  | 'coverImage___localFile___childMarkdownRemark___timeToRead'
-  | 'coverImage___localFile___childMarkdownRemark___tableOfContents'
-  | 'coverImage___localFile___childMarkdownRemark___children'
   | 'coverImage___localFile___id'
   | 'coverImage___localFile___parent___id'
   | 'coverImage___localFile___parent___children'
@@ -4824,7 +4578,6 @@ export type GraphCms_PageFieldsEnum =
   | 'content___markdownNode___childrenMarkdownRemark___id'
   | 'content___markdownNode___childrenMarkdownRemark___excerpt'
   | 'content___markdownNode___childrenMarkdownRemark___rawMarkdownBody'
-  | 'content___markdownNode___childrenMarkdownRemark___fileAbsolutePath'
   | 'content___markdownNode___childrenMarkdownRemark___html'
   | 'content___markdownNode___childrenMarkdownRemark___htmlAst'
   | 'content___markdownNode___childrenMarkdownRemark___excerptAst'
@@ -4835,7 +4588,6 @@ export type GraphCms_PageFieldsEnum =
   | 'content___markdownNode___childMarkdownRemark___id'
   | 'content___markdownNode___childMarkdownRemark___excerpt'
   | 'content___markdownNode___childMarkdownRemark___rawMarkdownBody'
-  | 'content___markdownNode___childMarkdownRemark___fileAbsolutePath'
   | 'content___markdownNode___childMarkdownRemark___html'
   | 'content___markdownNode___childMarkdownRemark___htmlAst'
   | 'content___markdownNode___childMarkdownRemark___excerptAst'
@@ -4975,7 +4727,6 @@ export type GraphCms_PageFieldsEnum =
   | 'seo___image___localFile___url'
   | 'seo___image___localFile___publicURL'
   | 'seo___image___localFile___childrenImageSharp'
-  | 'seo___image___localFile___childrenMarkdownRemark'
   | 'seo___image___localFile___id'
   | 'seo___image___localFile___children'
   | 'seo___image___remoteTypeName'
@@ -5483,29 +5234,6 @@ export type GraphCms_PostFieldsEnum =
   | 'coverImage___localFile___childImageSharp___gatsbyImageData'
   | 'coverImage___localFile___childImageSharp___id'
   | 'coverImage___localFile___childImageSharp___children'
-  | 'coverImage___localFile___childrenMarkdownRemark'
-  | 'coverImage___localFile___childrenMarkdownRemark___id'
-  | 'coverImage___localFile___childrenMarkdownRemark___excerpt'
-  | 'coverImage___localFile___childrenMarkdownRemark___rawMarkdownBody'
-  | 'coverImage___localFile___childrenMarkdownRemark___fileAbsolutePath'
-  | 'coverImage___localFile___childrenMarkdownRemark___html'
-  | 'coverImage___localFile___childrenMarkdownRemark___htmlAst'
-  | 'coverImage___localFile___childrenMarkdownRemark___excerptAst'
-  | 'coverImage___localFile___childrenMarkdownRemark___headings'
-  | 'coverImage___localFile___childrenMarkdownRemark___timeToRead'
-  | 'coverImage___localFile___childrenMarkdownRemark___tableOfContents'
-  | 'coverImage___localFile___childrenMarkdownRemark___children'
-  | 'coverImage___localFile___childMarkdownRemark___id'
-  | 'coverImage___localFile___childMarkdownRemark___excerpt'
-  | 'coverImage___localFile___childMarkdownRemark___rawMarkdownBody'
-  | 'coverImage___localFile___childMarkdownRemark___fileAbsolutePath'
-  | 'coverImage___localFile___childMarkdownRemark___html'
-  | 'coverImage___localFile___childMarkdownRemark___htmlAst'
-  | 'coverImage___localFile___childMarkdownRemark___excerptAst'
-  | 'coverImage___localFile___childMarkdownRemark___headings'
-  | 'coverImage___localFile___childMarkdownRemark___timeToRead'
-  | 'coverImage___localFile___childMarkdownRemark___tableOfContents'
-  | 'coverImage___localFile___childMarkdownRemark___children'
   | 'coverImage___localFile___id'
   | 'coverImage___localFile___parent___id'
   | 'coverImage___localFile___parent___children'
@@ -5918,7 +5646,6 @@ export type GraphCms_PostFieldsEnum =
   | 'content___markdownNode___childrenMarkdownRemark___id'
   | 'content___markdownNode___childrenMarkdownRemark___excerpt'
   | 'content___markdownNode___childrenMarkdownRemark___rawMarkdownBody'
-  | 'content___markdownNode___childrenMarkdownRemark___fileAbsolutePath'
   | 'content___markdownNode___childrenMarkdownRemark___html'
   | 'content___markdownNode___childrenMarkdownRemark___htmlAst'
   | 'content___markdownNode___childrenMarkdownRemark___excerptAst'
@@ -5929,7 +5656,6 @@ export type GraphCms_PostFieldsEnum =
   | 'content___markdownNode___childMarkdownRemark___id'
   | 'content___markdownNode___childMarkdownRemark___excerpt'
   | 'content___markdownNode___childMarkdownRemark___rawMarkdownBody'
-  | 'content___markdownNode___childMarkdownRemark___fileAbsolutePath'
   | 'content___markdownNode___childMarkdownRemark___html'
   | 'content___markdownNode___childMarkdownRemark___htmlAst'
   | 'content___markdownNode___childMarkdownRemark___excerptAst'
@@ -6068,7 +5794,6 @@ export type GraphCms_PostFieldsEnum =
   | 'author___picture___localFile___url'
   | 'author___picture___localFile___publicURL'
   | 'author___picture___localFile___childrenImageSharp'
-  | 'author___picture___localFile___childrenMarkdownRemark'
   | 'author___picture___localFile___id'
   | 'author___picture___localFile___children'
   | 'author___picture___remoteTypeName'
@@ -6431,7 +6156,6 @@ export type GraphCms_PostFieldsEnum =
   | 'seo___image___localFile___url'
   | 'seo___image___localFile___publicURL'
   | 'seo___image___localFile___childrenImageSharp'
-  | 'seo___image___localFile___childrenMarkdownRemark'
   | 'seo___image___localFile___id'
   | 'seo___image___localFile___children'
   | 'seo___image___remoteTypeName'
@@ -6959,29 +6683,6 @@ export type GraphCms_SeoFieldsEnum =
   | 'image___localFile___childImageSharp___gatsbyImageData'
   | 'image___localFile___childImageSharp___id'
   | 'image___localFile___childImageSharp___children'
-  | 'image___localFile___childrenMarkdownRemark'
-  | 'image___localFile___childrenMarkdownRemark___id'
-  | 'image___localFile___childrenMarkdownRemark___excerpt'
-  | 'image___localFile___childrenMarkdownRemark___rawMarkdownBody'
-  | 'image___localFile___childrenMarkdownRemark___fileAbsolutePath'
-  | 'image___localFile___childrenMarkdownRemark___html'
-  | 'image___localFile___childrenMarkdownRemark___htmlAst'
-  | 'image___localFile___childrenMarkdownRemark___excerptAst'
-  | 'image___localFile___childrenMarkdownRemark___headings'
-  | 'image___localFile___childrenMarkdownRemark___timeToRead'
-  | 'image___localFile___childrenMarkdownRemark___tableOfContents'
-  | 'image___localFile___childrenMarkdownRemark___children'
-  | 'image___localFile___childMarkdownRemark___id'
-  | 'image___localFile___childMarkdownRemark___excerpt'
-  | 'image___localFile___childMarkdownRemark___rawMarkdownBody'
-  | 'image___localFile___childMarkdownRemark___fileAbsolutePath'
-  | 'image___localFile___childMarkdownRemark___html'
-  | 'image___localFile___childMarkdownRemark___htmlAst'
-  | 'image___localFile___childMarkdownRemark___excerptAst'
-  | 'image___localFile___childMarkdownRemark___headings'
-  | 'image___localFile___childMarkdownRemark___timeToRead'
-  | 'image___localFile___childMarkdownRemark___tableOfContents'
-  | 'image___localFile___childMarkdownRemark___children'
   | 'image___localFile___id'
   | 'image___localFile___parent___id'
   | 'image___localFile___parent___children'
@@ -8298,8 +7999,6 @@ export type MarkdownRemark = Node & {
   frontmatter?: Maybe<MarkdownRemarkFrontmatter>
   excerpt?: Maybe<Scalars['String']>
   rawMarkdownBody?: Maybe<Scalars['String']>
-  fileAbsolutePath?: Maybe<Scalars['String']>
-  fields?: Maybe<MarkdownRemarkFields>
   html?: Maybe<Scalars['String']>
   htmlAst?: Maybe<Scalars['JSON']>
   excerptAst?: Maybe<Scalars['JSON']>
@@ -8359,19 +8058,11 @@ export type MarkdownRemarkEdge = {
   previous?: Maybe<MarkdownRemark>
 }
 
-export type MarkdownRemarkFields = {
-  slug?: Maybe<Scalars['String']>
-}
-
 export type MarkdownRemarkFieldsEnum =
   | 'id'
   | 'frontmatter___title'
-  | 'frontmatter___templateKey'
-  | 'frontmatter___path'
   | 'excerpt'
   | 'rawMarkdownBody'
-  | 'fileAbsolutePath'
-  | 'fields___slug'
   | 'html'
   | 'htmlAst'
   | 'excerptAst'
@@ -8470,17 +8161,11 @@ export type MarkdownRemarkFieldsEnum =
   | 'internal___owner'
   | 'internal___type'
 
-export type MarkdownRemarkFieldsFilterInput = {
-  slug?: Maybe<StringQueryOperatorInput>
-}
-
 export type MarkdownRemarkFilterInput = {
   id?: Maybe<StringQueryOperatorInput>
   frontmatter?: Maybe<MarkdownRemarkFrontmatterFilterInput>
   excerpt?: Maybe<StringQueryOperatorInput>
   rawMarkdownBody?: Maybe<StringQueryOperatorInput>
-  fileAbsolutePath?: Maybe<StringQueryOperatorInput>
-  fields?: Maybe<MarkdownRemarkFieldsFilterInput>
   html?: Maybe<StringQueryOperatorInput>
   htmlAst?: Maybe<JsonQueryOperatorInput>
   excerptAst?: Maybe<JsonQueryOperatorInput>
@@ -8499,14 +8184,10 @@ export type MarkdownRemarkFilterListInput = {
 
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>
-  templateKey?: Maybe<Scalars['String']>
-  path?: Maybe<Scalars['String']>
 }
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>
-  templateKey?: Maybe<StringQueryOperatorInput>
-  path?: Maybe<StringQueryOperatorInput>
 }
 
 export type MarkdownRemarkGroupConnection = {
@@ -8660,8 +8341,6 @@ export type QueryFileArgs = {
   publicURL?: Maybe<StringQueryOperatorInput>
   childrenImageSharp?: Maybe<ImageSharpFilterListInput>
   childImageSharp?: Maybe<ImageSharpFilterInput>
-  childrenMarkdownRemark?: Maybe<MarkdownRemarkFilterListInput>
-  childMarkdownRemark?: Maybe<MarkdownRemarkFilterInput>
   id?: Maybe<StringQueryOperatorInput>
   parent?: Maybe<NodeFilterInput>
   children?: Maybe<NodeFilterListInput>
@@ -8748,15 +8427,15 @@ export type QuerySitePageArgs = {
   internalComponentName?: Maybe<StringQueryOperatorInput>
   componentChunkName?: Maybe<StringQueryOperatorInput>
   matchPath?: Maybe<StringQueryOperatorInput>
-  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>
-  pluginCreator?: Maybe<SitePluginFilterInput>
-  pluginCreatorId?: Maybe<StringQueryOperatorInput>
-  componentPath?: Maybe<StringQueryOperatorInput>
   id?: Maybe<StringQueryOperatorInput>
   parent?: Maybe<NodeFilterInput>
   children?: Maybe<NodeFilterListInput>
   internal?: Maybe<InternalFilterInput>
+  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>
   context?: Maybe<SitePageContextFilterInput>
+  pluginCreator?: Maybe<SitePluginFilterInput>
+  pluginCreatorId?: Maybe<StringQueryOperatorInput>
+  componentPath?: Maybe<StringQueryOperatorInput>
 }
 
 export type QueryAllSitePageArgs = {
@@ -8843,8 +8522,6 @@ export type QueryMarkdownRemarkArgs = {
   frontmatter?: Maybe<MarkdownRemarkFrontmatterFilterInput>
   excerpt?: Maybe<StringQueryOperatorInput>
   rawMarkdownBody?: Maybe<StringQueryOperatorInput>
-  fileAbsolutePath?: Maybe<StringQueryOperatorInput>
-  fields?: Maybe<MarkdownRemarkFieldsFilterInput>
   html?: Maybe<StringQueryOperatorInput>
   htmlAst?: Maybe<JsonQueryOperatorInput>
   excerptAst?: Maybe<JsonQueryOperatorInput>
@@ -9360,15 +9037,15 @@ export type SitePage = Node & {
   internalComponentName: Scalars['String']
   componentChunkName: Scalars['String']
   matchPath?: Maybe<Scalars['String']>
-  isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>
-  pluginCreator?: Maybe<SitePlugin>
-  pluginCreatorId?: Maybe<Scalars['String']>
-  componentPath?: Maybe<Scalars['String']>
   id: Scalars['ID']
   parent?: Maybe<Node>
   children: Array<Node>
   internal: Internal
+  isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>
   context?: Maybe<SitePageContext>
+  pluginCreator?: Maybe<SitePlugin>
+  pluginCreatorId?: Maybe<Scalars['String']>
+  componentPath?: Maybe<Scalars['String']>
 }
 
 export type SitePageConnection = {
@@ -9410,7 +9087,94 @@ export type SitePageFieldsEnum =
   | 'internalComponentName'
   | 'componentChunkName'
   | 'matchPath'
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type'
   | 'isCreatedByStatefulCreatePages'
+  | 'context___id'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -9504,8 +9268,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___exclude'
   | 'pluginCreator___pluginOptions___options___emitWarning'
   | 'pluginCreator___pluginOptions___options___failOnError'
-  | 'pluginCreator___pluginOptions___options___extensions'
-  | 'pluginCreator___pluginOptions___options___exclude'
   | 'pluginCreator___pluginOptions___prettier___patterns'
   | 'pluginCreator___pluginOptions___eslint___patterns'
   | 'pluginCreator___pluginOptions___alias____src'
@@ -9536,93 +9298,6 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___packageJson___keywords'
   | 'pluginCreatorId'
   | 'componentPath'
-  | 'id'
-  | 'parent___id'
-  | 'parent___parent___id'
-  | 'parent___parent___parent___id'
-  | 'parent___parent___parent___children'
-  | 'parent___parent___children'
-  | 'parent___parent___children___id'
-  | 'parent___parent___children___children'
-  | 'parent___parent___internal___content'
-  | 'parent___parent___internal___contentDigest'
-  | 'parent___parent___internal___description'
-  | 'parent___parent___internal___fieldOwners'
-  | 'parent___parent___internal___ignoreType'
-  | 'parent___parent___internal___mediaType'
-  | 'parent___parent___internal___owner'
-  | 'parent___parent___internal___type'
-  | 'parent___children'
-  | 'parent___children___id'
-  | 'parent___children___parent___id'
-  | 'parent___children___parent___children'
-  | 'parent___children___children'
-  | 'parent___children___children___id'
-  | 'parent___children___children___children'
-  | 'parent___children___internal___content'
-  | 'parent___children___internal___contentDigest'
-  | 'parent___children___internal___description'
-  | 'parent___children___internal___fieldOwners'
-  | 'parent___children___internal___ignoreType'
-  | 'parent___children___internal___mediaType'
-  | 'parent___children___internal___owner'
-  | 'parent___children___internal___type'
-  | 'parent___internal___content'
-  | 'parent___internal___contentDigest'
-  | 'parent___internal___description'
-  | 'parent___internal___fieldOwners'
-  | 'parent___internal___ignoreType'
-  | 'parent___internal___mediaType'
-  | 'parent___internal___owner'
-  | 'parent___internal___type'
-  | 'children'
-  | 'children___id'
-  | 'children___parent___id'
-  | 'children___parent___parent___id'
-  | 'children___parent___parent___children'
-  | 'children___parent___children'
-  | 'children___parent___children___id'
-  | 'children___parent___children___children'
-  | 'children___parent___internal___content'
-  | 'children___parent___internal___contentDigest'
-  | 'children___parent___internal___description'
-  | 'children___parent___internal___fieldOwners'
-  | 'children___parent___internal___ignoreType'
-  | 'children___parent___internal___mediaType'
-  | 'children___parent___internal___owner'
-  | 'children___parent___internal___type'
-  | 'children___children'
-  | 'children___children___id'
-  | 'children___children___parent___id'
-  | 'children___children___parent___children'
-  | 'children___children___children'
-  | 'children___children___children___id'
-  | 'children___children___children___children'
-  | 'children___children___internal___content'
-  | 'children___children___internal___contentDigest'
-  | 'children___children___internal___description'
-  | 'children___children___internal___fieldOwners'
-  | 'children___children___internal___ignoreType'
-  | 'children___children___internal___mediaType'
-  | 'children___children___internal___owner'
-  | 'children___children___internal___type'
-  | 'children___internal___content'
-  | 'children___internal___contentDigest'
-  | 'children___internal___description'
-  | 'children___internal___fieldOwners'
-  | 'children___internal___ignoreType'
-  | 'children___internal___mediaType'
-  | 'children___internal___owner'
-  | 'children___internal___type'
-  | 'internal___content'
-  | 'internal___contentDigest'
-  | 'internal___description'
-  | 'internal___fieldOwners'
-  | 'internal___ignoreType'
-  | 'internal___mediaType'
-  | 'internal___owner'
-  | 'internal___type'
-  | 'context___id'
 
 export type SitePageFilterInput = {
   path?: Maybe<StringQueryOperatorInput>
@@ -9630,15 +9305,15 @@ export type SitePageFilterInput = {
   internalComponentName?: Maybe<StringQueryOperatorInput>
   componentChunkName?: Maybe<StringQueryOperatorInput>
   matchPath?: Maybe<StringQueryOperatorInput>
-  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>
-  pluginCreator?: Maybe<SitePluginFilterInput>
-  pluginCreatorId?: Maybe<StringQueryOperatorInput>
-  componentPath?: Maybe<StringQueryOperatorInput>
   id?: Maybe<StringQueryOperatorInput>
   parent?: Maybe<NodeFilterInput>
   children?: Maybe<NodeFilterListInput>
   internal?: Maybe<InternalFilterInput>
+  isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>
   context?: Maybe<SitePageContextFilterInput>
+  pluginCreator?: Maybe<SitePluginFilterInput>
+  pluginCreatorId?: Maybe<StringQueryOperatorInput>
+  componentPath?: Maybe<StringQueryOperatorInput>
 }
 
 export type SitePageGroupConnection = {
@@ -9852,8 +9527,6 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___exclude'
   | 'pluginOptions___options___emitWarning'
   | 'pluginOptions___options___failOnError'
-  | 'pluginOptions___options___extensions'
-  | 'pluginOptions___options___exclude'
   | 'pluginOptions___prettier___patterns'
   | 'pluginOptions___eslint___patterns'
   | 'pluginOptions___eslint___customOptions___fix'
@@ -10119,15 +9792,11 @@ export type SitePluginPluginOptionsFilterInput = {
 export type SitePluginPluginOptionsOptions = {
   emitWarning?: Maybe<Scalars['Boolean']>
   failOnError?: Maybe<Scalars['Boolean']>
-  extensions?: Maybe<Array<Maybe<Scalars['String']>>>
-  exclude?: Maybe<Array<Maybe<Scalars['String']>>>
 }
 
 export type SitePluginPluginOptionsOptionsFilterInput = {
   emitWarning?: Maybe<BooleanQueryOperatorInput>
   failOnError?: Maybe<BooleanQueryOperatorInput>
-  extensions?: Maybe<StringQueryOperatorInput>
-  exclude?: Maybe<StringQueryOperatorInput>
 }
 
 export type SitePluginPluginOptionsPlugins = {
