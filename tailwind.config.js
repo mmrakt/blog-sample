@@ -1,5 +1,3 @@
-const daisyui = require('daisyui')
-
 module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
@@ -18,5 +16,5 @@ module.exports = {
       opacity: ['disabled'],
     },
   },
-  plugins: [daisyui],
+  plugins: [],
 }

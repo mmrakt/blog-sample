@@ -8820,6 +8820,8 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___exclude'
   | 'pluginCreator___pluginOptions___options___emitWarning'
   | 'pluginCreator___pluginOptions___options___failOnError'
+  | 'pluginCreator___pluginOptions___options___extensions'
+  | 'pluginCreator___pluginOptions___options___exclude'
   | 'pluginCreator___pluginOptions___prettier___patterns'
   | 'pluginCreator___pluginOptions___eslint___patterns'
   | 'pluginCreator___pluginOptions___alias____src'
@@ -9044,6 +9046,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___exclude'
   | 'pluginOptions___options___emitWarning'
   | 'pluginOptions___options___failOnError'
+  | 'pluginOptions___options___extensions'
+  | 'pluginOptions___options___exclude'
   | 'pluginOptions___prettier___patterns'
   | 'pluginOptions___eslint___patterns'
   | 'pluginOptions___eslint___customOptions___fix'
@@ -9281,11 +9285,15 @@ export type SitePluginPluginOptionsFilterInput = {
 export type SitePluginPluginOptionsOptions = {
   emitWarning?: Maybe<Scalars['Boolean']>
   failOnError?: Maybe<Scalars['Boolean']>
+  extensions?: Maybe<Array<Maybe<Scalars['String']>>>
+  exclude?: Maybe<Array<Maybe<Scalars['String']>>>
 }
 
 export type SitePluginPluginOptionsOptionsFilterInput = {
   emitWarning?: Maybe<BooleanQueryOperatorInput>
   failOnError?: Maybe<BooleanQueryOperatorInput>
+  extensions?: Maybe<StringQueryOperatorInput>
+  exclude?: Maybe<StringQueryOperatorInput>
 }
 
 export type SitePluginPluginOptionsPrettier = {
