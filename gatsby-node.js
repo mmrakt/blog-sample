@@ -1,4 +1,3 @@
-const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
@@ -8,13 +7,6 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allMarkdownRemark: allMarkdownRemark(limit: 1000) {
-        edges {
-          node {
-            id
-          }
-        }
-      }
       allGraphCmsPost: allGraphCmsPost {
         nodes {
           id: remoteId
@@ -33,25 +25,8 @@ exports.createPages = ({ actions, graphql }) => {
       throw result.errors
     }
 
-    const posts = result.data.allMarkdownRemark.edges
     const cmsPosts = result.data.allGraphCmsPost.nodes
     const cmsPages = result.data.allGraphCmsPage.nodes
-
-    posts.forEach((edge) => {
-      const { id } = edge.node
-      if (edge.node.fields) {
-        createPage({
-          path: edge.node.fields.slug,
-          component: path.resolve(
-            `src/templates/${String(edge.node.frontmatter.templateKey)}.tsx`
-          ),
-          // pageQueryのデフォルトの引数はid
-          context: {
-            id,
-          },
-        })
-      }
-    })
 
     cmsPosts.forEach(({ id, slug }) => {
       createPage({
@@ -73,7 +48,7 @@ exports.createPages = ({ actions, graphql }) => {
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
-  fmImagesToRelative(node) // convert image paths for gatsby images
+  fmImagesToRelative(node)
 
   if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode })
