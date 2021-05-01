@@ -4,7 +4,7 @@ import PageTitle from '../../components/common/PageTitle'
 import Layout from '../../components/Layout'
 import CoverImage from '../../components/common/CoverImage'
 import MiddleHeading from '../../components/common/MiddleHeading'
-import AboutInfo from '../../components/AboutInfo'
+import AboutInfo from '../../components/about/AboutInfo'
 
 export const AboutPage = () => {
   const data = useStaticQuery(
