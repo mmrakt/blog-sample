@@ -1,15 +1,15 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
-import PageTitle from '../components/common/PageTitle'
-import Layout from '../components/Layout'
-import CoverImage from '../components/common/CoverImage'
-import MiddleHeading from '../components/common/MiddleHeading'
-import AboutInfo from '../components/AboutInfo'
+import PageTitle from '../../components/common/PageTitle'
+import Layout from '../../components/Layout'
+import CoverImage from '../../components/common/CoverImage'
+import MiddleHeading from '../../components/common/MiddleHeading'
+import AboutInfo from '../../components/AboutInfo'
 
-export const AboutPageTemplate = () => {
+export const AboutPage = () => {
   const data = useStaticQuery(
     graphql`
-      query aboutPageQuery {
+      query aboutPageAssetQuery {
         graphCmsAsset(fileName: { eq: "about-page.jpg" }) {
           gatsbyImageData
         }
@@ -42,4 +42,4 @@ export const AboutPageTemplate = () => {
   )
 }
 
-export default AboutPageTemplate
+export default AboutPage
