@@ -55,7 +55,7 @@ const HamburgerMenu: React.VFC = () => {
         <List>
           {MENU_ITEM_LIST.map((item) => (
             <ListItem key={item.name}>
-              <Link to={item.to}>
+              <Link to={`/${item.to}`}>
                 <ListItemText>{item.name}</ListItemText>
               </Link>
             </ListItem>
