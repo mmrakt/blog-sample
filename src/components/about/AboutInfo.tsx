@@ -6,10 +6,10 @@ const AboutInfo: React.VFC = () => {
 
   return (
     <div className="flex flex-wrap">
-      <div className="w-full md:w-1/2">
+      <div className="w-full sm:w-1/2">
         <InfoTable />
       </div>
-      <div className="w-full md:w-1/2">fuga</div>
+      <div className="w-full sm:w-1/2">fuga</div>
     </div>
   )
 }

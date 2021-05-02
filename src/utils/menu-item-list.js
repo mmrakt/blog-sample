@@ -12,12 +12,8 @@ const MENU_ITEM_LIST = [
     to: 'blog',
   },
   {
-    name: 'お問い合わせ',
+    name: 'お問い合わせ・お申し込み',
     to: 'contact',
-  },
-  {
-    name: 'お申し込み',
-    to: 'contact/example',
   },
 ]
 
