@@ -58,5 +58,6 @@
         "tsx": "never"
       }
     ]
+    // "ignorePatterns": ["types/graphql-types.d.ts"]
   }
 }

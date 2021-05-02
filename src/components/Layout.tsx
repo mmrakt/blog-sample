@@ -6,7 +6,7 @@ import Header from './header'
 const TemplateWrapper = ({ children }) => (
   <div>
     <Head />
-    <div className="mx-auto md:w-768">
+    <div className="container mx-auto">
       <Header />
       <main className="">{children}</main>
       <hr />

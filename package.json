@@ -5,7 +5,7 @@
   "author": "Austin Green",
   "scripts": {
     "clean": "gatsby clean",
-    "dev": "ENABLE_GATSBY_REFRESH_ENDPOINT=true gatsby develop",
+    "dev": "gatsby develop",
     "start": "npm run develop",
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
@@ -28,7 +28,6 @@
     "gatsby": "^2.20.35",
     "gatsby-image": "^3.2.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
-    "gatsby-plugin-graphql-codegen": "^2.7.1",
     "gatsby-plugin-image": "^1.2.1",
     "gatsby-plugin-postcss": "^4.2.0",
     "gatsby-plugin-prettier-eslint": "^1.0.4",

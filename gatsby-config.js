@@ -93,11 +93,11 @@ module.exports = {
         extensions: ['js', 'jsx', 'ts', 'tsx'],
       },
     },
-    {
-      resolve: 'gatsby-plugin-graphql-codegen',
-      options: {
-        fileName: 'types/graphql-types.d.ts',
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-graphql-codegen',
+    //   options: {
+    //     fileName: 'types/graphql-types.d.ts',
+    //   },
+    // },
   ],
 }

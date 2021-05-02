@@ -1,2 +1,3 @@
 *.sass
 .cache/
+types/graphql-types.d.ts

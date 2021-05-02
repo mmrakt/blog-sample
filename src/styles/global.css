@@ -16,9 +16,6 @@ ul {
   @apply list-disc;
   @apply pl-6;
 }
-p {
-  @apply mt-3;
-}
 
 @tailwind components;
 @tailwind utilities;
