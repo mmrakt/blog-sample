@@ -14,6 +14,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import { Link } from 'gatsby'
 import MENU_ITEM_LIST from '../../utils/menu-item-list'
+import CourseAccordion from './CourseAccordion'
 
 const drawerWidth = 100
 
@@ -53,13 +54,17 @@ const HamburgerMenu: React.VFC = () => {
         </div>
         <Divider />
         <List>
-          {MENU_ITEM_LIST.map((item) => (
-            <ListItem key={item.name}>
-              <Link to={`/${item.to}`}>
-                <ListItemText>{item.name}</ListItemText>
-              </Link>
-            </ListItem>
-          ))}
+          {MENU_ITEM_LIST.map((item) =>
+            item.name === 'コース紹介' ? (
+              <CourseAccordion />
+            ) : (
+              <ListItem key={item.name}>
+                <Link to={`/${item.to}`}>
+                  <ListItemText>{item.name}</ListItemText>
+                </Link>
+              </ListItem>
+            )
+          )}
         </List>
       </Drawer>
     </>
