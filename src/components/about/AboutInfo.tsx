@@ -2,7 +2,7 @@ import React from 'react'
 import InfoTable from './InfoTable'
 
 const AboutInfo: React.VFC = () => {
-  const hoge = ''
+  const hoge = 'hgoe'
 
   return (
     <div className="flex flex-wrap">
