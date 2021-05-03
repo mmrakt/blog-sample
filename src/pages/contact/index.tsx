@@ -57,9 +57,6 @@ const ContactPage = () => {
           onSubmit={handleSubmit}
         >
           <input type="hidden" name="form-name" value="contact" />
-          <label htmlFor="bot-field" hidden>
-            <input name="bot-field" onChange={handleChange} />
-          </label>
 
           <TextField
             type="text"
