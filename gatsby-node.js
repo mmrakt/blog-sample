@@ -24,7 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
     cmsPosts.forEach(({ id, slug }) => {
       createPage({
         path: slug,
-        component: path.resolve('src/templates/blog-post.tsx'),
+        component: path.resolve('src/templates/blog.tsx'),
         context: { id },
       })
     })
