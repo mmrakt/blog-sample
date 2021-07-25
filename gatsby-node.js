@@ -13,12 +13,6 @@ exports.createPages = ({ actions, graphql }) => {
           slug
         }
       }
-      allGraphCmsPage: allGraphCmsPage {
-        nodes {
-          id: remoteId
-          slug
-        }
-      }
     }
   `).then((result) => {
     if (result.errors) {
@@ -26,20 +20,11 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const cmsPosts = result.data.allGraphCmsPost.nodes
-    const cmsPages = result.data.allGraphCmsPage.nodes
 
     cmsPosts.forEach(({ id, slug }) => {
       createPage({
         path: slug,
         component: path.resolve('src/templates/blog-post.tsx'),
-        context: { id },
-      })
-    })
-
-    cmsPages.forEach(({ id, slug }) => {
-      createPage({
-        path: slug,
-        component: path.resolve('src/templates/course-page.tsx'),
         context: { id },
       })
     })
