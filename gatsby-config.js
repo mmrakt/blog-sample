@@ -4,8 +4,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'eigthtee-demo',
-    description: 'eigthtee demo',
+    title: 'blog-sample',
+    description: 'blog sample',
   },
   plugins: [
     {
@@ -91,13 +91,8 @@ module.exports = {
           '@templates': 'src/templates',
         },
         extensions: ['js', 'jsx', 'ts', 'tsx'],
-      },
-    },
-    // {
-    //   resolve: 'gatsby-plugin-graphql-codegen',
-    //   options: {
-    //     fileName: 'types/graphql-types.d.ts',
-    //   },
-    // },
+      }
+    }
+
   ],
 }

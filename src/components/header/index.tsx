@@ -6,8 +6,8 @@ import HamburgerMenu from './HamburgerMenu'
 
 const Header: React.VFC = () => (
   <div className="">
-    <MediaQuery query="(max-width: 360px)">
-      <div className="flex items-center">
+    <MediaQuery query="(max-width: 980px)">
+      <div className="flex items-center shadow-md">
         <div className="flex-1">
           <Title />
         </div>
@@ -16,7 +16,7 @@ const Header: React.VFC = () => (
         </div>
       </div>
     </MediaQuery>
-    <MediaQuery query="(min-width: 361px)">
+    <MediaQuery query="(min-width: 981px) shadow-md">
       <Title />
       <Navbar />
     </MediaQuery>

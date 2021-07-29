@@ -1,10 +1,8 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Layout from '../components/Layout'
-import PageTitle from '../components/common/PageTitle'
 
 export const BlogPageIndex = () => {
-  // id = Post:ckncsw4mo2nm40b889j5rbw9l:PUBLISHED
   const data = useStaticQuery(
     graphql`
       query BlogRollQuery {
@@ -24,26 +22,18 @@ export const BlogPageIndex = () => {
 
   return (
     <Layout>
-      <div className="mt-5">
-        <PageTitle title="お知らせ一覧" />
-        <div className="w-5/6 mx-auto mt-10">
-          {nodes.map((node) => (
-            <div key={node.id}>
-              <div className="flex">
-                <div className="flex-2">
-                  <div className="pt-5 pl-5 text-xl font-bold flex-1">
-                    <Link to={node.slug}>
-                      <span>{node.title}</span>
-                    </Link>
-                  </div>
-                  <p className="text-right">{node.date}</p>
-                  <div className="pt-5 pl-5">{node.excerpt}</div>
-                </div>
-              </div>
-              <hr className="my-5" />
+      <div className="py-5 px-3 mx-auto max-w-xl">
+        {nodes.map((node) => (
+          <div key={node.id} className="my-3 bg-white">
+            <span className="text-xs p-3">{node.date}</span>
+            <div className="text-md font-bold p-3">
+              <Link to={node.slug}>
+                <span>{node.title}</span>
+              </Link>
             </div>
-          ))}
-        </div>
+            <div className="text-xs p-3">{node.excerpt}</div>
+          </div>
+        ))}
       </div>
     </Layout>
   )
