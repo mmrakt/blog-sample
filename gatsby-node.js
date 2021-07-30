@@ -7,10 +7,14 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allGraphCmsPost: allGraphCmsPost {
-        nodes {
-          id: remoteId
-          slug
+      allGraphCmsPost: allGraphCmsPost(
+        sort: { fields: createdAt, order: DESC }
+      ) {
+        edges {
+          node {
+            id
+            slug
+          }
         }
       }
     }
@@ -19,13 +23,29 @@ exports.createPages = ({ actions, graphql }) => {
       throw result.errors
     }
 
-    const cmsPosts = result.data.allGraphCmsPost.nodes
-
-    cmsPosts.forEach(({ id, slug }) => {
+    const cmsPosts = result.data.allGraphCmsPost.edges
+    const postsPerPage = 3
+    const numPages = Math.ceil(cmsPosts.length / postsPerPage)
+    Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
-        path: slug,
-        component: path.resolve('src/templates/blog.tsx'),
-        context: { id },
+        path: i === 0 ? '/' : `/page/${i + 1}`,
+        component: path.resolve('./src/pages/index.tsx'),
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
+        },
+      })
+    })
+
+    cmsPosts.forEach(({ node }) => {
+      createPage({
+        path: node.slug,
+        component: path.resolve('./src/templates/blog.tsx'),
+        context: {
+          id: node.id,
+        },
       })
     })
   })

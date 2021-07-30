@@ -1,23 +1,9 @@
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import Pagination from '../components/Pagination'
 
-export const BlogPageIndex = () => {
-  const data = useStaticQuery(
-    graphql`
-      query BlogRollQuery {
-        allGraphCmsPost {
-          nodes {
-            id
-            excerpt
-            date
-            slug
-            title
-          }
-        }
-      }
-    `
-  )
+export const BlogPageIndex = ({ data, pageContext }) => {
   const { nodes } = data.allGraphCmsPost
 
   return (
@@ -34,9 +20,27 @@ export const BlogPageIndex = () => {
             <div className="text-xs p-3">{node.excerpt}</div>
           </div>
         ))}
+        <Pagination pageContext={pageContext} />
       </div>
     </Layout>
   )
 }
+
+export const BlogIndexPageQuery = graphql`
+  query BlogRollQuery($skip: Int, $limit: Int) {
+    allGraphCmsPost(sort: { fields: createdAt }, skip: $skip, limit: $limit) {
+      nodes {
+        id
+        excerpt
+        coverImage {
+          url
+        }
+        date
+        slug
+        title
+      }
+    }
+  }
+`
 
 export default BlogPageIndex
