@@ -1,6 +1,7 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+const { paginate } = require('gatsby-awesome-pagination')
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
@@ -23,23 +24,18 @@ exports.createPages = ({ actions, graphql }) => {
       throw result.errors
     }
 
-    const cmsPosts = result.data.allGraphCmsPost.edges
+    const blogPosts = result.data.allGraphCmsPost.edges
     const postsPerPage = 3
-    const numPages = Math.ceil(cmsPosts.length / postsPerPage)
-    Array.from({ length: numPages }).forEach((_, i) => {
-      createPage({
-        path: i === 0 ? '/' : `/page/${i + 1}`,
-        component: path.resolve('./src/pages/index.tsx'),
-        context: {
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numPages,
-          currentPage: i + 1,
-        },
-      })
+
+    paginate({
+      createPage,
+      items: blogPosts,
+      itemsPerPage: postsPerPage,
+      pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? '/' : '/page'),
+      component: path.resolve('./src/pages/index.tsx'),
     })
 
-    cmsPosts.forEach(({ node }) => {
+    blogPosts.forEach(({ node }) => {
       createPage({
         path: node.slug,
         component: path.resolve('./src/templates/blog.tsx'),

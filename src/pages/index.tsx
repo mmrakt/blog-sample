@@ -32,9 +32,6 @@ export const BlogIndexPageQuery = graphql`
       nodes {
         id
         excerpt
-        coverImage {
-          url
-        }
         date
         slug
         title
