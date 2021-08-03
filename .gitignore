@@ -11,3 +11,4 @@ yarn-error.log
 .env*
 todo
 graphql-types.ts
+launch.json
