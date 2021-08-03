@@ -2,23 +2,22 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
-import Profile from '../components/Profile'
 
 export const BlogPageIndex = ({ data, pageContext }) => {
   const { nodes } = data.allGraphCmsPost
 
   return (
     <Layout>
-      <div className="py-5 px-3 mx-auto max-w-xl">
+      <div className="">
         {nodes.map((node) => (
           <div key={node.id} className="my-3 bg-white">
-            <span className="text-xs p-3">{node.date}</span>
-            <div className="text-md font-bold p-3">
+            <span className="text-sm p-3">{node.date}</span>
+            <div className="text-lg font-bold p-3">
               <Link to={node.slug}>
                 <span>{node.title}</span>
               </Link>
             </div>
-            <div className="text-xs p-3">
+            <div className="text-sm p-3">
               {node.excerpt.length > 100
                 ? `${node.excerpt.substring(0, 100)}...`
                 : node.excerpt}
@@ -26,7 +25,6 @@ export const BlogPageIndex = ({ data, pageContext }) => {
           </div>
         ))}
         <Pagination pageContext={pageContext} />
-        <Profile />
       </div>
     </Layout>
   )
