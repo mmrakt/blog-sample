@@ -91,8 +91,7 @@ module.exports = {
           '@templates': 'src/templates',
         },
         extensions: ['js', 'jsx', 'ts', 'tsx'],
-      }
-    }
-
+      },
+    },
   ],
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
+import Profile from '../components/Profile'
 
 export const BlogPageIndex = ({ data, pageContext }) => {
   const { nodes } = data.allGraphCmsPost
@@ -21,6 +22,7 @@ export const BlogPageIndex = ({ data, pageContext }) => {
           </div>
         ))}
         <Pagination pageContext={pageContext} />
+        <Profile />
       </div>
     </Layout>
   )
