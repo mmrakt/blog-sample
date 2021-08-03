@@ -14,7 +14,7 @@ export const Pagination: React.VFC<IProps> = ({ pageContext }) => {
 
   return (
     <div className="flex">
-      {previousPagePath !== '' && (
+      {previousPagePath && (
         <Link
           to={previousPagePath}
           rel="prev"
@@ -23,7 +23,7 @@ export const Pagination: React.VFC<IProps> = ({ pageContext }) => {
           &lt;&nbsp;Previous
         </Link>
       )}
-      {nextPagePath !== '' && (
+      {nextPagePath && (
         <Link
           to={nextPagePath}
           rel="next"

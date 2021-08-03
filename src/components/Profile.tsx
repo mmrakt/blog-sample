@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
 
 const Profile: React.VFC = () => (
-  <aside className="bg-white p-4 my-3">
+  <aside className=" p-4 my-3">
     <h3 className="font-black">Profile</h3>
     <div className="flex mt-3">
       <StaticImage

@@ -32,7 +32,7 @@ exports.createPages = ({ actions, graphql }) => {
       items: blogPosts,
       itemsPerPage: postsPerPage,
       pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? '/' : '/page'),
-      component: path.resolve('./src/pages/index.tsx'),
+      component: path.resolve('./src/templates/index.tsx'),
     })
 
     blogPosts.forEach(({ node }) => {

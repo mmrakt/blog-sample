@@ -18,7 +18,11 @@ export const BlogPageIndex = ({ data, pageContext }) => {
                 <span>{node.title}</span>
               </Link>
             </div>
-            <div className="text-xs p-3">{node.excerpt}</div>
+            <div className="text-xs p-3">
+              {node.excerpt.length > 100
+                ? `${node.excerpt.substring(0, 100)}...`
+                : node.excerpt}
+            </div>
           </div>
         ))}
         <Pagination pageContext={pageContext} />
