@@ -10,17 +10,22 @@ export const BlogPageIndex = ({ data, pageContext }) => {
     <Layout>
       <div className="">
         {nodes.map((node) => (
-          <div key={node.id} className="my-3 bg-white">
+          <div key={node.id} className="my-5  bg-white">
             <span className="text-sm p-3">{node.date}</span>
             <div className="text-lg font-bold p-3">
               <Link to={node.slug}>
-                <span>{node.title}</span>
+                <span className="hover:text-gray-400">{node.title}</span>
               </Link>
             </div>
             <div className="text-sm p-3">
               {node.excerpt.length > 100
                 ? `${node.excerpt.substring(0, 100)}...`
                 : node.excerpt}
+            </div>
+            <div className="flex p-3">
+              <div className="underline ml-auto text-sm">
+                <span className="hover:text-gray-400">続きを読む</span>
+              </div>
             </div>
           </div>
         ))}
