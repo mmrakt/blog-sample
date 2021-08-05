@@ -10,8 +10,20 @@ export const BlogPageIndex = ({ data, pageContext }) => {
     <Layout>
       <div className="">
         {nodes.map((node) => (
-          <div key={node.id} className="my-5  bg-white">
-            <span className="text-sm p-3">{node.date}</span>
+          <div key={node.id} className="my-5 p-3  bg-white">
+            <span className="text-sm p-3">
+              <span className="class">{node.date}</span>
+              <Link to="/">
+                <span className="ml-5 p-1 bg-gray-300 underline hover:bg-gray-200">
+                  #JavaScript
+                </span>
+              </Link>
+              <Link to="/">
+                <span className="ml-5 p-1 bg-gray-300 underline hover:bg-gray-200">
+                  #React.js
+                </span>
+              </Link>
+            </span>
             <div className="text-lg font-bold p-3">
               <Link to={node.slug}>
                 <span className="hover:text-gray-400">{node.title}</span>
@@ -24,7 +36,9 @@ export const BlogPageIndex = ({ data, pageContext }) => {
             </div>
             <div className="flex p-3">
               <div className="underline ml-auto text-sm">
-                <span className="hover:text-gray-400">続きを読む</span>
+                <span className="hover:text-gray-400 cursor-pointer">
+                  続きを読む
+                </span>
               </div>
             </div>
           </div>
