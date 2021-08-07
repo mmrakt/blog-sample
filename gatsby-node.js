@@ -13,6 +13,7 @@ exports.createPages = ({ actions, graphql }) => {
       ) {
         edges {
           node {
+            remoteId
             id
             slug
           }
@@ -36,11 +37,12 @@ exports.createPages = ({ actions, graphql }) => {
     })
 
     blogPosts.forEach(({ node }) => {
+      console.log(node)
       createPage({
         path: node.slug,
         component: path.resolve('./src/templates/blog.tsx'),
         context: {
-          id: node.id,
+          remoteId: node.remoteId,
         },
       })
     })

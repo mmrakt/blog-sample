@@ -1,11 +1,16 @@
 import React from 'react'
-import Title from './Title'
+import { Link } from 'gatsby'
 
 const Header: React.VFC = () => (
-  <div className="bg-black h-10">
-    <div className="flex items-center shadow-md">
-      <div className="flex-1 text-white">
-        <Title />
+  <div className="bg-black">
+    <div className="items-center shadow-md">
+      <div className="text-white p-4">
+        <h1 className="font-black text-xl m-0">
+          <Link to="/" className="navbar-item" title="Logo">
+            Blog Sample
+          </Link>
+        </h1>
+        <p className="text-white text-sm">文系卒底辺エンジニアの成長記録</p>
       </div>
     </div>
   </div>

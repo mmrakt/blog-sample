@@ -48,8 +48,8 @@ const BlogPost = ({ data }) => {
 export default BlogPost
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: ID!) {
-    graphCmsPost(remoteId: { eq: $id }) {
+  query BlogPostByID($remoteId: ID!) {
+    graphCmsPost(remoteId: { eq: $remoteId }) {
       content {
         html
       }

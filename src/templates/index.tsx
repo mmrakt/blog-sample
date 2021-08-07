@@ -36,9 +36,11 @@ export const BlogPageIndex = ({ data, pageContext }) => {
             </div>
             <div className="flex p-3">
               <div className="underline ml-auto text-sm">
-                <span className="hover:text-gray-400 cursor-pointer">
-                  続きを読む
-                </span>
+                <Link to={node.slug}>
+                  <span className="hover:text-gray-400 cursor-pointer">
+                    続きを読む
+                  </span>
+                </Link>
               </div>
             </div>
           </div>

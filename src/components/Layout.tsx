@@ -19,9 +19,11 @@ const TemplateWrapper = ({ children }) => (
       </MediaQuery>
       <MediaQuery query="(min-width: 981px)">
         <div className="flex max-w-5xl mx-auto">
-          <Children>{children}</Children>
-          <div className="ml-10">
+          <div>
             <Profile />
+          </div>
+          <div className="ml-10">
+            <Children>{children}</Children>
           </div>
         </div>
       </MediaQuery>
