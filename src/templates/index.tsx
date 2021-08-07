@@ -11,7 +11,7 @@ export const BlogPageIndex = ({ data, pageContext }) => {
       <div className="">
         {nodes.map((node) => (
           <div key={node.id} className="my-5 p-3  bg-white">
-            <span className="text-sm p-3">
+            <p className="text-sm p-3">
               <span className="class">{node.date}</span>
               <Link to="/">
                 <span className="ml-5 p-1 bg-gray-300 underline hover:bg-gray-200">
@@ -23,7 +23,7 @@ export const BlogPageIndex = ({ data, pageContext }) => {
                   #React.js
                 </span>
               </Link>
-            </span>
+            </p>
             <div className="text-lg font-bold p-3">
               <Link to={node.slug}>
                 <span className="hover:text-gray-400">{node.title}</span>
