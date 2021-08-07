@@ -22,9 +22,7 @@ const TemplateWrapper = ({ children }) => (
           <div>
             <Profile />
           </div>
-          <div className="ml-10">
-            <Children>{children}</Children>
-          </div>
+          <Children>{children}</Children>
         </div>
       </MediaQuery>
     </main>
@@ -35,7 +33,7 @@ const TemplateWrapper = ({ children }) => (
 // NOTE: tailwindだとなぜかwidth: 100%が適用されないのでstyled componentで代用
 const Children = styled.div`
   width: 100%;
-  margin: 0 auto;
+  margin-left: 2.5rem;
   max-width: 48rem;
 `
 
