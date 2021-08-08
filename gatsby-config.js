@@ -8,15 +8,6 @@ module.exports = {
     description: 'blog sample',
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-graphcms',
-      options: {
-        endpoint: process.env.GRAPHCMS_ENDPOINT,
-        locales: ['ja'],
-        buildMarkdownNodes: true,
-        downloadLocalImages: true,
-      },
-    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
@@ -29,6 +20,7 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    'gatsby-transformer-remark',
     'gatsby-plugin-typescript',
     {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
@@ -91,6 +83,13 @@ module.exports = {
           '@templates': 'src/templates',
         },
         extensions: ['js', 'jsx', 'ts', 'tsx'],
+      },
+    },
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_DELIVERY_API_TOKEN,
       },
     },
   ],

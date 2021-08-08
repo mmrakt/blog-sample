@@ -8,7 +8,7 @@ export const BlogPostTemplate = ({
   contentComponent,
   date,
   title,
-  image,
+  // image,
 }) => {
   const PostContent = contentComponent || Content
 
@@ -32,12 +32,13 @@ export const BlogPostTemplate = ({
           </Link>
         </p>
       </div>
-      <div className="mt-10">
+      {/* <div className="mt-10">
         <img src={image.url} alt="カバー画像" className="w-768" />
-      </div>
+      </div> */}
       <div className="mt-10">
         <div className="text-left leading-loose">
-          <PostContent content={content} />
+          {/* <PostContent content={content} /> */}
+          <div dangerouslySetInnerHTML={{ __html: content }} />
         </div>
       </div>
     </section>
@@ -45,16 +46,16 @@ export const BlogPostTemplate = ({
 }
 
 const BlogPost = ({ data }) => {
-  const { graphCmsPost } = data
+  const { contentfulPost } = data
 
   return (
     <Layout>
       <BlogPostTemplate
-        content={graphCmsPost.content.html}
+        content={contentfulPost.content.childMarkdownRemark.html}
         contentComponent={HTMLContent}
-        date={graphCmsPost.date}
-        title={graphCmsPost.title}
-        image={graphCmsPost.coverImage}
+        date={contentfulPost.date}
+        title={contentfulPost.title}
+        // image={contentfulPost.coverImage}
       />
     </Layout>
   )
@@ -62,19 +63,20 @@ const BlogPost = ({ data }) => {
 export default BlogPost
 
 export const pageQuery = graphql`
-  query BlogPostByID($remoteId: ID!) {
-    graphCmsPost(remoteId: { eq: $remoteId }) {
+  query BlogPostByID($id: String!) {
+    contentfulPost(id: { eq: $id }) {
       content {
-        html
+        childMarkdownRemark {
+          html
+        }
       }
-      coverImage {
-        url
-      }
-      id
       date
       slug
       title
-      tags
+      tags {
+        title
+        slug
+      }
     }
   }
 `

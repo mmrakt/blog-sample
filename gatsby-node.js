@@ -3,19 +3,20 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 const { paginate } = require('gatsby-awesome-pagination')
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   return graphql(`
     {
-      allGraphCmsPost: allGraphCmsPost(
-        sort: { fields: createdAt, order: DESC }
-      ) {
+      allContentfulPost(sort: { fields: createdAt, order: DESC }) {
         edges {
           node {
-            remoteId
-            id
             slug
+            id
           }
         }
       }
@@ -25,8 +26,8 @@ exports.createPages = ({ actions, graphql }) => {
       throw result.errors
     }
 
-    const blogPosts = result.data.allGraphCmsPost.edges
-    const postsPerPage = 3
+    const blogPosts = result.data.allContentfulPost.edges
+    const postsPerPage = 10
 
     paginate({
       createPage,
@@ -37,12 +38,11 @@ exports.createPages = ({ actions, graphql }) => {
     })
 
     blogPosts.forEach(({ node }) => {
-      console.log(node)
       createPage({
         path: node.slug,
         component: path.resolve('./src/templates/blog.tsx'),
         context: {
-          remoteId: node.remoteId,
+          id: node.id,
         },
       })
     })

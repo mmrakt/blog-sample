@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { usePopupState, bindHover } from 'material-ui-popup-state/hooks'
-import CourseMenu from '../CourseMenu'
 
 type IProps = {
   name: string
@@ -23,7 +22,6 @@ const NavbarItem = (props: IProps) => {
       >
         {name}
       </div>
-      <CourseMenu popupState={popupState} />
     </>
   ) : (
     <div className="navbar-item hover:bg-blue-300 flex-1 flex text-lg ext-white items-center justify-center">

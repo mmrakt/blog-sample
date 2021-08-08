@@ -4,7 +4,7 @@ import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
 
 export const BlogPageIndex = ({ data, pageContext }) => {
-  const { nodes } = data.allGraphCmsPost
+  const { nodes } = data.allContentfulPost
 
   return (
     <Layout>
@@ -30,9 +30,9 @@ export const BlogPageIndex = ({ data, pageContext }) => {
               </Link>
             </div>
             <div className="text-sm p-3">
-              {node.excerpt.length > 100
-                ? `${node.excerpt.substring(0, 100)}...`
-                : node.excerpt}
+              {node.excerpt.excerpt.length > 100
+                ? `${node.excerpt.excerpt.substring(0, 100)}...`
+                : node.excerpt.excerpt}
             </div>
             <div className="flex p-3">
               <div className="underline ml-auto text-sm">
@@ -53,13 +53,17 @@ export const BlogPageIndex = ({ data, pageContext }) => {
 
 export const BlogIndexPageQuery = graphql`
   query BlogRollQuery($skip: Int, $limit: Int) {
-    allGraphCmsPost(sort: { fields: createdAt }, skip: $skip, limit: $limit) {
+    allContentfulPost(sort: { fields: createdAt }, skip: $skip, limit: $limit) {
       nodes {
-        id
-        excerpt
-        date
+        date(formatString: "YYYY.MM.DD")
         slug
         title
+        content {
+          content
+        }
+        excerpt {
+          excerpt
+        }
       }
     }
   }
