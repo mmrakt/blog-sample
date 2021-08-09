@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/common/Content'
 
@@ -8,9 +9,11 @@ export const BlogPostTemplate = ({
   contentComponent,
   date,
   title,
-  // image,
+  tags,
+  coverImage,
 }) => {
   const PostContent = contentComponent || Content
+  const image = getImage(coverImage)
 
   return (
     <section className="bg-white p-10">
@@ -18,27 +21,26 @@ export const BlogPostTemplate = ({
         <p className="text-sm">
           <span className="text-lg">{date}</span>
         </p>
-        <h1 className="text-3xl font-black mb-1 mt-0">{title}</h1>
-        <p className="class">
-          <Link to="/">
-            <span className="text-lg mb-1 bg-gray-300 underline hover:bg-gray-200">
-              #JavaScript
-            </span>
-          </Link>
-          <Link to="/">
-            <span className="text-lg mb-1 ml-5 bg-gray-300 underline hover:bg-gray-200">
-              #React.js
-            </span>
-          </Link>
+        <h1 className="text-3xl font-black mb-2 mt-0">{title}</h1>
+        <p className="flex flex-wrap">
+          {tags &&
+            tags.map((tag) => (
+              <Link to={`/tag/${tag.slug}`} key={tag.slug}>
+                <span className="text-lg mb-3 mr-5 bg-gray-300 underline hover:bg-gray-200">
+                  #{tag.title}
+                </span>
+              </Link>
+            ))}
         </p>
       </div>
-      {/* <div className="mt-10">
-        <img src={image.url} alt="カバー画像" className="w-768" />
-      </div> */}
+      {image && (
+        <div className="mt-10">
+          <GatsbyImage image={image} alt={`「${title}」のカバー画像`} />
+        </div>
+      )}
       <div className="mt-10">
         <div className="text-left leading-loose">
-          {/* <PostContent content={content} /> */}
-          <div dangerouslySetInnerHTML={{ __html: content }} />
+          <PostContent content={content} />
         </div>
       </div>
     </section>
@@ -47,6 +49,7 @@ export const BlogPostTemplate = ({
 
 const BlogPost = ({ data }) => {
   const { contentfulPost } = data
+  console.log(contentfulPost)
 
   return (
     <Layout>
@@ -55,7 +58,8 @@ const BlogPost = ({ data }) => {
         contentComponent={HTMLContent}
         date={contentfulPost.date}
         title={contentfulPost.title}
-        // image={contentfulPost.coverImage}
+        tags={contentfulPost.tags}
+        coverImage={contentfulPost.coverImage}
       />
     </Layout>
   )
@@ -70,12 +74,15 @@ export const pageQuery = graphql`
           html
         }
       }
-      date
+      date(formatString: "YYYY.MM.DD")
       slug
       title
       tags {
         title
         slug
+      }
+      coverImage {
+        gatsbyImageData
       }
     }
   }

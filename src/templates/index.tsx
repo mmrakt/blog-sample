@@ -8,45 +8,42 @@ export const BlogPageIndex = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <div className="">
-        {nodes.map((node) => (
-          <div key={node.id} className="my-5 p-3  bg-white">
-            <p className="text-sm p-3">
-              <span className="class">{node.date}</span>
-              <Link to="/">
-                <span className="ml-5 p-1 bg-gray-300 underline hover:bg-gray-200">
-                  #JavaScript
-                </span>
-              </Link>
-              <Link to="/">
-                <span className="ml-5 p-1 bg-gray-300 underline hover:bg-gray-200">
-                  #React.js
-                </span>
-              </Link>
-            </p>
-            <div className="text-lg font-bold p-3">
-              <Link to={node.slug}>
-                <span className="hover:text-gray-400">{node.title}</span>
-              </Link>
-            </div>
-            <div className="text-sm p-3">
-              {node.excerpt.excerpt.length > 100
-                ? `${node.excerpt.excerpt.substring(0, 100)}...`
-                : node.excerpt.excerpt}
-            </div>
-            <div className="flex p-3">
-              <div className="underline ml-auto text-sm">
-                <Link to={node.slug}>
-                  <span className="hover:text-gray-400 cursor-pointer">
-                    続きを読む
+      {nodes.map((node) => (
+        <div key={node.id} className="my-5 p-5  bg-white text-sm">
+          <p className="mb-3">{node.date}</p>
+
+          <div className="text-lg font-bold mb-3">
+            <Link to={node.slug}>
+              <span className="hover:text-gray-400">{node.title}</span>
+            </Link>
+          </div>
+          <p className="flex flex-wrap mb-3">
+            {node.tags &&
+              node.tags.map((tag) => (
+                <Link to={`/tag/${tag.slug}`} key={tag.slug}>
+                  <span className="mr-5 mb-3 bg-gray-300 underline hover:bg-gray-200">
+                    #{tag.title}
                   </span>
                 </Link>
-              </div>
+              ))}
+          </p>
+          <div className="mb-3">
+            {node.excerpt.excerpt.length > 100
+              ? `${node.excerpt.excerpt.substring(0, 100)}...`
+              : node.excerpt.excerpt}
+          </div>
+          <div className="flex">
+            <div className="underline ml-auto ">
+              <Link to={node.slug}>
+                <span className="hover:text-gray-400 cursor-pointer">
+                  続きを読む
+                </span>
+              </Link>
             </div>
           </div>
-        ))}
-        <Pagination pageContext={pageContext} />
-      </div>
+        </div>
+      ))}
+      <Pagination pageContext={pageContext} />
     </Layout>
   )
 }
@@ -63,6 +60,10 @@ export const BlogIndexPageQuery = graphql`
         }
         excerpt {
           excerpt
+        }
+        tags {
+          title
+          slug
         }
       }
     }
