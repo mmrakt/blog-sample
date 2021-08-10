@@ -1,0 +1,1119 @@
+yarn run v1.22.10
+$ gatsby develop
+success open and validate gatsby-configs - 0.084s
+
+[2K[1A[2K[Gwarn Plugin gatsby-plugin-image is not compatible with your gatsby version
+2.32.11 - It requires gatsby@^3.0.0-next.0
+
+[2K[1A[2K[Gwarn Plugin gatsby-plugin-typescript is not compatible with your gatsby version
+2.32.11 - It requires gatsby@^3.0.0-next.0
+
+[2K[1A[2K[Gwarn Plugin gatsby-remark-prismjs is not compatible with your gatsby version
+2.32.11 - It requires gatsby@^3.0.0-next.0
+
+[2K[1A[2K[Gwarn Plugin gatsby-plugin-postcss is not compatible with your gatsby version
+2.32.11 - It requires gatsby@^3.0.0-next.0
+
+[2K[1A[2K[Gsuccess load plugins - 1.009s
+
+[2K[1A[2K[Gsuccess onPreInit - 0.022s
+
+[2K[1A[2K[Gsuccess initialize cache - 0.002s
+
+[2K[1A[2K[Gsuccess copy gatsby files - 0.036s
+
+[2K[1A[2K[Gsuccess onPreBootstrap - 0.013s
+
+[2K[1A[2K[Gsuccess createSchemaCustomization - 0.043s
+
+[2K[1A[2K[G{
+  path: '/dev-404-page/',
+  id: 'SitePage /dev-404-page/',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'dfef0fff8c14f741676d67cf456399fb',
+    counter: 1,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  buildTime: '2021-08-10T11:46:22.000Z',
+  id: 'SiteBuildMetadata',
+  parent: null,
+  children: [],
+  internal: {
+    contentDigest: '83cd1d83033f015735e9abf2d67c7c14',
+    type: 'SiteBuildMetadata',
+    counter: 48,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[Gsuccess Contentful: Sync changed items - 0.337s - 0/100 297.11/s
+
+[2K[1A[2K[Gsuccess Contentful: Fetch data (y8ww7dmweb1m-master) - 0.507s
+
+[2K[1A[2K[Ginfo Updated entries 0
+
+[2K[1A[2K[Ginfo Deleted entries 0
+
+[2K[1A[2K[Ginfo Updated assets 0
+
+[2K[1A[2K[Ginfo Deleted assets 0
+
+[2K[1A[2K[Gsuccess Contentful: Process data (y8ww7dmweb1m-master) - 0.071s
+
+[2K[1A[2K[Ginfo Creating 30 Contentful Post nodes
+
+[2K[1A[2K[Ginfo Creating 10 Contentful Tag nodes
+
+[2K[1A[2K[Ginfo Creating 1 Contentful asset nodes
+
+[2K[1A[2K[Gsuccess Contentful: Create nodes (y8ww7dmweb1m-master) - 0.013s
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.001s
+
+[2K[1A[2K[Gsuccess source and transform nodes - 0.702s
+
+[2K[1A[2K[Gwarn Thank you for trying the beta version of the `gatsbyImageData` API. Please
+provide feedback and report any issues at:
+https://github.com/gatsbyjs/gatsby/discussions/27950
+
+[2K[1A[2K[Gsuccess building schema - 0.433s
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentIndex',
+  path: '/',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/index.tsx',
+  componentChunkName: 'component---src-templates-index-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: {
+    pageNumber: 0,
+    humanPageNumber: 1,
+    skip: 0,
+    limit: 10,
+    numberOfPages: 3,
+    previousPagePath: '',
+    nextPagePath: '/page/2'
+  },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/index.tsx',
+  id: 'SitePage /',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '868069431436957831f1575b6b10bc12',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 54,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentPage2',
+  path: '/page/2',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/index.tsx',
+  componentChunkName: 'component---src-templates-index-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: {
+    pageNumber: 1,
+    humanPageNumber: 2,
+    skip: 10,
+    limit: 10,
+    numberOfPages: 3,
+    previousPagePath: '/',
+    nextPagePath: '/page/3'
+  },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/index.tsx',
+  id: 'SitePage /page/2',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'c03f2d7e5f705a948dd7ccc3712bbcd2',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 55,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentPage3',
+  path: '/page/3',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/index.tsx',
+  componentChunkName: 'component---src-templates-index-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: {
+    pageNumber: 2,
+    humanPageNumber: 3,
+    skip: 20,
+    limit: 10,
+    numberOfPages: 3,
+    previousPagePath: '/page/2',
+    nextPagePath: ''
+  },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/index.tsx',
+  id: 'SitePage /page/3',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '7456b15e3062b8dfbbe9fa8519fff905',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 56,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost30',
+  path: '/test-post-30',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '0d06faa9-64f3-5613-b851-5d3d8cea81bf' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-30',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '08737ccf62cc2b768a8115afc5176763',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 57,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost29',
+  path: '/test-post-29',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '8d1c1ad6-4980-52bd-8715-38bb3ad27e03' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-29',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'fe75726c984ef8c29dbfd6066d263bdd',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 58,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost28',
+  path: '/test-post-28',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '5e8fc632-5b44-5a29-ad27-fd808da66ecc' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-28',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'c54766d5d5e1050bf875264bbda9e247',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 59,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost27',
+  path: '/test-post-27',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: 'c21d74c4-c2c6-5a8c-be3f-4baf683807ad' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-27',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '6bd1a5b9b9b32696a110e2330156d9ff',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 60,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost26',
+  path: '/test-post-26',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: 'c4a70ddf-45f6-594b-ab70-cfc2e7b7a87b' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-26',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'bf87642d25c6f009ad7f279f52edb479',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 61,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost25',
+  path: '/test-post-25',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '18bca4a2-4268-5381-9dbb-b17f4119a524' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-25',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '1ea042dca8215ed2cfaa11c6851617b7',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 62,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost24',
+  path: '/test-post-24',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '41c7f590-0608-5516-8375-e14ea459f297' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-24',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '8f8e77917407d67cefb278b78317938b',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 63,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost23',
+  path: '/test-post-23',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '2d0fbf50-1eeb-5b03-a3dc-e274059397a2' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-23',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '3417cd082799becad89362b86919c5d6',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 64,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost22',
+  path: '/test-post-22',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '461dfa7d-db84-5dcd-a099-8d5eee1c259b' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-22',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'dc6c698dba602e5c8eb1437fc4526237',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 65,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost21',
+  path: '/test-post-21',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '26128bc1-5e67-53b0-8f4c-5a967a2f11e4' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-21',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'dc8e4a2e2b47370df9c1e2c9948ade0a',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 66,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost20',
+  path: '/test-post-20',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: 'f7e85564-8bda-5a2f-ba1e-a7b955bd5f3d' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-20',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'ad5b1f09080598fd7b57d68cc3f75ec1',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 67,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost19',
+  path: '/test-post-19',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '3d98e70e-4c4c-553c-b063-2cea72561d0b' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-19',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '49685cd76d3388104fd77ce6444f8e99',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 68,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost18',
+  path: '/test-post-18',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '7147db82-1967-5032-b2ea-ffc93f4b48e5' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-18',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '4be03c380366b54b8c612ba88ce4ba2c',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 69,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost17',
+  path: '/test-post-17',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '85888837-b6ad-5bd4-b346-c9f85d64173a' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-17',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '2cdec2f0135bc901e603106fb9084b1f',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 70,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost16',
+  path: '/test-post-16',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: 'bec08b11-7bae-500d-a9e0-f91467b182e6' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-16',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '945e4c2efe1afcff27ea5e41a5bc4b04',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 71,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost15',
+  path: '/test-post-15',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '39027698-5b5b-5909-8045-ae3694542844' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-15',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'a7762582c3f4a282bd44970d4c47a80d',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 72,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost14',
+  path: '/test-post-14',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '64474308-78d3-576d-a2bd-cbe3d3266a27' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-14',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '53bb826274f5b07d35d0788ac7466f9d',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 73,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost13',
+  path: '/test-post-13',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '3bae58a6-992a-53d2-aaa7-41dc02d41188' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-13',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '03b31d2e8439fe8cb0ed4e1f21e25994',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 74,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost12',
+  path: '/test-post-12',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '99a327ed-eae6-5cfa-82dd-f813f7e7430b' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-12',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'adcc85024db1dc9c41adc1da20c54c2e',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 75,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost11',
+  path: '/test-post-11',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '4b82b76e-2e8e-546b-9b5f-b857cb1a2a2a' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-11',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '8223291abfa3c9ad911e26a79953449e',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 76,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost10',
+  path: '/test-post-10',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: 'fe041778-a00a-5cd2-8287-6a0caf04a501' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-10',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '9e96276b070a1a271118e63a66d8e3af',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 77,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost9',
+  path: '/test-post-9',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '840def6a-bc85-56f2-8b2d-d43c917b2a4f' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-9',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '584b2f690c488b917d11ca8c809b3c1f',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 78,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost8',
+  path: '/test-post-8',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '2d47bd1a-be6c-583f-9587-6dfde9d40573' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-8',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'c2b4da55a8de450ab5dfaeb77bf2f5b3',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 79,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost7',
+  path: '/test-post-7',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: 'ef39dbc5-4136-50fc-993c-194427fde348' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-7',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '291f077d8ac89c104f04d514134ebd14',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 80,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost6',
+  path: '/test-post-6',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '81daf113-720f-574a-8c7f-26baa11370e9' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-6',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'e7d321cd444c2ca38bef63445f5198c7',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 81,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost5',
+  path: '/test-post-5',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '248fceb3-d4c4-58f2-942a-81eabc99fadb' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-5',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '3f050f03804aa1a0802d4b18fc68d0f8',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 82,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost4',
+  path: '/test-post-4',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '8166c5c7-13c4-5119-b47e-b4e5067e4ed7' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post-4',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '263616e77acada0ce56ed0d3c217a184',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 83,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentTestPost',
+  path: '/test-post',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '076bc619-f398-58c4-b157-157cb8e41036' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /test-post',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'cbb058c731a4db8bd8002971a52f5cb7',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 84,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentSecondPost',
+  path: '/second-post',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: '6f723c8b-d0f7-5354-9cbc-c1d56d3c8bdc' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /second-post',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'b2e36fcf5e2e2231d22e6abfe8cbe69e',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 85,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentFirstPost',
+  path: '/first-post',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  componentChunkName: 'component---src-templates-blog-tsx',
+  isCreatedByStatefulCreatePages: false,
+  context: { id: 'f229fa7f-4dcd-5cb9-bbec-add1da4b3abf' },
+  pluginCreator___NODE: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  pluginCreatorId: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx',
+  id: 'SitePage /first-post',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'abb7eb84e45fa094146ee69151e4cb2d',
+    description: '7374ebf2-d961-52ee-92a2-c25e7cb387a9',
+    counter: 86,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[Ginfo Total nodes: 246, SitePage nodes: 34 (use --verbose for breakdown)
+
+[2K[1A[2K[Gsuccess createPages - 0.109s
+
+[2K[1A[2K[Gsuccess Checking for changed pages - 0.000s
+
+[2K[1A[2K[G{
+  internalComponentName: 'ComponentDev404Page',
+  path: '/dev-404-page/',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/.cache/dev-404-page.js',
+  componentChunkName: 'component---cache-dev-404-page-js',
+  isCreatedByStatefulCreatePages: true,
+  context: {},
+  pluginCreator___NODE: 'd48d1c52-fe48-53cb-8f08-aa4b47dde5a5',
+  pluginCreatorId: 'd48d1c52-fe48-53cb-8f08-aa4b47dde5a5',
+  componentPath:
+'/Users/mimuraakito/workspace/blog-sample/.cache/dev-404-page.js',
+  id: 'SitePage /dev-404-page/',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: '58e7093033af419c88900eed954cd0ff',
+    description: 'd48d1c52-fe48-53cb-8f08-aa4b47dde5a5',
+    counter: 87,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'Component404',
+  path: '/404/',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/pages/404.tsx',
+  componentChunkName: 'component---src-pages-404-tsx',
+  isCreatedByStatefulCreatePages: true,
+  context: {},
+  pluginCreator___NODE: '9257b598-bcf7-5deb-a3f5-0f67eee333db',
+  pluginCreatorId: '9257b598-bcf7-5deb-a3f5-0f67eee333db',
+  componentPath: '/Users/mimuraakito/workspace/blog-sample/src/pages/404.tsx',
+  id: 'SitePage /404/',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'd9710509cc84059e00db8eab9273b90f',
+    description: '9257b598-bcf7-5deb-a3f5-0f67eee333db',
+    counter: 88,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[G{
+  internalComponentName: 'Component404Html',
+  path: '/404.html',
+  matchPath: undefined,
+  component: '/Users/mimuraakito/workspace/blog-sample/src/pages/404.tsx',
+  componentChunkName: 'component---src-pages-404-tsx',
+  isCreatedByStatefulCreatePages: true,
+  context: {},
+  pluginCreator___NODE: 'f795702c-a3b8-5a88-88ee-5d06019d44fa',
+  pluginCreatorId: 'f795702c-a3b8-5a88-88ee-5d06019d44fa',
+  componentPath: '/Users/mimuraakito/workspace/blog-sample/src/pages/404.tsx',
+  id: 'SitePage /404.html',
+  parent: null,
+  children: [],
+  internal: {
+    type: 'SitePage',
+    contentDigest: 'a10380ceb1b327094c432c1ec5c14fef',
+    description: 'f795702c-a3b8-5a88-88ee-5d06019d44fa',
+    counter: 89,
+    owner: 'internal-data-bridge'
+  }
+}
+
+[2K[1A[2K[Gsuccess createPagesStatefully - 0.041s
+
+[2K[1A[2K[Gsuccess update schema - 0.025s
+
+[2K[1A[2K[Gsuccess write out redirect data - 0.001s
+
+[2K[1A[2K[Gsuccess onPostBootstrap - 0.001s
+
+[2K[1A[2K[Ginfo bootstrap finished - 4.539s
+
+[2K[1A[2K[Gsuccess onPreExtractQueries - 0.001s
+
+[2K[1A[2K[G{
+  id: '140f11bc-14c1-5140-91dd-2f08004b13a0',
+  children: [],
+  parent: null,
+  internal: {
+    contentDigest: '60ed456a8fbc4e0678fe962536a5339e',
+    type: 'StaticImage',
+    mediaType: 'image/png',
+    description: 'File "static/img/avatar.png"',
+    counter: 90,
+    owner: 'gatsby-plugin-image'
+  },
+  sourceInstanceName: '__PROGRAMMATIC__',
+  relativePath: 'static/img/avatar.png',
+  extension: 'png',
+  prettySize: '80.1 kB',
+  modifiedTime: '2021-07-31T14:56:44.873Z',
+  accessTime: '2021-07-31T15:00:47.022Z',
+  changeTime: '2021-07-31T14:56:44.873Z',
+  birthTime: '2021-07-31T14:56:44.872Z',
+  root: '/',
+  dir: '/Users/mimuraakito/workspace/blog-sample/static/img',
+  base: 'avatar.png',
+  ext: '.png',
+  name: 'avatar',
+  absolutePath:
+'/Users/mimuraakito/workspace/blog-sample/static/img/avatar.png',
+  relativeDirectory: 'static/img',
+  dev: 16777234,
+  mode: 33188,
+  nlink: 1,
+  uid: 501,
+  rdev: 0,
+  blksize: 4096,
+  ino: 27181759,
+  size: 80109,
+  blocks: 160,
+  atimeMs: 1627743647022.4373,
+  mtimeMs: 1627743404873.1191,
+  ctimeMs: 1627743404873.1191,
+  birthtimeMs: 1627743404872.3865,
+  atime: '2021-07-31T15:00:47.022Z',
+  mtime: '2021-07-31T14:56:44.873Z',
+  ctime: '2021-07-31T14:56:44.873Z',
+  birthtime: '2021-07-31T14:56:44.872Z'
+}
+
+[2K[1A[2K[Gsuccess extract queries from components - 1.490s
+
+[2K[1A[2K[Gsuccess write out requires - 0.005s
+
+[2K[1A[2K[Gsuccess run page queries - 0.011s - 1/1 93.40/s
+
+[2K[1A[2K[G
+/Users/mimuraakito/workspace/blog-sample/gatsby-node.js
+  54:3  warning  Unexpected console statement  no-console
+
+/Users/mimuraakito/workspace/blog-sample/src/components/about/AboutInfo.tsx
+  5:9  warning  'hoge' is assigned a value but never used
+@typescript-eslint/no-unused-vars
+
+/Users/mimuraakito/workspace/blog-sample/src/components/about/InfoTable.tsx
+  4:9  warning  'hoge' is assigned a value but never used
+@typescript-eslint/no-unused-vars
+
+/Users/mimuraakito/workspace/blog-sample/src/components/common/CoverImage.tsx
+  5:10  warning  Unexpected any. Specify a different type
+@typescript-eslint/no-explicit-any
+  8:9   warning  'hoge' is assigned a value but never used
+@typescript-eslint/no-unused-vars
+
+/Users/mimuraakito/workspace/blog-sample/src/components/header/CourseAccordion.t
+sx
+   6:8   warning  'ExpandMoreIcon' is defined but never used
+@typescript-eslint/no-unused-vars
+   8:31  warning  'theme' is defined but never used
+@typescript-eslint/no-unused-vars
+  15:9   warning  'classes' is assigned a value but never used
+@typescript-eslint/no-unused-vars
+
+/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx
+  52:3  warning  Unexpected console statement  no-console
+
+✖ 9 problems (0 errors, 9 warnings)
+
+
+[2K[1A[2K[G⠀
+
+[2K[1A[2K[GYou can now view gatsby-starter-netlify-cms in the browser.
+
+[2K[1A[2K[G⠀
+
+[2K[1A[2K[G  http://localhost:8000/
+
+[2K[1A[2K[G⠀
+
+[2K[1A[2K[GView GraphiQL, an in-browser IDE, to explore your site's data and schema
+
+[2K[1A[2K[G⠀
+
+[2K[1A[2K[G  http://localhost:8000/___graphql
+
+[2K[1A[2K[G⠀
+
+[2K[1A[2K[GNote that the development build is not optimized.
+
+[2K[1A[2K[GTo create a production build, use gatsby build
+
+[2K[1A[2K[G⠀
+
+[2K[1A[2K[Gwarn
+/Users/mimuraakito/workspace/blog-sample/src/templates/blog.tsx
+  52:3  warning  Unexpected console statement  no-console
+
+✖ 1 problem (0 errors, 1 warning)
+
+
+[2K[1A[2K[Gsuccess Building development bundle - 16.739s
+
+warn develop process needs to be restarted to apply the changes to
+gatsby-node.js
+
+[2K[1A[2K[G
+/Users/mimuraakito/workspace/blog-sample/gatsby-node.js
+  54:3  warning  Unexpected console statement  no-console
+
+✖ 1 problem (0 errors, 1 warning)
+
+

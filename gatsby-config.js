@@ -20,15 +20,39 @@ module.exports = {
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-transformer-remark',
     'gatsby-plugin-typescript',
     {
-      resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+      resolve: 'gatsby-transformer-remark',
       options: {
-        develop: true, // Activates purging in npm run develop
-        purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
+        plugins: [
+          { resolve: 'gatsby-remark-code-titles' },
+          {
+            resolve: 'gatsby-source-contentful',
+            options: {
+              spaceId: process.env.CONTENTFUL_SPACE_ID,
+              accessToken: process.env.CONTENTFUL_DELIVERY_API_TOKEN,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: true,
+              noInlineHighlight: false,
+            },
+          },
+        ],
       },
-    }, // must be after other CSS plugins
+    },
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        develop: true,
+        purgeOnly: ['/all.sass'],
+      },
+    },
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
@@ -55,7 +79,6 @@ module.exports = {
       options: {
         prettier: {
           patterns: [
-            // the pattern "**/*.{js,jsx,ts,tsx}" is not used because we will rely on `eslint --fix`
             '**/*.{css,scss,less}',
             '**/*.{json,json5}',
             '**/*.{graphql}',
@@ -83,13 +106,6 @@ module.exports = {
           '@templates': 'src/templates',
         },
         extensions: ['js', 'jsx', 'ts', 'tsx'],
-      },
-    },
-    {
-      resolve: 'gatsby-source-contentful',
-      options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_DELIVERY_API_TOKEN,
       },
     },
   ],
