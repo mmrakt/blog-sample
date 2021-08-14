@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
 
-export const TagPostIndexTemplate = ({ data, pageContext }) => {
+export const PostsByTagTemplate = ({ data, pageContext }) => {
   console.log(data)
 
   return (
@@ -86,4 +86,4 @@ export const TagPostIndexPageQuery = graphql`
   }
 `
 
-export default TagPostIndexTemplate
+export default PostsByTagTemplate

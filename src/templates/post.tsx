@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/common/Content'
 
-export const BlogPostTemplate = ({
+export const PostTemplate = ({
   content,
   contentComponent,
   date,
@@ -53,7 +53,7 @@ const BlogPost = ({ data }) => {
 
   return (
     <Layout>
-      <BlogPostTemplate
+      <PostTemplate
         content={contentfulPost.content.childMarkdownRemark.html}
         contentComponent={HTMLContent}
         date={contentfulPost.date}
@@ -67,7 +67,7 @@ const BlogPost = ({ data }) => {
 export default BlogPost
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query Post($id: String!) {
     contentfulPost(id: { eq: $id }) {
       content {
         childMarkdownRemark {

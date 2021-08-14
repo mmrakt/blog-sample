@@ -28,30 +28,22 @@ exports.createPages = ({ actions, graphql }) => {
           fieldValue
         }
       }
-      tags: allContentfulTag {
-        edges {
-          node {
-            title
-            slug
-          }
-        }
-      }
     }
   `).then((result) => {
     if (result.errors) {
       throw result.errors
     }
 
-    const blogPosts = result.data.allContentfulPost.edges
+    const posts = result.data.allContentfulPost.edges
     const postsPerPage = 10
     const postsByTag = result.data.postsByTag.group
 
     paginate({
       createPage,
-      items: blogPosts,
+      items: posts,
       itemsPerPage: postsPerPage,
       pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? '/' : '/page'),
-      component: path.resolve('./src/templates/index.tsx'),
+      component: path.resolve('./src/templates/posts.tsx'),
     })
 
     postsByTag.forEach((tagPage) => {
@@ -63,14 +55,14 @@ exports.createPages = ({ actions, graphql }) => {
           pageNumber === 0
             ? `/tag/${tagPage.fieldValue}`
             : `/tag/${tagPage.fieldValue}/page`,
-        component: path.resolve('./src/templates/tagIndex.tsx'),
+        component: path.resolve('./src/templates/postsByTag.tsx'),
         context: {
           tagSlug: tagPage.fieldValue,
         },
       })
     })
 
-    blogPosts.forEach(({ node }) => {
+    posts.forEach(({ node }) => {
       createPage({
         path: node.slug,
         component: path.resolve('./src/templates/post.tsx'),

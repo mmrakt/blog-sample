@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
 
-export const PostIndexTemplate = ({ data, pageContext }) => {
+export const PostsTemplate = ({ data, pageContext }) => {
   const { nodes } = data.allContentfulPost
 
   return (
@@ -49,7 +49,7 @@ export const PostIndexTemplate = ({ data, pageContext }) => {
 }
 
 export const BlogIndexPageQuery = graphql`
-  query BlogRollQuery($skip: Int, $limit: Int) {
+  query Posts($skip: Int, $limit: Int) {
     allContentfulPost(sort: { fields: createdAt }, skip: $skip, limit: $limit) {
       nodes {
         date(formatString: "YYYY.MM.DD")
@@ -70,4 +70,4 @@ export const BlogIndexPageQuery = graphql`
   }
 `
 
-export default PostIndexTemplate
+export default PostsTemplate
