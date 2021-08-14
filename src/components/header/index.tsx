@@ -7,7 +7,7 @@ const Header: React.VFC = () => (
       <div className="text-white p-4">
         <h1 className="font-black text-xl m-0">
           <Link to="/" className="navbar-item" title="Logo">
-            Blog Sample
+            mamimu memo
           </Link>
         </h1>
         <p className="text-white text-sm">文系卒底辺エンジニアの成長記録</p>

@@ -14,7 +14,7 @@ const Profile: React.VFC = () => (
       />
       <div className="ml-3">
         <p>@mmrakt</p>
-        <h4 className="font-black">みむら</h4>
+        <h4 className="font-black">mimu</h4>
       </div>
     </div>
     <div className="description mt-3">

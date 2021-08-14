@@ -4,8 +4,8 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'blog-sample',
-    description: 'blog sample',
+    title: 'mamimu memo',
+    description: '文系卒底辺エンジニアの成長記録',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
