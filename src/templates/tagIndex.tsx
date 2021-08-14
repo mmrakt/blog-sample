@@ -3,17 +3,21 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
 
-export const PostIndexTemplate = ({ data, pageContext }) => {
-  const { nodes } = data.allContentfulPost
+export const TagPostIndexTemplate = ({ data, pageContext }) => {
+  console.log(data)
 
   return (
     <Layout>
-      {nodes.map((node) => (
+      <p className="text-center">
+        <b className="mr-2 text-lg">#{data.tags.edges[0].node.title}</b>
+        の記事一覧
+      </p>
+      {data?.posts.nodes.map((node) => (
         <div key={node.id} className="my-5 p-5  bg-white text-sm">
           <p className="mb-3">{node.date}</p>
 
           <div className="text-lg font-bold mb-3">
-            <Link to={node.slug}>
+            <Link to={`/${node.slug}`}>
               <span className="hover:text-gray-400">{node.title}</span>
             </Link>
           </div>
@@ -34,7 +38,7 @@ export const PostIndexTemplate = ({ data, pageContext }) => {
           </div>
           <div className="flex">
             <div className="underline ml-auto ">
-              <Link to={node.slug}>
+              <Link to={`/${node.slug}`}>
                 <span className="hover:text-gray-400 cursor-pointer">
                   続きを読む
                 </span>
@@ -48,9 +52,14 @@ export const PostIndexTemplate = ({ data, pageContext }) => {
   )
 }
 
-export const BlogIndexPageQuery = graphql`
-  query BlogRollQuery($skip: Int, $limit: Int) {
-    allContentfulPost(sort: { fields: createdAt }, skip: $skip, limit: $limit) {
+export const TagPostIndexPageQuery = graphql`
+  query PostsByTag($skip: Int, $limit: Int, $tagSlug: String) {
+    posts: allContentfulPost(
+      sort: { fields: createdAt }
+      skip: $skip
+      limit: $limit
+      filter: { tags: { elemMatch: { slug: { eq: $tagSlug } } } }
+    ) {
       nodes {
         date(formatString: "YYYY.MM.DD")
         slug
@@ -67,7 +76,14 @@ export const BlogIndexPageQuery = graphql`
         }
       }
     }
+    tags: allContentfulTag(filter: { slug: { eq: $tagSlug } }) {
+      edges {
+        node {
+          title
+        }
+      }
+    }
   }
 `
 
-export default PostIndexTemplate
+export default TagPostIndexTemplate
