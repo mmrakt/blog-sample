@@ -2,8 +2,8 @@ import React from 'react'
 import MediaQuery from 'react-responsive'
 import styled from 'styled-components'
 import Head from './Head'
-import Footer from './footer'
-import Header from './header'
+import Footer from './Footer'
+import Header from './Header'
 import Profile from './Profile'
 
 const TemplateWrapper = ({ children }) => (

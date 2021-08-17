@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/common/Content'
+import Content, { HTMLContent } from '../components/Content'
 
 const PostTemplate = ({ data }) => {
   const { contentfulPost } = data
