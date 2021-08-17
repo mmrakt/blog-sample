@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
 
-export const PostsTemplate = ({ data, pageContext }) => {
+const PostsTemplate = ({ data, pageContext }) => {
   const { nodes } = data.allContentfulPost
 
   return (

@@ -1,10 +1,15 @@
 import React from 'react'
 
-export const HTMLContent = ({ content, className }) => (
+type IContent = {
+  content: string
+  className?: string
+}
+
+export const HTMLContent: React.VFC<IContent> = ({ content, className }) => (
   <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
 )
 
-const Content = ({ content, className }) => (
+const Content: React.VFC<IContent> = ({ content, className }) => (
   <div className={className}>{content}</div>
 )
 
