@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import Head from './Head'
 import Footer from './Footer'
 import Header from './Header'
-import Profile from './Profile'
+import SideBar from './SideBar'
 
 const TemplateWrapper = ({ children }) => (
   <div>
@@ -14,13 +14,13 @@ const TemplateWrapper = ({ children }) => (
       <MediaQuery query="(max-width: 980px)">
         <div className="py-5 px-3 mx-auto max-w-xl">
           {children}
-          <Profile />
+          <SideBar />
         </div>
       </MediaQuery>
       <MediaQuery query="(min-width: 981px)">
         <div className="flex max-w-5xl mx-auto">
           <div>
-            <Profile />
+            <SideBar />
           </div>
           <Children>{children}</Children>
         </div>

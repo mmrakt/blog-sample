@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 const Profile: React.VFC = () => (
-  <aside className="p-4 my-3 bg-white">
+  <>
     <h3 className="font-black">Profile</h3>
     <div className="flex mt-3">
       <StaticImage
@@ -37,7 +37,7 @@ const Profile: React.VFC = () => (
         <FontAwesomeIcon size="2x" icon={faTwitter} />
       </a>
     </div>
-  </aside>
+  </>
 )
 
 export default Profile
