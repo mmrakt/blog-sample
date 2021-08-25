@@ -9,7 +9,7 @@ const PostsTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       {nodes.map((node) => (
-        <div key={node.id} className="my-5 p-5  bg-white text-sm">
+        <div key={node.id} className="mb-5 p-5  bg-white text-sm">
           <p className="mb-3">{node.date}</p>
 
           <div className="text-lg font-bold mb-3">

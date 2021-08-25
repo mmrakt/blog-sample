@@ -1,12 +1,22 @@
 import React from 'react'
+import styled from 'styled-components'
 import Profile from './Profile'
 import Tags from './Tags'
 
 const SideBar: React.VFC = () => (
-  <aside className="max-w-sm p-4 my-3 bg-white">
+  <Aside>
     <Profile />
     <Tags />
-  </aside>
+  </Aside>
 )
+
+// NOTE: taiwindでwidthが何故か効かないので暫定対応
+const Aside = styled.aside`
+  padding: 1rem;
+  background: white;
+  @media screen and (min-width: 981px) {
+    width: 22rem;
+  }
+`
 
 export default SideBar

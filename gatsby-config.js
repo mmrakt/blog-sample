@@ -4,8 +4,11 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'mamimu memo',
+    title: 'mimu memo',
     description: '文系卒底辺エンジニアの成長記録',
+    lang: 'ja',
+    // siteUrl: '',
+    locale: 'ja_JP',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

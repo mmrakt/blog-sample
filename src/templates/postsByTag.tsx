@@ -10,7 +10,7 @@ export const PostsByTagTemplate = ({ data, pageContext }) => {
     <Layout>
       <p className="text-center">
         <b className="mr-2 text-lg">#{data.tags.edges[0].node.title}</b>
-        の記事一覧
+        の記事
       </p>
       {data?.posts.nodes.map((node) => (
         <div key={node.id} className="my-5 p-5  bg-white text-sm">

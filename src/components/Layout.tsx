@@ -18,7 +18,7 @@ const TemplateWrapper = ({ children }) => (
         </div>
       </MediaQuery>
       <MediaQuery query="(min-width: 981px)">
-        <div className="flex max-w-5xl mx-auto">
+        <div className="flex max-w-6xl mx-auto">
           <div>
             <SideBar />
           </div>
@@ -33,7 +33,7 @@ const TemplateWrapper = ({ children }) => (
 // NOTE: tailwindだとなぜかwidth: 100%が適用されないのでstyled componentで代用
 const Children = styled.div`
   width: 100%;
-  margin-left: 2.5rem;
+  margin-left: 4rem;
   max-width: 48rem;
 `
 
