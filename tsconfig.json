@@ -19,5 +19,6 @@
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "src/pages/contact/examples.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "strict": true
 }

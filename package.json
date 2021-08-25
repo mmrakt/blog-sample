@@ -5,7 +5,7 @@
   "author": "Austin Green",
   "scripts": {
     "clean": "gatsby clean",
-    "dev": "gatsby develop",
+    "dev": "gatsby clean && gatsby develop",
     "start": "npm run develop",
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
@@ -13,9 +13,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js,.ts,.jsx,.tsx ./src",
     "lint:fix": "eslint --fix --ext .js,.ts,.jsx,.tsx ./src",
-    "prettier:watch": "onchange '**/*.{ts,tsx,js}' -- prettier --config ./.prettierrc --write {{changed}}"
+    "prettier:watch": "onchange '**/*.{ts,tsx,js}' -- prettier --config ./.prettierrc --write {{changed}}",
+    "prepare": "husky install"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@headlessui/react": "^1.0.0",
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
@@ -24,10 +29,13 @@
     "autoprefixer": "^10.2.5",
     "bulma": "^0.9.0",
     "classnames": "^2.3.1",
+    "contentful-management": "^7.31.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.20.35",
+    "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-image": "^3.2.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
+    "gatsby-plugin-fontawesome-css": "^1.1.0",
     "gatsby-plugin-image": "^1.2.1",
     "gatsby-plugin-postcss": "^4.2.0",
     "gatsby-plugin-prettier-eslint": "^1.0.4",
@@ -36,28 +44,32 @@
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.2.4",
     "gatsby-plugin-sharp": "^2.5.7",
+    "gatsby-plugin-typegen": "^2.2.4",
     "gatsby-plugin-typescript": "^3.2.0",
+    "gatsby-remark-code-titles": "^1.1.0",
     "gatsby-remark-copy-linked-files": "^2.2.4",
     "gatsby-remark-images": "^3.2.6",
-    "gatsby-remark-relative-images": "^0.3.0",
+    "gatsby-remark-prismjs": "^5.8.0",
+    "gatsby-remark-relative-images": "^2.0.2",
+    "gatsby-source-contentful": "4.6.3",
     "gatsby-source-filesystem": "^2.2.5",
     "gatsby-source-graphcms": "^2.5.0-next.3",
     "gatsby-source-graphql": "^3.2.0",
     "gatsby-transformer-remark": "^2.7.5",
     "gatsby-transformer-sharp": "^2.4.7",
-    "husky": "^4.3.6",
-    "lint-staged": "^10.5.3",
     "lodash": "^4.17.15",
     "lodash-webpack-plugin": "^0.11.4",
     "material-ui-popup-state": "^1.8.2",
     "node-sass": "^4.14.0",
     "onchange": "^7.1.0",
     "postcss": "^8.2.9",
+    "prismjs": "^1.24.1",
     "prop-types": "^15.6.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^6.0.0",
     "react-responsive": "^8.2.0",
+    "styled-components": "^5.3.0",
     "tailwindcss": "^2.0.4",
     "typescript": "^4.2.3",
     "uuid": "^7.0.0"
@@ -84,11 +96,18 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-webpack-plugin": "^2.5.3",
     "gatsby-plugin-eslint": "^3.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1"
   },
   "moduleDirectories": [
     "node_modules",
     "src"
-  ]
+  ],
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --ext .js,.ts,.jsx,.tsx ./src"
+    ]
+  }
 }

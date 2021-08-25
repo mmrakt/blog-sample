@@ -19,3 +19,50 @@ ul {
 
 @tailwind components;
 @tailwind utilities;
+
+pre[class*='language-'] {
+  background-color: #1c1b1b;
+  display: block;
+  margin: 0 0 20px;
+  padding-right: 1rem;
+  padding-left: 2rem;
+  border-radius: 0 4px 4px 4px;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: #fff;
+}
+
+:not(pre) > code[class*='language-text'] {
+  padding: 2px 10px 3px 12px;
+  margin: 0;
+  color: #f14668;
+  text-shadow: none;
+  background-color: whitesmoke;
+}
+
+.gatsby-highlight {
+  background: #545454;
+  display: block;
+  margin-bottom: 1rem;
+  width: 600px;
+}
+
+.gatsby-code-title {
+  margin-top: 1rem;
+  margin-bottom: -0.6rem;
+  padding: 0.5em 1em;
+  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+    monospace;
+
+  background-color: black;
+  color: white;
+  z-index: 0;
+
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+  width: 600px;
+}
