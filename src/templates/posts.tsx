@@ -13,7 +13,7 @@ const PostsTemplate = ({ data, pageContext }) => {
           <p className="mb-3">{node.date}</p>
 
           <div className="text-lg font-bold mb-3">
-            <Link to={node.slug}>
+            <Link to={`/${node.slug}`}>
               <span className="hover:text-gray-400">{node.title}</span>
             </Link>
           </div>
@@ -34,7 +34,7 @@ const PostsTemplate = ({ data, pageContext }) => {
           </div>
           <div className="flex">
             <div className="underline ml-auto ">
-              <Link to={node.slug}>
+              <Link to={`/${node.slug}`}>
                 <span className="hover:text-gray-400 cursor-pointer">
                   続きを読む
                 </span>
