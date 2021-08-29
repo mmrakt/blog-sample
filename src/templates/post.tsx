@@ -51,8 +51,8 @@ const PostTemplate = ({ data }) => {
 }
 
 export const pageQuery = graphql`
-  query Post($id: String!) {
-    contentfulPost(id: { eq: $id }) {
+  query Post($slug: String!) {
+    contentfulPost(slug: { eq: $slug }) {
       content {
         childMarkdownRemark {
           html
