@@ -3,14 +3,20 @@ import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import Head from '../components/Head'
 
-const PostTemplate = ({ data }) => {
+const PostTemplate = ({ data, location }) => {
   const { contentfulPost } = data
   const image = getImage(contentfulPost.coverImage)
   const PostContent = HTMLContent || Content
 
   return (
     <Layout>
+      <Head
+        pageTitle={contentfulPost.title}
+        pageDescription={contentfulPost.excerpt.excerpt}
+        pageUrl={location.pathname}
+      />
       <section className="bg-white p-10">
         <div className="">
           <p className="text-sm">
@@ -67,6 +73,9 @@ export const pageQuery = graphql`
       }
       coverImage {
         gatsbyImageData
+      }
+      excerpt {
+        excerpt
       }
     }
   }

@@ -2,12 +2,14 @@ import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
+import Head from '../components/Head'
 
 const PostsTemplate = ({ data, pageContext }) => {
   const { nodes } = data.allContentfulPost
 
   return (
     <Layout>
+      <Head />
       {nodes.map((node) => (
         <div key={node.id} className="mb-5 p-5  bg-white text-sm">
           <p className="mb-3">{node.date}</p>

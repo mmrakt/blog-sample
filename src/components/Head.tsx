@@ -3,13 +3,37 @@ import { Helmet } from 'react-helmet'
 import { withPrefix } from 'gatsby'
 import useSiteMetadata from './SiteMetadata'
 
-const Head = () => {
-  const { title, description } = useSiteMetadata()
+type IProps = {
+  pageTitle?: string
+  pageDescription?: string
+  pageUrl?: string
+}
+
+const Head: React.VFC<IProps> = ({ pageTitle, pageDescription, pageUrl }) => {
+  const siteMetadata = useSiteMetadata()
+
+  const title = pageTitle
+    ? `${pageTitle} | ${siteMetadata.title}`
+    : siteMetadata.title
+
+  const description = pageDescription || siteMetadata.description
+
+  const siteUrl = pageUrl
+    ? `${siteMetadata.siteUrl}${pageUrl}`
+    : siteMetadata.siteUrl
+
+  // const imgurl = pageimg
+  //   ? `${siteMetadata.siteUrl}${pageimg}`
+  //   : blogimg || `${siteMetadata.siteUrl}/thumb.jpg`
+  // const imgw = pageimgw || 1280
+  // const imgh = props.pageimgh || 640
+
   return (
     <Helmet>
       <html lang="en" />
       <title>{title}</title>
       <meta name="description" content={description} />
+      <link rel="canonical" href={siteUrl} />
 
       <link
         rel="apple-touch-icon"
@@ -18,15 +42,8 @@ const Head = () => {
       />
       <link
         rel="icon"
-        type="image/png"
-        href={`${withPrefix('/')}img/IMG_2149.png`}
-        sizes="32x32"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        href={`${withPrefix('/')}img/IMG_2149.png`}
-        sizes="16x16"
+        href={`${withPrefix('/')}img/favicon.svg`}
+        type="image/svg+xml"
       />
 
       <link
