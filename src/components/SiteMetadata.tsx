@@ -9,6 +9,8 @@ const useSiteMetadata = () => {
             title
             description
             siteUrl
+            lang
+            locale
           }
         }
       }
