@@ -3,42 +3,61 @@ import { Helmet } from 'react-helmet'
 import { withPrefix } from 'gatsby'
 import useSiteMetadata from './SiteMetadata'
 
-const Head = () => {
-  const { title, description } = useSiteMetadata()
+type IProps = {
+  pageTitle?: string
+  pageDescription?: string
+  pageUrl?: string
+  pageImage?: string
+  pageImageWidth?: string
+  pageImageHeight?: string
+}
+
+const Head: React.VFC<IProps> = ({
+  pageTitle,
+  pageDescription,
+  pageUrl,
+  pageImage,
+  pageImageWidth,
+  pageImageHeight,
+}) => {
+  const siteMetadata = useSiteMetadata()
+
+  const title = pageTitle
+    ? `${pageTitle} | ${siteMetadata.title}`
+    : siteMetadata.title
+
+  const description = pageDescription || siteMetadata.description
+
+  const siteUrl = pageUrl
+    ? `${siteMetadata.siteUrl}${pageUrl}`
+    : siteMetadata.siteUrl
+
+  const imageUrl = pageImage
+    ? `${siteMetadata.siteUrl}${pageImage}`
+    : `${siteMetadata.siteUrl}/thumb.png`
+  const imageWidth = pageImageWidth || '1280'
+  const imageHeight = pageImageHeight || '640'
+
   return (
     <Helmet>
       <html lang="en" />
       <title>{title}</title>
       <meta name="description" content={description} />
-
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href={`${withPrefix('/')}img/apple-touch-icon.png`}
-      />
+      <link rel="canonical" href={siteUrl} />
       <link
         rel="icon"
-        type="image/png"
-        href={`${withPrefix('/')}img/IMG_2149.png`}
-        sizes="32x32"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        href={`${withPrefix('/')}img/IMG_2149.png`}
-        sizes="16x16"
-      />
-
-      <link
-        rel="mask-icon"
-        href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
-        color="#ff4400"
+        href={`${withPrefix('/')}img/favicon.svg`}
+        type="image/svg+xml"
       />
       <meta name="theme-color" content="#fff" />
-
       <meta property="og:type" content="business.business" />
       <meta property="og:title" content={title} />
-      <meta property="og:url" content="/" />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={siteUrl} />
+      <meta property="og:locale" content={siteMetadata.locale} />
+      <meta property="og:image" content={imageUrl} />
+      <meta property="og:image.width" content={imageWidth} />
+      <meta property="og:image.height" content={imageHeight} />
       <meta
         property="og:image"
         content={`${withPrefix('/')}img/og-image.jpg`}

@@ -7,7 +7,7 @@ module.exports = {
     title: 'mimu memo',
     description: '文系卒底辺エンジニアの成長記録',
     lang: 'ja',
-    // siteUrl: '',
+    siteUrl: 'https://vercel.com/mmrakt/mimu-blog',
     locale: 'ja_JP',
   },
   plugins: [

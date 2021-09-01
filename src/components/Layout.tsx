@@ -1,14 +1,12 @@
 import React from 'react'
 import MediaQuery from 'react-responsive'
 import styled from 'styled-components'
-import Head from './Head'
 import Footer from './Footer'
 import Header from './Header'
 import SideBar from './SideBar'
 
 const TemplateWrapper = ({ children }) => (
   <div>
-    <Head />
     <Header />
     <main className="bg-gray-100 py-10">
       <MediaQuery query="(max-width: 980px)">
