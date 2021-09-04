@@ -35,7 +35,7 @@ const Tags = () => {
                 (postGroupByTag) =>
                   node.slug === postGroupByTag.fieldValue && (
                     <Link to={`/tag/${node.slug}`} key={node.slug}>
-                      <span className="mr-5 mb-3 text-sm bg-gray-300 underline hover:bg-gray-200">
+                      <span className="mr-5 mb-3 text-sm underline hover:text-gray-500">
                         #{node.title}({postGroupByTag.totalCount})
                       </span>
                     </Link>

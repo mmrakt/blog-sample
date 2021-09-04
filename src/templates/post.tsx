@@ -29,7 +29,7 @@ const PostTemplate = ({ data, location }) => {
             {contentfulPost.tags &&
               contentfulPost.tags.map((tag) => (
                 <Link to={`/tag/${tag.slug}`} key={tag.slug}>
-                  <span className="text-lg mb-3 mr-5 bg-gray-300 underline hover:bg-gray-200">
+                  <span className="text-lg mb-3 mr-5 underline hover:text-gray-500">
                     #{tag.title}
                   </span>
                 </Link>

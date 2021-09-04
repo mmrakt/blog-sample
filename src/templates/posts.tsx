@@ -16,14 +16,14 @@ const PostsTemplate = ({ data, pageContext }) => {
 
           <div className="text-lg font-bold mb-3">
             <Link to={`/${node.slug}`}>
-              <span className="hover:text-gray-400">{node.title}</span>
+              <span className="hover:text-gray-500">{node.title}</span>
             </Link>
           </div>
           <p className="flex flex-wrap mb-3">
             {node.tags &&
               node.tags.map((tag) => (
                 <Link to={`/tag/${tag.slug}`} key={tag.slug}>
-                  <span className="mr-5 mb-3 bg-gray-300 underline hover:bg-gray-200">
+                  <span className="mr-5 mb-3 underline hover:text-gray-500">
                     #{tag.title}
                   </span>
                 </Link>
