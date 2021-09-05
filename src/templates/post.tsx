@@ -9,10 +9,7 @@ const PostTemplate = ({ data, pageContext, location }) => {
   const { contentfulPost } = data
   const image = getImage(contentfulPost.coverImage)
   const PostContent = HTMLContent || Content
-
   const { prev, next } = pageContext
-
-  console.log(pageContext)
 
   return (
     <Layout>
