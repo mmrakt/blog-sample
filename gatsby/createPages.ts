@@ -16,6 +16,14 @@ exports.createPages = ({ actions, graphql }) => {
             slug
             id
           }
+          next {
+            slug
+            title
+          }
+          previous {
+            slug
+            title
+          }
         }
       }
       postsByTag: allContentfulPost {
@@ -62,12 +70,14 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
 
-    posts.forEach(({ node }) => {
+    posts.forEach((post) => {
       createPage({
-        path: node.slug,
+        path: post.node.slug,
         component: path.resolve('./src/templates/post.tsx'),
         context: {
-          slug: node.slug,
+          slug: post.node.slug,
+          next: post.next,
+          prev: post.previous,
         },
       })
     })

@@ -5,10 +5,14 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import Head from '../components/Head'
 
-const PostTemplate = ({ data, location }) => {
+const PostTemplate = ({ data, pageContext, location }) => {
   const { contentfulPost } = data
   const image = getImage(contentfulPost.coverImage)
   const PostContent = HTMLContent || Content
+
+  const { prev, next } = pageContext
+
+  console.log(pageContext)
 
   return (
     <Layout>
@@ -52,6 +56,35 @@ const PostTemplate = ({ data, location }) => {
           </div>
         </div>
       </section>
+      <div className="flex mt-10">
+        {prev && (
+          <p className="hover:text-gray-500">
+            <Link to={`/${prev.slug}`}>
+              <div className="flex">
+                <span className="">&lt;</span>
+                <div className="ml-2">
+                  <p className="class">prev</p>
+                  <p className="class">{prev.title}</p>
+                </div>
+              </div>
+            </Link>
+          </p>
+        )}
+        {/* <p className="ml-auto">新しい記事&nbsp;&gt;</p> */}
+        {next && (
+          <p className="ml-auto hover:text-gray-500">
+            <Link to={`/${next.slug}`}>
+              <div className="flex ml-auto">
+                <div className="ml-2">
+                  <p className="float-right">next</p>
+                  <p className="clear-right">{next.title}</p>
+                </div>
+                <span className="ml-2">&gt;</span>
+              </div>
+            </Link>
+          </p>
+        )}
+      </div>
     </Layout>
   )
 }
