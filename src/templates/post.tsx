@@ -67,7 +67,6 @@ const PostTemplate = ({ data, pageContext, location }) => {
             </Link>
           </p>
         )}
-        {/* <p className="ml-auto">新しい記事&nbsp;&gt;</p> */}
         {next && (
           <p className="ml-auto hover:text-gray-500">
             <Link to={`/${next.slug}`}>
