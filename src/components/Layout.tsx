@@ -9,13 +9,13 @@ const TemplateWrapper = ({ children }) => (
   <div>
     <Header />
     <main className="bg-gray-100 py-10">
-      <MediaQuery query="(max-width: 980px)">
+      <MediaQuery maxWidth={980}>
         <div className="py-5 px-3 mx-auto max-w-xl">
           {children}
           <SideBar />
         </div>
       </MediaQuery>
-      <MediaQuery query="(min-width: 981px)">
+      <MediaQuery minWidth={981}>
         <div className="flex max-w-6xl mx-auto">
           <div>
             <SideBar />

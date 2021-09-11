@@ -10,6 +10,9 @@ module.exports = {
       1280: '1280px',
       1536: '1536px',
     },
+    screens: {
+      pc: '980px',
+    },
   },
   variants: {
     extend: {

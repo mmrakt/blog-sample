@@ -18,25 +18,23 @@ const PostTemplate = ({ data, pageContext, location }) => {
         pageDescription={contentfulPost.excerpt.excerpt}
         pageUrl={location.pathname}
       />
-      <section className="bg-white p-10">
-        <div className="">
-          <p className="text-sm">
-            <span className="text-lg">{contentfulPost.date}</span>
-          </p>
-          <h1 className="text-3xl font-black mb-2 mt-0">
-            {contentfulPost.title}
-          </h1>
-          <p className="flex flex-wrap">
-            {contentfulPost.tags &&
-              contentfulPost.tags.map((tag) => (
-                <Link to={`/tag/${tag.slug}`} key={tag.slug}>
-                  <span className="text-lg mb-3 mr-5 underline hover:text-gray-500">
-                    #{tag.title}
-                  </span>
-                </Link>
-              ))}
-          </p>
-        </div>
+      <section className="bg-white p-5 pc:p-10 w-full">
+        <p className="text-sm">
+          <span className="text-lg">{contentfulPost.date}</span>
+        </p>
+        <h1 className="text-3xl font-black mb-2 mt-0">
+          {contentfulPost.title}
+        </h1>
+        <p className="flex flex-wrap">
+          {contentfulPost.tags &&
+            contentfulPost.tags.map((tag) => (
+              <Link to={`/tag/${tag.slug}`} key={tag.slug}>
+                <span className="text-lg mb-3 mr-5 underline hover:text-gray-500">
+                  #{tag.title}
+                </span>
+              </Link>
+            ))}
+        </p>
         {image && (
           <div className="mt-10">
             <GatsbyImage

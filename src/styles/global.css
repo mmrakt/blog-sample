@@ -46,7 +46,6 @@ pre[class*='language-'] {
   background: #545454;
   display: block;
   margin-bottom: 1rem;
-  width: 600px;
 }
 
 .gatsby-code-title {
