@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import Head from '../components/Head'
@@ -51,32 +53,25 @@ const PostTemplate = ({ data, pageContext, location }) => {
           </div>
         </div>
       </section>
-      <div className="flex mt-10">
+      <div className="mt-10 flex items-center">
         {prev && (
-          <p className="hover:text-gray-500">
-            <Link to={`/${prev.slug}`}>
-              <div className="flex">
-                <span className="">&lt;</span>
-                <div className="ml-2">
-                  <p className="class">prev</p>
-                  <p className="class">{prev.title}</p>
-                </div>
-              </div>
+          <div className="w-1/2">
+            <Link to={`/${prev.slug}`} className="flex items-center">
+              <ChevronLeftIcon />
+              <span>{prev.title}</span>
             </Link>
-          </p>
+          </div>
         )}
         {next && (
-          <p className="ml-auto hover:text-gray-500">
-            <Link to={`/${next.slug}`}>
-              <div className="flex ml-auto">
-                <div className="ml-2">
-                  <p className="float-right">next</p>
-                  <p className="clear-right">{next.title}</p>
-                </div>
-                <span className="ml-2">&gt;</span>
-              </div>
+          <div className="w-1/2">
+            <Link
+              to={`/${next.slug}`}
+              className="flex items-center float-right"
+            >
+              <span>{next.title}</span>
+              <ChevronRightIcon />
             </Link>
-          </p>
+          </div>
         )}
       </div>
     </Layout>

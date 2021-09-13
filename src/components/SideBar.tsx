@@ -14,8 +14,10 @@ const SideBar: React.VFC = () => (
 const Aside = styled.aside`
   padding: 1rem;
   background: white;
+  margin-top: 2.5rem;
   @media screen and (min-width: 981px) {
     width: 22rem;
+    margin-top: 0px;
   }
 `
 

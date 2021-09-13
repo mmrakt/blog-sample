@@ -1,15 +1,12 @@
 @tailwind base;
 h1 {
-  @apply text-2xl;
-  @apply mt-3;
+  @apply text-2xl pc:text-3xl mt-5 mb-3 font-black;
 }
 h2 {
-  @apply text-xl;
-  @apply mt-3;
+  @apply text-xl pc:text-2xl mt-5 mb-3 font-bold;
 }
 h3 {
-  @apply text-lg;
-  @apply mt-3;
+  @apply text-lg pc:text-xl mt-3 mb-2;
 }
 ol,
 ul {
