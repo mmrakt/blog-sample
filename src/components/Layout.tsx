@@ -8,7 +8,7 @@ import SideBar from './SideBar'
 const TemplateWrapper = ({ children }) => (
   <div>
     <Header />
-    <main className="bg-gray-100 py-10">
+    <main className="bg-gray-100 py-6 pc:py-10">
       <MediaQuery maxWidth={980}>
         <div className="py-5 px-3 mx-auto max-w-xl">
           {children}

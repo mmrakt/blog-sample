@@ -56,7 +56,7 @@ const PostTemplate = ({ data, pageContext, location }) => {
       <div className="mt-10 flex items-center">
         {prev && (
           <div className="w-1/2">
-            <Link to={`/${prev.slug}`} className="flex items-center">
+            <Link to={`/${prev.slug}`} className="flex items-center underline">
               <ChevronLeftIcon />
               <span>{prev.title}</span>
             </Link>
@@ -66,7 +66,7 @@ const PostTemplate = ({ data, pageContext, location }) => {
           <div className="w-1/2">
             <Link
               to={`/${next.slug}`}
-              className="flex items-center float-right"
+              className="flex items-center float-right underline"
             >
               <span>{next.title}</span>
               <ChevronRightIcon />

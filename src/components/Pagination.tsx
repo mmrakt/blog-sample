@@ -20,19 +20,19 @@ export const Pagination: React.VFC<IProps> = ({ pageContext }) => {
         <Link
           to={previousPagePath}
           rel="prev"
-          className="relative inline-flex px-2 py-2 border bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+          className="relative flex items-center pr-2 py-2 underline bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
         >
           <ChevronLeftIcon />
-          Previous
+          <span className="">Prev</span>
         </Link>
       )}
       {nextPagePath && (
         <Link
           to={nextPagePath}
           rel="next"
-          className="ml-auto relative inline-flex px-2 py-2 border bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+          className="ml-auto relative flex items-center pl-2 py-2 underline bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
         >
-          Next
+          <span>Next</span>
           <ChevronRightIcon />
         </Link>
       )}
