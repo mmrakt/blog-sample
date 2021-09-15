@@ -16,7 +16,7 @@ const Aside = styled.aside`
   background: white;
   margin-top: 2.5rem;
   @media screen and (min-width: 981px) {
-    width: 22rem;
+    width: 18rem;
     margin-top: 0px;
   }
 `
