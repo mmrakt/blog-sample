@@ -4,10 +4,10 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'mimu memo',
-    description: '文系卒底辺エンジニアの成長記録',
+    title: 'mimu-memo',
+    description: '平凡エンジニアの個人学習メモ',
     lang: 'ja',
-    siteUrl: 'https://vercel.com/mmrakt/mimu-blog',
+    siteUrl: 'https://mimu-memo.com',
     locale: 'ja_JP',
   },
   plugins: [
