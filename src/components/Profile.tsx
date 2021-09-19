@@ -6,7 +6,7 @@ import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
 const Profile: React.VFC = () => (
   <>
     <h3 className="font-black">Profile</h3>
-    <div className="flex mt-3">
+    <div className="flex mt-3 items-center">
       <StaticImage
         src="../../static/img/avatar.png"
         alt="mmrakt"
@@ -14,16 +14,12 @@ const Profile: React.VFC = () => (
         placeholder="blurred"
         width={80}
       />
-      <div className="ml-3">
+      <div className="ml-3 ">
         <p>@mmrakt</p>
-        <h4 className="font-black">mimu</h4>
+        <h4 className="font-black">みむ</h4>
       </div>
     </div>
-    <div className="description mt-3">
-      おしゃれな部屋に住みたい系webエンジニアです。
-      <br />
-      ひとり暮らしのライフハック募集してます。
-    </div>
+    <div className="description mt-3">大阪出身の文系エンジニアです</div>
     <div className="mt-3">
       <a href="https://github.com/mmrakt" target="_blank" rel="noreferrer">
         <FontAwesomeIcon size="2x" icon={faGithub} />

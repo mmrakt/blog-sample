@@ -1,14 +1,17 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import Head from '../components/Head'
 
-const PostTemplate = ({ data, location }) => {
+const PostTemplate = ({ data, pageContext, location }) => {
   const { contentfulPost } = data
   const image = getImage(contentfulPost.coverImage)
   const PostContent = HTMLContent || Content
+  const { prev, next } = pageContext
 
   return (
     <Layout>
@@ -17,25 +20,23 @@ const PostTemplate = ({ data, location }) => {
         pageDescription={contentfulPost.excerpt.excerpt}
         pageUrl={location.pathname}
       />
-      <section className="bg-white p-10">
-        <div className="">
-          <p className="text-sm">
-            <span className="text-lg">{contentfulPost.date}</span>
-          </p>
-          <h1 className="text-3xl font-black mb-2 mt-0">
-            {contentfulPost.title}
-          </h1>
-          <p className="flex flex-wrap">
-            {contentfulPost.tags &&
-              contentfulPost.tags.map((tag) => (
-                <Link to={`/tag/${tag.slug}`} key={tag.slug}>
-                  <span className="text-lg mb-3 mr-5 bg-gray-300 underline hover:bg-gray-200">
-                    #{tag.title}
-                  </span>
-                </Link>
-              ))}
-          </p>
-        </div>
+      <section className="bg-white p-5 pc:p-10 w-full">
+        <p className="text-sm">
+          <span className="text-lg">{contentfulPost.date}</span>
+        </p>
+        <h1 className="text-3xl font-black mb-2 mt-0">
+          {contentfulPost.title}
+        </h1>
+        <p className="flex flex-wrap">
+          {contentfulPost.tags &&
+            contentfulPost.tags.map((tag) => (
+              <Link to={`/tag/${tag.slug}`} key={tag.slug}>
+                <span className="text-lg mb-3 mr-5 underline hover:text-gray-500">
+                  #{tag.title}
+                </span>
+              </Link>
+            ))}
+        </p>
         {image && (
           <div className="mt-10">
             <GatsbyImage
@@ -52,6 +53,27 @@ const PostTemplate = ({ data, location }) => {
           </div>
         </div>
       </section>
+      <div className="mt-10 flex items-center">
+        {prev && (
+          <div className="w-1/2">
+            <Link to={`/${prev.slug}`} className="flex items-center underline">
+              <ChevronLeftIcon />
+              <span>{prev.title}</span>
+            </Link>
+          </div>
+        )}
+        {next && (
+          <div className="w-1/2">
+            <Link
+              to={`/${next.slug}`}
+              className="flex items-center float-right underline"
+            >
+              <span>{next.title}</span>
+              <ChevronRightIcon />
+            </Link>
+          </div>
+        )}
+      </div>
     </Layout>
   )
 }
