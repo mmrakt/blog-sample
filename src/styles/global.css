@@ -1,12 +1,12 @@
 @tailwind base;
 h1 {
-  @apply text-2xl pc:text-3xl mt-5 mb-3 font-black;
+  @apply mb-3 mt-5 text-2xl pc:text-3xl font-black;
 }
 h2 {
-  @apply text-xl pc:text-2xl mt-5 mb-3 font-bold;
+  @apply mb-3 mt-5 pc:text-2xl text-xl font-bold;
 }
 h3 {
-  @apply text-lg pc:text-xl mt-3 mb-2;
+  @apply mb-2 mt-3 text-lg pc:text-xl;
 }
 ol,
 ul {
@@ -61,4 +61,11 @@ pre[class*='language-'] {
   border-top-left-radius: 0.3em;
   border-top-right-radius: 0.3em;
   width: 600px;
+}
+
+/* NOTE: ダークモードで上書きする方法がわからず暫定対応 */
+@media (prefers-color-scheme: light) {
+  .box-outline {
+    @apply border-2 border-solid rounded-md;
+  }
 }

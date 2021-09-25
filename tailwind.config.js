@@ -1,8 +1,15 @@
 module.exports = {
   purge: [],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media',
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        dark: {
+          black: '#121212',
+          gray: '#1E1E1E',
+        },
+      },
+    },
     screens: {
       pc: '980px',
     },

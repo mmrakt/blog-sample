@@ -3,9 +3,9 @@ import { Link, withPrefix, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 const Header: React.VFC = () => {
-  const { site } = useStaticQuery<GatsbyTypes.SiteMetaQueryQuery>(
+  const { site } = useStaticQuery<GatsbyTypes.SiteDescriptionQuery>(
     graphql`
-      query SiteDescriptionQuery {
+      query SiteDescription {
         site {
           siteMetadata {
             description
@@ -16,13 +16,13 @@ const Header: React.VFC = () => {
   )
 
   return (
-    <div className="bg-gray-800">
+    <div className="dark:bg-dark-black bg-gray-800">
       <div className="items-center shadow-md">
-        <div className="text-white p-4 text-center">
+        <div className="p-4 text-center text-white">
           <Link to="/" className="navbar-item" title="Logo">
             <Img src={`${withPrefix('/')}img/logo.png`} alt="logo" />
           </Link>
-          <p className="text-white text-sm mt-2">
+          <p className="mt-2 text-white text-sm">
             {site.siteMetadata.description}
           </p>
         </div>

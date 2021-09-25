@@ -20,18 +20,18 @@ const PostTemplate = ({ data, pageContext, location }) => {
         pageDescription={contentfulPost.excerpt.excerpt}
         pageUrl={location.pathname}
       />
-      <section className="bg-white p-5 pc:p-10 w-full">
+      <section className="box-outline pc:p-10 p-5 w-full dark:bg-dark-gray bg-white">
         <p className="text-sm">
           <span className="text-lg">{contentfulPost.date}</span>
         </p>
-        <h1 className="text-3xl font-black mb-2 mt-0">
+        <h1 className="mb-2 mt-0 text-3xl font-black">
           {contentfulPost.title}
         </h1>
         <p className="flex flex-wrap">
           {contentfulPost.tags &&
             contentfulPost.tags.map((tag) => (
               <Link to={`/tag/${tag.slug}`} key={tag.slug}>
-                <span className="text-lg mb-3 mr-5 underline hover:text-gray-500">
+                <span className="mb-3 mr-5 hover:text-gray-500 underline text-lg">
                   #{tag.title}
                 </span>
               </Link>
@@ -53,7 +53,7 @@ const PostTemplate = ({ data, pageContext, location }) => {
           </div>
         </div>
       </section>
-      <div className="mt-10 flex items-center">
+      <div className="flex items-center mt-10">
         {prev && (
           <div className="w-1/2">
             <Link to={`/${prev.slug}`} className="flex items-center underline">

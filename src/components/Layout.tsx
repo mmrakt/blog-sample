@@ -1,38 +1,30 @@
 import React from 'react'
 import MediaQuery from 'react-responsive'
-import styled from 'styled-components'
 import Footer from './Footer'
 import Header from './Header'
 import SideBar from './SideBar'
 
 const TemplateWrapper = ({ children }) => (
-  <div>
+  <div className="dark:text-white">
     <Header />
-    <main className="bg-gray-100 py-6 pc:py-10">
+    <main className="pc:py-10 py-6 dark:bg-dark-black bg-gray-100">
       <MediaQuery maxWidth={980}>
-        <div className="py-5 px-3 mx-auto max-w-xl">
+        <div className="mx-auto px-3 py-5 max-w-xl">
           {children}
           <SideBar />
         </div>
       </MediaQuery>
       <MediaQuery minWidth={981}>
-        <div className="flex max-w-6xl mx-auto">
+        <div className="flex mx-auto max-w-6xl">
           <div>
             <SideBar />
           </div>
-          <Children>{children}</Children>
+          <div className="ml-16 w-full max-w-3xl">{children}</div>
         </div>
       </MediaQuery>
     </main>
     <Footer />
   </div>
 )
-
-// NOTE: tailwindだとなぜかwidth: 100%が適用されないのでstyled componentで代用
-const Children = styled.div`
-  width: 100%;
-  margin-left: 4rem;
-  max-width: 48rem;
-`
 
 export default TemplateWrapper
