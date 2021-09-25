@@ -25,7 +25,7 @@ const Tags = () => {
 
   return (
     <>
-      <h3 className="font-black mt-6">Tags</h3>
+      <h3 className="mt-6 font-black">Tags</h3>
       <div className="flex flex-wrap mt-2">
         {tags &&
           tags.edges.map(
@@ -35,7 +35,7 @@ const Tags = () => {
                 (postGroupByTag) =>
                   node.slug === postGroupByTag.fieldValue && (
                     <Link to={`/tag/${node.slug}`} key={node.slug}>
-                      <span className="mr-5 mb-3 text-sm underline hover:text-gray-500">
+                      <span className="text-link mb-3 mr-5 underline text-sm">
                         #{node.title}({postGroupByTag.totalCount})
                       </span>
                     </Link>

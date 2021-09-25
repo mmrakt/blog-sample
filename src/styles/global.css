@@ -68,4 +68,14 @@ pre[class*='language-'] {
   .box-outline {
     @apply border-2 border-solid rounded-md;
   }
+
+  .text-link:hover {
+    @apply text-gray-500;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .text-link:hover {
+    @apply text-gray-400;
+  }
 }

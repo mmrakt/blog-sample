@@ -30,14 +30,14 @@ const PostList: React.VFC<IProps> = ({ posts }) => (
           <p className="mb-3">{node.date}</p>
           <div className="mb-3 text-lg font-bold">
             <Link to={`/${node.slug}`}>
-              <span className="hover:text-gray-500">{node.title}</span>
+              <span className="text-link">{node.title}</span>
             </Link>
           </div>
           <p className="flex flex-wrap mb-3">
             {node.tags &&
               node.tags.map((tag) => (
                 <Link to={`/tag/${tag.slug}`} key={tag.slug}>
-                  <span className="mb-3 mr-5 hover:text-gray-500 underline">
+                  <span className="text-link mb-3 mr-5 underline">
                     #{tag.title}
                   </span>
                 </Link>
@@ -49,9 +49,9 @@ const PostList: React.VFC<IProps> = ({ posts }) => (
               : node.excerpt.excerpt}
           </div>
           <div className="flex">
-            <div className="ml-auto underline">
+            <div className="ml-auto">
               <Link to={`/${node.slug}`}>
-                <span className="hover:text-gray-400 cursor-pointer">
+                <span className="text-link underline cursor-pointer">
                   続きを読む
                 </span>
               </Link>
