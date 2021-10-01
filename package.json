@@ -10,11 +10,12 @@
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --ext .js,.ts,.jsx,.tsx ./src",
     "lint:fix": "eslint --fix --ext .js,.ts,.jsx,.tsx ./src",
     "prettier:watch": "onchange '**/*.{ts,tsx,js}' -- prettier --config ./.prettierrc --write {{changed}}",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest",
+    "test:w": "jest --watch"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -79,8 +80,17 @@
   "license": "MIT",
   "main": "n/a",
   "devDependencies": {
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.1",
+    "@types/jest": "^27.0.2",
+    "@types/react-test-renderer": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^4.14.1",
     "@typescript-eslint/parser": "^4.20.0",
+    "babel-jest": "^27.2.4",
+    "babel-preset-gatsby": "^1.14.0",
     "eslint": "^7.23.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.1.0",
@@ -96,9 +106,13 @@
     "eslint-webpack-plugin": "^2.5.3",
     "gatsby-plugin-eslint": "^3.0.0",
     "husky": "^7.0.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.2.4",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.1",
     "prettier-plugin-tailwind": "^2.2.12",
+    "react-test-renderer": "^17.0.2",
+    "ts-jest": "^27.0.5",
     "ts-node": "^9.1.1"
   },
   "moduleDirectories": [
