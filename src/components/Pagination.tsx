@@ -20,7 +20,7 @@ export const Pagination: React.VFC<IProps> = ({ pageContext }) => {
         <Link
           to={previousPagePath}
           rel="prev"
-          className="flex items-center pr-2 py-2 text-gray-500 underline text-sm font-medium hover:bg-gray-50 bg-white border-2 border-solid"
+          className="box-outline text-link flex items-center pr-2 py-2 dark:text-white underline text-sm font-medium dark:bg-dark-gray bg-white"
         >
           <ChevronLeftIcon />
           <span className="">Prev</span>
@@ -30,7 +30,7 @@ export const Pagination: React.VFC<IProps> = ({ pageContext }) => {
         <Link
           to={nextPagePath}
           rel="next"
-          className="flex items-center ml-auto pl-2 py-2 text-gray-500 underline text-sm font-medium hover:bg-gray-50 bg-white border-2 border-solid"
+          className="box-outline text-link flex items-center ml-auto pl-2 py-2 dark:text-white underline text-sm font-medium dark:bg-dark-gray bg-white"
         >
           <span>Next</span>
           <ChevronRightIcon />

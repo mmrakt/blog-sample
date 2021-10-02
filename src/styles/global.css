@@ -17,55 +17,168 @@ ul {
 @tailwind components;
 @tailwind utilities;
 
-pre[class*='language-'] {
-  background-color: #1c1b1b;
-  display: block;
-  margin: 0 0 20px;
-  padding-right: 1rem;
-  padding-left: 2rem;
-  border-radius: 0 4px 4px 4px;
-}
+/**
+ * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/chriskempson/tomorrow-theme
+ * @author Rose Pritchard
+ */
 
 code[class*='language-'],
 pre[class*='language-'] {
-  color: #fff;
+  color: #ccc;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
-:not(pre) > code[class*='language-text'] {
-  padding: 2px 10px 3px 12px;
-  margin: 0;
-  color: #f14668;
-  text-shadow: none;
-  background-color: whitesmoke;
+/* Code blocks */
+pre[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+  background: #2d2d2d;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em 0.2em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999;
+}
+
+.token.punctuation {
+  color: #ccc;
+}
+
+.token.tag,
+.token.attr-name,
+.token.namespace,
+.token.deleted {
+  color: #e2777a;
+}
+
+.token.function-name {
+  color: #6196cc;
+}
+
+.token.boolean,
+.token.number,
+.token.function {
+  color: #f08d49;
+}
+
+.token.property,
+.token.class-name,
+.token.constant,
+.token.symbol {
+  color: #f8c555;
+}
+
+.token.selector,
+.token.important,
+.token.atrule,
+.token.keyword,
+.token.builtin {
+  color: #cc99cd;
+}
+
+.token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
+.token.variable {
+  color: #7ec699;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #67cdcc;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.inserted {
+  color: green;
+}
+
+/* end prismjs */
+
+pre.language-text {
+  @apply block bg-gray-200 rounded;
+}
+
+:not(pre) > code.language-text {
+  @apply m-0 text-black bg-gray-200;
 }
 
 .gatsby-highlight {
-  background: #545454;
-  display: block;
-  margin-bottom: 1rem;
+  @apply block mb-4 bg-black;
 }
 
 .gatsby-code-title {
-  margin-top: 1rem;
-  margin-bottom: -0.6rem;
-  padding: 0.5em 1em;
-  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
-    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
-    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
-    monospace;
-
-  background-color: black;
-  color: white;
-  z-index: 0;
-
-  border-top-left-radius: 0.3em;
-  border-top-right-radius: 0.3em;
   width: 600px;
+  @apply z-0 -mb-2 mt-4 px-4 py-2 text-white font-mono font-sans font-serif bg-black;
 }
 
 /* NOTE: ダークモードで上書きする方法がわからず暫定対応 */
 @media (prefers-color-scheme: light) {
   .box-outline {
     @apply border-2 border-solid rounded-md;
+  }
+
+  .text-link:hover {
+    @apply text-gray-500;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .text-link:hover {
+    @apply text-gray-400;
+  }
+
+  pre.language-text {
+    background: #2d2d2d;
+  }
+
+  :not(pre) > code.language-text {
+    background: #3c3c3c;
+    @apply m-0 text-white;
   }
 }

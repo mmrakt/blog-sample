@@ -31,7 +31,7 @@ const PostTemplate = ({ data, pageContext, location }) => {
           {contentfulPost.tags &&
             contentfulPost.tags.map((tag) => (
               <Link to={`/tag/${tag.slug}`} key={tag.slug}>
-                <span className="mb-3 mr-5 hover:text-gray-500 underline text-lg">
+                <span className="text-link mb-3 mr-5 underline text-lg">
                   #{tag.title}
                 </span>
               </Link>
@@ -56,9 +56,11 @@ const PostTemplate = ({ data, pageContext, location }) => {
       <div className="flex items-center mt-10">
         {prev && (
           <div className="w-1/2">
-            <Link to={`/${prev.slug}`} className="flex items-center underline">
-              <ChevronLeftIcon />
-              <span>{prev.title}</span>
+            <Link to={`/${prev.slug}`} className="flex items-center">
+              <span className="text-link underline">
+                <ChevronLeftIcon />
+                {prev.title}
+              </span>
             </Link>
           </div>
         )}
@@ -66,10 +68,12 @@ const PostTemplate = ({ data, pageContext, location }) => {
           <div className="w-1/2">
             <Link
               to={`/${next.slug}`}
-              className="flex items-center float-right underline"
+              className="flex items-center float-right"
             >
-              <span>{next.title}</span>
-              <ChevronRightIcon />
+              <span className="text-link underline">
+                {next.title}
+                <ChevronRightIcon />
+              </span>
             </Link>
           </div>
         )}
