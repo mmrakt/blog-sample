@@ -10,6 +10,7 @@ type IProps = {
   pageImage?: string
   pageImageWidth?: string
   pageImageHeight?: string
+  pageType?: string
 }
 
 const Head: React.VFC<IProps> = ({
@@ -19,24 +20,22 @@ const Head: React.VFC<IProps> = ({
   pageImage,
   pageImageWidth,
   pageImageHeight,
+  pageType,
 }) => {
   const siteMetadata = useSiteMetadata()
 
-  const title = pageTitle
-    ? `${pageTitle} | ${siteMetadata.title}`
-    : siteMetadata.title
-
+  const { siteName } = siteMetadata
+  const title = pageTitle ? `${pageTitle} | ${siteName}` : siteName
   const description = pageDescription || siteMetadata.description
-
   const siteUrl = pageUrl
     ? `${siteMetadata.siteUrl}${pageUrl}`
     : siteMetadata.siteUrl
-
   const imageUrl = pageImage
     ? `${siteMetadata.siteUrl}${pageImage}`
     : `${siteMetadata.siteUrl}/thumb.png`
   const imageWidth = pageImageWidth || '1280'
   const imageHeight = pageImageHeight || '640'
+  const type = pageType || 'blog'
 
   return (
     <Helmet>
@@ -50,8 +49,9 @@ const Head: React.VFC<IProps> = ({
         type="image/svg+xml"
       />
       <meta name="theme-color" content="#fff" />
-      <meta property="og:type" content="business.business" />
       <meta property="og:title" content={title} />
+      <meta property="og:site_name" content={siteName} />
+      <meta property="og:type" content={type} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={siteUrl} />
       <meta property="og:locale" content={siteMetadata.locale} />

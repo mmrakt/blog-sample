@@ -19,6 +19,7 @@ const PostTemplate = ({ data, pageContext, location }) => {
         pageTitle={contentfulPost.title}
         pageDescription={contentfulPost.excerpt.excerpt}
         pageUrl={location.pathname}
+        pageType="article"
       />
       <section className="box-outline pc:p-10 p-5 w-full dark:bg-dark-gray bg-white">
         <p className="text-sm">

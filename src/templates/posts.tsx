@@ -6,13 +6,13 @@ import Head from '../components/Head'
 import PostList from '../components/PostList'
 
 // TODO: typegenで生成した型(GatsbyTypes.PostsQuery)を当てたいがreadonlyの制約エラーになるのを解消する
-const PostsTemplate = ({ data, pageContext }) => {
+const PostsTemplate = ({ data, pageContext, location }) => {
   const { nodes } = data.allContentfulPost
 
   return (
     <Layout>
-      <Head />
-      <div className="">
+      <Head pageUrl={location.pathname} />
+      <div>
         <PostList posts={nodes} />
         <Pagination pageContext={pageContext} />
       </div>
