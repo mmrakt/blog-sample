@@ -6,7 +6,7 @@ import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
 const Profile: React.VFC = () => (
   <>
     <h3 className="font-black">Profile</h3>
-    <div className="flex mt-3 items-center">
+    <div className="flex items-center mt-3">
       <StaticImage
         src="../../static/img/avatar.png"
         alt="mmrakt"
@@ -14,7 +14,7 @@ const Profile: React.VFC = () => (
         placeholder="blurred"
         width={80}
       />
-      <div className="ml-3 ">
+      <div className="ml-3">
         <p>@mmrakt</p>
         <h4 className="font-black">みむ</h4>
       </div>

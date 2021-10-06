@@ -32,7 +32,7 @@ const Head: React.VFC<IProps> = ({
     : siteMetadata.siteUrl
   const imageUrl = pageImage
     ? `${siteMetadata.siteUrl}${pageImage}`
-    : `${siteMetadata.siteUrl}/thumb.png`
+    : `${siteMetadata.siteUrl}/img/thumb.png`
   const imageWidth = pageImageWidth || '1280'
   const imageHeight = pageImageHeight || '640'
   const type = pageType || 'blog'
@@ -58,10 +58,6 @@ const Head: React.VFC<IProps> = ({
       <meta property="og:image" content={imageUrl} />
       <meta property="og:image.width" content={imageWidth} />
       <meta property="og:image.height" content={imageHeight} />
-      <meta
-        property="og:image"
-        content={`${withPrefix('/')}img/og-image.jpg`}
-      />
     </Helmet>
   )
 }
