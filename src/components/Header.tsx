@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, withPrefix, useStaticQuery, graphql } from 'gatsby'
-import styled from 'styled-components'
 
 const Header: React.VFC = () => {
   const { site } = useStaticQuery<GatsbyTypes.SiteDescriptionQuery>(
@@ -20,7 +19,13 @@ const Header: React.VFC = () => {
       <div className="items-center shadow-md">
         <div className="p-4 text-center text-white">
           <Link to="/" className="navbar-item" title="Logo">
-            <Img src={`${withPrefix('/')}img/logo.png`} alt="logo" />
+            <img
+              className="block m-auto w-max h-auto"
+              width="190"
+              height="30"
+              src={`${withPrefix('/')}img/logo.png`}
+              alt="logo"
+            />
           </Link>
           <p className="mt-2 text-white text-sm">
             {site.siteMetadata.description}
@@ -30,10 +35,5 @@ const Header: React.VFC = () => {
     </div>
   )
 }
-
-const Img = styled.img`
-  display: block;
-  margin: auto;
-`
 
 export default Header
