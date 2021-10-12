@@ -115,5 +115,12 @@ module.exports = {
     },
     'gatsby-plugin-typegen',
     'gatsby-plugin-fontawesome-css',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://mimu-memo.com',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
   ],
 }

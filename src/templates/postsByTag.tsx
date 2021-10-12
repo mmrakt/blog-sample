@@ -3,13 +3,15 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
 import PostList from '../components/PostList'
+import Head from '../components/Head'
 
-export const PostsByTagTemplate = ({ data, pageContext }) => {
+export const PostsByTagTemplate = ({ data, pageContext, location }) => {
   const { nodes } = data.posts
 
   return (
     <Layout>
-      <p className="text-center mb-7">
+      <Head pageUrl={location.pathname} />
+      <p className="mb-7 text-center">
         <b className="mr-2 text-lg">#{data.tags.edges[0].node.title}</b>
         の記事
       </p>
