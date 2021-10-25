@@ -1,4 +1,5 @@
 import React from 'react'
+import DOMPurify from 'dompurify'
 
 type IContent = {
   content: string
@@ -6,7 +7,10 @@ type IContent = {
 }
 
 export const HTMLContent: React.VFC<IContent> = ({ content, className }) => (
-  <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
+  <div
+    className="post-content"
+    dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(content) }}
+  />
 )
 
 const Content: React.VFC<IContent> = ({ content, className }) => (
