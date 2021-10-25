@@ -14,6 +14,10 @@ ul {
   @apply pl-6;
 }
 
+blockquote {
+  @apply border-l-[5px] my-3 p-4 text-gray-500 border-solid border-gray-300;
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -181,4 +185,8 @@ pre.language-text {
     background: #3c3c3c;
     @apply m-0 text-white;
   }
+}
+
+.post-content a {
+  @apply text-blue-600 underline;
 }
