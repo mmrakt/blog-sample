@@ -5775,6 +5775,7 @@ type SitePageFieldsEnum =
   | 'pluginCreator.pluginOptions.classPrefix'
   | 'pluginCreator.pluginOptions.showLineNumbers'
   | 'pluginCreator.pluginOptions.noInlineHighlight'
+  | 'pluginCreator.pluginOptions.target'
   | 'pluginCreator.pluginOptions.develop'
   | 'pluginCreator.pluginOptions.purgeOnly'
   | 'pluginCreator.pluginOptions.extensions'
@@ -5995,6 +5996,7 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.plugins.pluginOptions.classPrefix'
   | 'pluginOptions.plugins.pluginOptions.showLineNumbers'
   | 'pluginOptions.plugins.pluginOptions.noInlineHighlight'
+  | 'pluginOptions.plugins.pluginOptions.target'
   | 'pluginOptions.plugins.nodeAPIs'
   | 'pluginOptions.plugins.pluginFilepath'
   | 'pluginOptions.indentedSyntax'
@@ -6027,6 +6029,7 @@ type SitePluginFieldsEnum =
   | 'pluginOptions.classPrefix'
   | 'pluginOptions.showLineNumbers'
   | 'pluginOptions.noInlineHighlight'
+  | 'pluginOptions.target'
   | 'pluginOptions.develop'
   | 'pluginOptions.purgeOnly'
   | 'pluginOptions.extensions'
@@ -6189,6 +6192,7 @@ type SitePluginPluginOptions = {
   readonly classPrefix: Maybe<Scalars['String']>;
   readonly showLineNumbers: Maybe<Scalars['Boolean']>;
   readonly noInlineHighlight: Maybe<Scalars['Boolean']>;
+  readonly target: Maybe<Scalars['String']>;
   readonly develop: Maybe<Scalars['Boolean']>;
   readonly purgeOnly: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
   readonly extensions: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
@@ -6268,6 +6272,7 @@ type SitePluginPluginOptionsFilterInput = {
   readonly classPrefix: Maybe<StringQueryOperatorInput>;
   readonly showLineNumbers: Maybe<BooleanQueryOperatorInput>;
   readonly noInlineHighlight: Maybe<BooleanQueryOperatorInput>;
+  readonly target: Maybe<StringQueryOperatorInput>;
   readonly develop: Maybe<BooleanQueryOperatorInput>;
   readonly purgeOnly: Maybe<StringQueryOperatorInput>;
   readonly extensions: Maybe<StringQueryOperatorInput>;
@@ -6328,6 +6333,7 @@ type SitePluginPluginOptionsPluginsPluginOptions = {
   readonly classPrefix: Maybe<Scalars['String']>;
   readonly showLineNumbers: Maybe<Scalars['Boolean']>;
   readonly noInlineHighlight: Maybe<Scalars['Boolean']>;
+  readonly target: Maybe<Scalars['String']>;
 };
 
 type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
@@ -6343,6 +6349,7 @@ type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
   readonly classPrefix: Maybe<StringQueryOperatorInput>;
   readonly showLineNumbers: Maybe<BooleanQueryOperatorInput>;
   readonly noInlineHighlight: Maybe<BooleanQueryOperatorInput>;
+  readonly target: Maybe<StringQueryOperatorInput>;
 };
 
 type SitePluginPluginOptionsPolicy = {
@@ -6423,20 +6430,33 @@ type WebPOptions = {
   readonly quality: Maybe<Scalars['Int']>;
 };
 
-type SiteDescriptionQueryVariables = Exact<{ [key: string]: never; }>;
+type PostsQueryVariables = Exact<{
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+}>;
 
 
-type SiteDescriptionQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
+type PostsQuery = { readonly allContentfulPost: { readonly nodes: ReadonlyArray<(
+      Pick<ContentfulPost, 'date' | 'slug' | 'title'>
+      & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>> }
+    )> } };
 
 type SiteMetaQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SiteMetaQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteName' | 'description' | 'siteUrl' | 'lang' | 'locale' | 'type'>> }> };
 
-type TagsQueryVariables = Exact<{ [key: string]: never; }>;
+type PostsByTagQueryVariables = Exact<{
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  tagSlug: Maybe<Scalars['String']>;
+}>;
 
 
-type TagsQuery = { readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title' | 'slug'> }> }, readonly postsGroupByTag: { readonly group: ReadonlyArray<Pick<ContentfulPostGroupConnection, 'totalCount' | 'fieldValue'>> } };
+type PostsByTagQuery = { readonly posts: { readonly nodes: ReadonlyArray<(
+      Pick<ContentfulPost, 'date' | 'slug' | 'title'>
+      & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>> }
+    )> }, readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title'> }> } };
 
 type GatsbyContentfulFixedFragment = Pick<ContentfulFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -6477,17 +6497,6 @@ type GatsbyContentfulSizes_noBase64Fragment = Pick<ContentfulSizes, 'aspectRatio
 type GatsbyContentfulSizes_withWebpFragment = Pick<ContentfulSizes, 'base64' | 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
 type GatsbyContentfulSizes_withWebp_noBase64Fragment = Pick<ContentfulSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type PostsQueryVariables = Exact<{
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-}>;
-
-
-type PostsQuery = { readonly allContentfulPost: { readonly nodes: ReadonlyArray<(
-      Pick<ContentfulPost, 'date' | 'slug' | 'title'>
-      & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>> }
-    )> } };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -6539,17 +6548,10 @@ type GatsbyImageSharpSizes_noBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio
 
 type GatsbyImageSharpSizes_withWebp_noBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-type PostsByTagQueryVariables = Exact<{
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-  tagSlug: Maybe<Scalars['String']>;
-}>;
+type TagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type PostsByTagQuery = { readonly posts: { readonly nodes: ReadonlyArray<(
-      Pick<ContentfulPost, 'date' | 'slug' | 'title'>
-      & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>> }
-    )> }, readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title'> }> } };
+type TagsQuery = { readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title' | 'slug'> }> }, readonly postsGroupByTag: { readonly group: ReadonlyArray<Pick<ContentfulPostGroupConnection, 'totalCount' | 'fieldValue'>> } };
 
 type PostQueryVariables = Exact<{
   slug: Scalars['String'];
@@ -6561,9 +6563,9 @@ type PostQuery = { readonly contentfulPost: Maybe<(
     & { readonly content: Maybe<{ readonly childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>> }
   )> };
 
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type SiteDescriptionQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type PagesQueryQuery = { readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+type SiteDescriptionQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
 
 }
