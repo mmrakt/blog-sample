@@ -502,6 +502,25 @@ type SiteBuildMetadata_buildTimeArgs = {
   locale: Maybe<Scalars['String']>;
 };
 
+type GatsbyImageFormat =
+  | 'NO_CHANGE'
+  | 'auto'
+  | 'jpg'
+  | 'png'
+  | 'webp'
+  | 'avif';
+
+type GatsbyImageLayout =
+  | 'fixed'
+  | 'fullWidth'
+  | 'constrained';
+
+type GatsbyImagePlaceholder =
+  | 'dominantColor'
+  | 'tracedSVG'
+  | 'blurred'
+  | 'none';
+
 type ImageFormat =
   | 'NO_CHANGE'
   | 'AUTO'
@@ -7386,25 +7405,27 @@ type ContentfulContentTypeSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type SiteDescriptionQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteDescriptionQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
+
+type PostsByTagQueryVariables = Exact<{
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  tagSlug: Maybe<Scalars['String']>;
+}>;
+
+
+type PostsByTagQuery = { readonly posts: { readonly nodes: ReadonlyArray<(
+      Pick<ContentfulPost, 'date' | 'slug' | 'title'>
+      & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>> }
+    )> }, readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title'> }> } };
+
 type SiteMetaQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SiteMetaQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteName' | 'description' | 'siteUrl' | 'lang' | 'locale' | 'type'>> }> };
-
-type PostQueryVariables = Exact<{
-  slug: Scalars['String'];
-}>;
-
-
-type PostQuery = { readonly contentfulPost: Maybe<(
-    Pick<ContentfulPost, 'date' | 'slug' | 'title'>
-    & { readonly content: Maybe<{ readonly childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>> }
-  )> };
-
-type TagsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type TagsQuery = { readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title' | 'slug'> }> }, readonly postsGroupByTag: { readonly group: ReadonlyArray<Pick<ContentfulPostGroupConnection, 'totalCount' | 'fieldValue'>> } };
 
 type PostsQueryVariables = Exact<{
   skip: Maybe<Scalars['Int']>;
@@ -7416,11 +7437,6 @@ type PostsQuery = { readonly allContentfulPost: { readonly nodes: ReadonlyArray<
       Pick<ContentfulPost, 'date' | 'slug' | 'title'>
       & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>> }
     )> } };
-
-type SiteDescriptionQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SiteDescriptionQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -7472,6 +7488,21 @@ type GatsbyImageSharpSizes_noBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio
 
 type GatsbyImageSharpSizes_withWebp_noBase64Fragment = Pick<ImageSharpSizes, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
+type PostQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+type PostQuery = { readonly contentfulPost: Maybe<(
+    Pick<ContentfulPost, 'date' | 'slug' | 'title'>
+    & { readonly content: Maybe<{ readonly childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<Pick<ContentfulAsset, 'gatsbyImageData'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>> }
+  )> };
+
+type TagsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type TagsQuery = { readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title' | 'slug'> }> }, readonly postsGroupByTag: { readonly group: ReadonlyArray<Pick<ContentfulPostGroupConnection, 'totalCount' | 'fieldValue'>> } };
+
 type GatsbyContentfulFixedFragment = Pick<ContentfulFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
 type GatsbyContentfulFixed_tracedSVGFragment = Pick<ContentfulFixed, 'tracedSVG' | 'width' | 'height' | 'src' | 'srcSet'>;
@@ -7496,17 +7527,5 @@ type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
-
-type PostsByTagQueryVariables = Exact<{
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-  tagSlug: Maybe<Scalars['String']>;
-}>;
-
-
-type PostsByTagQuery = { readonly posts: { readonly nodes: ReadonlyArray<(
-      Pick<ContentfulPost, 'date' | 'slug' | 'title'>
-      & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>> }
-    )> }, readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title'> }> } };
 
 }
