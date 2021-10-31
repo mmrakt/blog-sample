@@ -1,5 +1,5 @@
-import React from 'react'
 import { Link, withPrefix, useStaticQuery, graphql } from 'gatsby'
+import React from 'react'
 
 const Header: React.VFC = () => {
   const { site } = useStaticQuery<GatsbyTypes.SiteDescriptionQuery>(

@@ -1,11 +1,12 @@
-import React from 'react'
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import { graphql, Link } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import ChevronRightIcon from '@material-ui/icons/ChevronRight'
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
-import Layout from '../components/Layout'
+import React from 'react'
+
 import Content from '../components/Content'
 import Head from '../components/Head'
+import Layout from '../components/Layout'
 
 const PostTemplate = ({ data, pageContext, location }) => {
   const { contentfulPost } = data

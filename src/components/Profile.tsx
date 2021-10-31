@@ -1,7 +1,7 @@
-import React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { StaticImage } from 'gatsby-plugin-image'
+import React from 'react'
 
 const Profile: React.VFC = () => (
   <>

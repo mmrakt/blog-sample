@@ -1,6 +1,7 @@
+import { withPrefix } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { withPrefix } from 'gatsby'
+
 import useSiteMetadata from './SiteMetadata'
 
 type IProps = {

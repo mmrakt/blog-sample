@@ -1,5 +1,6 @@
 import React from 'react'
 import MediaQuery from 'react-responsive'
+
 import Footer from './Footer'
 import Header from './Header'
 import SideBar from './SideBar'

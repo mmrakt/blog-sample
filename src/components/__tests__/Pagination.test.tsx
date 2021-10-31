@@ -1,5 +1,6 @@
 import * as React from 'react'
 import * as renderer from 'react-test-renderer'
+
 import Pagination from '../Pagination'
 
 it('renders correctly', () => {

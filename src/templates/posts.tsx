@@ -1,8 +1,9 @@
-import React from 'react'
 import { graphql } from 'gatsby'
+import React from 'react'
+
+import Head from '../components/Head'
 import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
-import Head from '../components/Head'
 import PostList from '../components/PostList'
 
 // TODO: typegenで生成した型(GatsbyTypes.PostsQuery)を当てたいがreadonlyの制約エラーになるのを解消する

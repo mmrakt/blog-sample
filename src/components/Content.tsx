@@ -1,6 +1,6 @@
-import React from 'react'
 import DOMPurify from 'dompurify'
 import marked from 'marked'
+import React from 'react'
 
 type IContent = {
   content: string

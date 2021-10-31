@@ -1,9 +1,10 @@
-import React from 'react'
 import { graphql } from 'gatsby'
+import React from 'react'
+
+import Head from '../components/Head'
 import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
 import PostList from '../components/PostList'
-import Head from '../components/Head'
 
 export const PostsByTagTemplate = ({ data, pageContext, location }) => {
   const { nodes } = data.posts

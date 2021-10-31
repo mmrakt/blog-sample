@@ -1,7 +1,8 @@
 import React from 'react'
 import MediaQuery from 'react-responsive'
-import Header from '../components/Header'
+
 import Footer from '../components/Footer'
+import Header from '../components/Header'
 
 const NotFoundPage = () => (
   <>
