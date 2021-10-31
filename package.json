@@ -15,7 +15,8 @@
     "prettier:watch": "onchange '**/*.{ts,tsx,js}' -- prettier --config ./.prettierrc --write {{changed}}",
     "prepare": "husky install",
     "test": "jest",
-    "test:w": "jest --watch"
+    "test:w": "jest --watch",
+    "test:c": "jest --clearCache"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -33,7 +34,7 @@
     "contentful-management": "^7.31.0",
     "dompurify": "^2.3.3",
     "dotenv": "^10.0.0",
-    "gatsby": "^3.13.1",
+    "gatsby": "^3.14.2",
     "gatsby-awesome-pagination": "^0.3.8",
     "gatsby-image": "^3.2.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
@@ -130,5 +131,9 @@
     "*.{js,jsx,ts,tsx}": [
       "eslint --ext .js,.ts,.jsx,.tsx ./src"
     ]
+  },
+  "resolutions": {
+    "graphql": "^15.4.0",
+    "graphql-compose": "^7.25.0"
   }
 }

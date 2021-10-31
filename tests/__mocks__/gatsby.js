@@ -1,9 +1,9 @@
 /* eslint-disable */
-import { jest } from '@jest/globals';
+import { jest } from '@jest/globals'
 
-const React = require('react');
+const React = require('react')
+const gatsby = jest.requireActual('gatsby')
 
-const gatsby = jest.requireActual('gatsby');
 module.exports = {
   ...gatsby,
   graphql: jest.fn(),
@@ -27,5 +27,18 @@ module.exports = {
         })
     ),
   StaticQuery: jest.fn(),
-  useStaticQuery: jest.fn(),
-};
+  useStaticQuery: jest.fn().mockImplementation(() => {
+    return {
+      site: {
+        siteMetadata: {
+          siteName: 'blog name',
+          description: 'blog description',
+          lang: 'ja',
+          siteUrl: 'https://blog-test.com/',
+          locale: 'ja_JP',
+          type: 'blog',
+        },
+      },
+    }
+  }),
+}

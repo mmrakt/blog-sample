@@ -9198,7 +9198,7 @@ gatsby-worker@^0.5.0:
     "@babel/core" "^7.15.5"
     "@babel/runtime" "^7.15.4"
 
-gatsby@^3.13.1:
+gatsby@^3.14.2:
   version "3.14.5"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-3.14.5.tgz#917dfa512f83ec3feddca2f68b236ab70eeb8df7"
   integrity sha512-j1Dvm6iIlUcfYXXNKZWULanOF7UI/01uRMbIBP10iqjJClv+ZbqnFnkwQKvFwLaC88h6jPcEIbR7kZFTqbfbZQ==
@@ -9757,7 +9757,7 @@ graceful-fs@^4.1.10, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0,
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz"
   integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
 
-graphql-compose@~7.25.0:
+graphql-compose@^7.25.0, graphql-compose@~7.25.0:
   version "7.25.1"
   resolved "https://registry.yarnpkg.com/graphql-compose/-/graphql-compose-7.25.1.tgz#9d89f72781931590d4dfca6a709f381f2f76b873"
   integrity sha512-TPXTe1BoQkMjp/MH93yA0SQo8PiXxJAv6Eo6K/+kpJELM9l2jZnd5PCduweuXFcKv+nH973wn/VYzYKDMQ9YoQ==

@@ -18,7 +18,7 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", "src/pages/contact/examples.tsx"],
+  "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "strict": true
 }
