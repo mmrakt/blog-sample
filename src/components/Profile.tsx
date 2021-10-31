@@ -1,7 +1,7 @@
-import React from 'react'
-import { StaticImage } from 'gatsby-plugin-image'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { StaticImage } from 'gatsby-plugin-image'
+import React from 'react'
 
 const Profile: React.VFC = () => (
   <>
@@ -16,10 +16,9 @@ const Profile: React.VFC = () => (
       />
       <div className="ml-3">
         <p>@mmrakt</p>
-        <h4 className="font-black">みむ</h4>
+        <h4 className="font-black">mimu</h4>
       </div>
     </div>
-    <div className="description mt-3">大阪出身の文系エンジニアです</div>
     <div className="mt-3">
       <a href="https://github.com/mmrakt" target="_blank" rel="noreferrer">
         <FontAwesomeIcon size="2x" icon={faGithub} />

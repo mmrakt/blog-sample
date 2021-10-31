@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import { Link } from 'gatsby'
+import React from 'react'
 
 type IProps = {
   pageContext: {

@@ -1,4 +1,5 @@
 import path from 'path'
+
 import { paginate } from 'gatsby-awesome-pagination'
 
 require('dotenv').config({
