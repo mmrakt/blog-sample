@@ -68,7 +68,7 @@
     "marked": "^3.0.8",
     "material-ui-popup-state": "^1.8.2",
     "onchange": "^7.1.0",
-    "postcss": "^8.2.9",
+    "postcss": "^8.3.11",
     "prismjs": "^1.24.1",
     "prop-types": "^15.6.0",
     "react": "^17.0.0",
