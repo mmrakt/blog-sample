@@ -7401,7 +7401,7 @@ gatsby-plugin-postcss@^4.2.0:
     "@babel/runtime" "^7.15.4"
     postcss-loader "^4.3.0"
 
-gatsby-plugin-prettier-eslint@^1.0.4:
+gatsby-plugin-prettier-eslint@^1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-prettier-eslint/-/gatsby-plugin-prettier-eslint-1.0.6.tgz#5672e5371cb3ceae089d152e665364d9fabb8977"
   integrity sha512-M9FCWizeGdB1U4Jcas8rvIa/jwKiJGK84C6hnRr6FKCsM66HlCL7qfverhi1GNISmuCToxCuvjbkKypzRkLuHA==
