@@ -32,7 +32,7 @@ const Head: React.VFC<IProps> = ({
     ? `${siteMetadata.siteUrl}${pageUrl}`
     : siteMetadata.siteUrl
   const imageUrl = pageImage
-    ? `${siteMetadata.siteUrl}${pageImage}`
+    ? `https:${pageImage}`
     : `${siteMetadata.siteUrl}/img/thumb.png`
   const imageWidth = pageImageWidth || '1280'
   const imageHeight = pageImageHeight || '640'
@@ -59,6 +59,11 @@ const Head: React.VFC<IProps> = ({
       <meta property="og:image" content={imageUrl} />
       <meta property="og:image.width" content={imageWidth} />
       <meta property="og:image.height" content={imageHeight} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content={process.env.TWITTER_ID} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={imageUrl} />
     </Helmet>
   )
 }

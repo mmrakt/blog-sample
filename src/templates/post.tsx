@@ -20,6 +20,7 @@ const PostTemplate = ({ data, pageContext, location }) => {
         pageDescription={contentfulPost.excerpt.excerpt}
         pageUrl={location.pathname}
         pageType="article"
+        pageImage={contentfulPost.coverImage?.file?.url}
       />
       <section className="box-outline pc:p-10 p-5 w-full dark:bg-dark-gray bg-white">
         <p className="text-sm">
@@ -100,6 +101,9 @@ export const pageQuery = graphql`
       }
       coverImage {
         gatsbyImageData
+        file {
+          url
+        }
       }
       excerpt {
         excerpt
