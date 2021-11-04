@@ -24,7 +24,7 @@ const Profile: React.VFC = () => (
         <FontAwesomeIcon size="2x" icon={faGithub} />
       </a>
       <a
-        href="https://twitter.com/mmrakt0716"
+        href={`https://twitter.com/${process.env.TWITTER_ID}`}
         className="ml-3"
         target="_blank"
         rel="noreferrer"
