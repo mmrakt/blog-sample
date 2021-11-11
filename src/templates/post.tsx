@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql, Link, PageProps } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
@@ -7,9 +7,13 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import Head from '../components/Head'
 
-const PostTemplate = ({ data, pageContext, location }) => {
+const PostTemplate: React.FC<PageProps<GatsbyTypes.PostQuery>> = ({
+  data,
+  pageContext,
+  location,
+}: any) => {
   const { contentfulPost } = data
-  const image = getImage(contentfulPost.coverImage)
+  const image = getImage(contentfulPost?.coverImage)
   const PostContent = HTMLContent || Content
   const { prev, next } = pageContext
 
