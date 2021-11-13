@@ -5,7 +5,7 @@ import Footer from './Footer'
 import Header from './Header'
 import SideBar from './SideBar'
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper: React.FC = ({ children }) => (
   <div className="dark:text-white">
     <Header />
     <main className="pc:py-10 py-6 dark:bg-dark-black bg-gray-100">
