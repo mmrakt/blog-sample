@@ -1,19 +1,23 @@
 import React from 'react'
 import { graphql, Link, PageProps } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import Head from '../components/Head'
+import { PageContextProps } from '../../types/gatsby-awesome-pagination'
+import CustomImage from '../components/CustomImage'
 
-const PostTemplate: React.FC<PageProps<GatsbyTypes.PostQuery>> = ({
-  data,
-  pageContext,
-  location,
-}: any) => {
+type IProps = {
+  data: {
+    contentfulPost: GatsbyTypes.PostQuery['contentfulPost']
+  }
+  pageContext: PageContextProps
+  location: PageProps['location']
+}
+
+const PostTemplate = ({ data, pageContext, location }: IProps) => {
   const { contentfulPost } = data
-  const image = getImage(contentfulPost?.coverImage)
   const PostContent = HTMLContent || Content
   const { prev, next } = pageContext
 
@@ -42,10 +46,10 @@ const PostTemplate: React.FC<PageProps<GatsbyTypes.PostQuery>> = ({
               </Link>
             ))}
         </p>
-        {image && (
+        {contentfulPost?.coverImage && (
           <div className="mt-10">
-            <GatsbyImage
-              image={image}
+            <CustomImage
+              image={contentfulPost?.coverImage}
               alt={`「${contentfulPost.title}」のカバー画像`}
             />
           </div>

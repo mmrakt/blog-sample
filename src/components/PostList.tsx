@@ -1,25 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-type IProps = {
-  posts: {
-    date: string
-    slug: string
-    title: string
-    content: {
-      content: string
-    }
-    excerpt: {
-      excerpt: string
-    }
-    tags: {
-      title: string
-      slug: string
-    }[]
-  }[]
-}
-
-const PostList: React.VFC<IProps> = ({ posts }) => (
+const PostList = ({
+  nodes: posts,
+}: Pick<GatsbyTypes.ContentfulPostConnection, 'nodes'>) => (
   <>
     {posts.map((node) => (
       <>
@@ -58,7 +42,6 @@ const PostList: React.VFC<IProps> = ({ posts }) => (
             </div>
           </div>
         </div>
-        {/* <hr className="border-gray-500" /> */}
       </>
     ))}
   </>

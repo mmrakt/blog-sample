@@ -93,7 +93,12 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-typegen',
+    {
+      resolve: 'gatsby-plugin-typegen',
+      options: {
+        outputPath: 'types/gatsby-types.d.ts',
+      },
+    },
     'gatsby-plugin-fontawesome-css',
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',

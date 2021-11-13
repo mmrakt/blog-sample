@@ -1,19 +1,21 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
 import Head from '../components/Head'
 import PostList from '../components/PostList'
 
-// TODO: typegenで生成した型(GatsbyTypes.PostsQuery)を当てたいがreadonlyの制約エラーになるのを解消する
-const PostsTemplate = ({ data, pageContext, location }) => {
-  const { nodes } = data.allContentfulPost
+type IProps = {
+  allContentfulPost: GatsbyTypes.ContentfulPostConnection
+}
+const PostsTemplate = ({ data, pageContext, location }: PageProps<IProps>) => {
+  const { nodes: posts } = data.allContentfulPost
 
   return (
     <Layout>
       <Head pageUrl={location.pathname} />
       <div>
-        <PostList posts={nodes} />
+        <PostList nodes={posts} />
         <Pagination pageContext={pageContext} />
       </div>
     </Layout>
