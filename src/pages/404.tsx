@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { VFC } from 'react'
 import MediaQuery from 'react-responsive'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
-const NotFoundPage = () => (
+const NotFoundPage: VFC = () => (
   <>
     <Header />
-    <main className="bg-gray-100 px-3 py-10">
-      <h1 className="text-3xl text-center">
+    <main className="px-3 py-10 bg-gray-100">
+      <h1 className="text-center text-3xl">
         お探しのページが見つかりませんでした
       </h1>
       <div className="mt-10 text-center text-lg">
