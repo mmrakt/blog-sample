@@ -4,7 +4,7 @@ import { graphql, Link, PageProps } from 'gatsby'
 import React from 'react'
 
 import { PageContextProps } from '../../types/gatsby-awesome-pagination'
-import Content, { HTMLContent } from '../components/Content'
+import Content from '../components/Content'
 import CustomImage from '../components/CustomImage'
 import Head from '../components/Head'
 import Layout from '../components/Layout'

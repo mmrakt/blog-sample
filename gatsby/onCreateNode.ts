@@ -1,5 +1,5 @@
-import { createFilePath } from 'gatsby-source-filesystem'
 import { GatsbyNode } from 'gatsby'
+import { createFilePath } from 'gatsby-source-filesystem'
 
 const onCreateNode: GatsbyNode['onCreateNode'] = ({
   node,
