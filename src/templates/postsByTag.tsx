@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby'
+import { graphql, PageProps } from 'gatsby'
 import React from 'react'
 
 import Head from '../components/Head'
@@ -6,8 +6,17 @@ import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
 import PostList from '../components/PostList'
 
-export const PostsByTagTemplate = ({ data, pageContext, location }) => {
-  const { nodes } = data.posts
+type IProps = {
+  posts: GatsbyTypes.ContentfulPostConnection
+  tags: GatsbyTypes.ContentfulTagConnection
+}
+
+export const PostsByTagTemplate = ({
+  data,
+  pageContext,
+  location,
+}: PageProps<IProps>) => {
+  const { nodes: postList } = data.posts
 
   return (
     <Layout>
@@ -16,7 +25,7 @@ export const PostsByTagTemplate = ({ data, pageContext, location }) => {
         <b className="mr-2 text-lg">#{data.tags.edges[0].node.title}</b>
         の記事
       </p>
-      <PostList posts={nodes} />
+      <PostList nodes={postList} />
       <Pagination pageContext={pageContext} />
     </Layout>
   )

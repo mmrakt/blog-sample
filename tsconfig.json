@@ -16,7 +16,14 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "ts-graphql-plugin",
+        "schema": "src/__generated__/gatsby-schema.graphql",
+        "tag": "graphql"
+      }
+    ]
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
