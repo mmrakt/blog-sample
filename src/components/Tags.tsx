@@ -1,7 +1,7 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 
-const Tags = () => {
+const Tags: React.VFC = () => {
   const { tags, postsGroupByTag } = useStaticQuery<GatsbyTypes.TagsQuery>(
     graphql`
       query Tags {

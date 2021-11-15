@@ -1,6 +1,11 @@
+import { GatsbyNode } from 'gatsby'
 import { createFilePath } from 'gatsby-source-filesystem'
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+const onCreateNode: GatsbyNode['onCreateNode'] = ({
+  node,
+  getNode,
+  actions,
+}) => {
   const { createNodeField } = actions
   if (node.internal.type === 'ContetnfulPost') {
     const slug = createFilePath({ node, getNode, basePath: 'pages' })
@@ -11,3 +16,5 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
   }
 }
+
+export default onCreateNode
