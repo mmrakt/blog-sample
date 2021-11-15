@@ -52,7 +52,7 @@
     "gatsby-source-contentful": "6.0.0",
     "gatsby-source-filesystem": "^4.0.0",
     "gatsby-source-graphql": "^4.0.0",
-    "gatsby-transformer-remark": "^3.2.0",
+    "gatsby-transformer-remark": "^4.11.0",
     "gatsby-transformer-sharp": "^2.4.7",
     "marked": "^3.0.8",
     "onchange": "^7.1.0",
