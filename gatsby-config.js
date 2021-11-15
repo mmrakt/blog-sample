@@ -118,7 +118,7 @@ module.exports = {
       options: {
         develop: true,
         tailwind: true,
-        printRejected: true,
+        printRejected: false,
       },
     },
   ],

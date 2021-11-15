@@ -2,7 +2,7 @@ import { withPrefix } from 'gatsby'
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-import useSiteMetadata from './SiteMetadata'
+import useSiteMetadata from '../hooks/useSiteMetadata'
 
 type IProps = {
   pageTitle?: string
