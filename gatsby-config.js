@@ -13,7 +13,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -59,13 +58,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-purgecss',
-      options: {
-        develop: true,
-        purgeOnly: ['/all.sass'],
-      },
-    },
-    {
       resolve: 'gatsby-plugin-eslint',
       options: {
         extensions: ['js', 'jsx', 'ts', 'tsx'],
@@ -108,25 +100,20 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: 'gatsby-plugin-alias-imports',
-      options: {
-        alias: {
-          '@src': 'src',
-          '@components': 'src/components',
-          '@pages': 'src/pages',
-          '@templates': 'src/templates',
-        },
-        extensions: ['js', 'jsx', 'ts', 'tsx'],
-      },
-    },
     'gatsby-plugin-typegen',
     'gatsby-plugin-fontawesome-css',
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
-        host: 'https://mimu-memo.com',
-        policy: [{ userAgent: '*', allow: '/' }],
+        devMode: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        develop: true,
+        tailwind: true,
+        printRejected: true,
       },
     },
   ],
