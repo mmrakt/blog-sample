@@ -5,7 +5,6 @@ import React from 'react'
 const CustomImage = (props) => {
   const { image, ...rest } = props
   const imageData = getImage(image)
-  /* eslint-disable react/jsx-props-no-spreading */
   return <GatsbyImage image={imageData} {...rest} />
 }
 

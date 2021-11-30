@@ -1,6 +1,8 @@
 import { Link } from 'gatsby'
 import React from 'react'
 
+import useStringTrim from '../hooks/useStringTrim'
+
 const PostList = ({
   nodes: posts,
 }: Pick<GatsbyTypes.ContentfulPostConnection, 'nodes'>) => (
@@ -27,11 +29,7 @@ const PostList = ({
                 </Link>
               ))}
           </p>
-          <div className="mb-3">
-            {node.excerpt.excerpt.length > 100
-              ? `${node.excerpt.excerpt.substring(0, 100)}...`
-              : node.excerpt.excerpt}
-          </div>
+          <div className="mb-3">{useStringTrim(node.excerpt.excerpt, 100)}</div>
           <div className="flex">
             <div className="ml-auto">
               <Link to={`/${node.slug}`}>
