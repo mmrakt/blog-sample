@@ -8,6 +8,7 @@ import Content from '../components/Content'
 import CustomImage from '../components/CustomImage'
 import Head from '../components/Head'
 import Layout from '../components/Layout'
+import useStringTrim from '../hooks/useStringTrim'
 
 type IProps = {
   data: {
@@ -68,7 +69,7 @@ const PostTemplate = ({ data, pageContext, location }: IProps) => {
             <Link to={`/${prev.slug}`} className="flex items-center">
               <span className="text-link underline">
                 <ChevronLeftIcon />
-                {prev.title}
+                {useStringTrim(prev.title, 50)}
               </span>
             </Link>
           </div>
@@ -80,7 +81,7 @@ const PostTemplate = ({ data, pageContext, location }: IProps) => {
               className="flex items-center float-right"
             >
               <span className="text-link underline">
-                {next.title}
+                {useStringTrim(next.title, 50)}
                 <ChevronRightIcon />
               </span>
             </Link>

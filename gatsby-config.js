@@ -113,13 +113,14 @@ module.exports = {
         devMode: false,
       },
     },
-    {
-      resolve: 'gatsby-plugin-purgecss',
-      options: {
-        develop: true,
-        tailwind: true,
-        printRejected: true,
-      },
-    },
+    // TODO: 既存のスタイルを崩さないような設定を行う
+    // {
+    //   resolve: 'gatsby-plugin-purgecss',
+    //   options: {
+    //     develop: true,
+    //     tailwind: true,
+    //     printRejected: true,
+    //   },
+    // },
   ],
 }
