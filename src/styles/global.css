@@ -14,10 +14,6 @@ ul {
   @apply pl-6;
 }
 
-blockquote {
-  @apply border-l-[5px] my-3 p-4 text-gray-500 border-solid border-gray-300;
-}
-
 @tailwind components;
 @tailwind utilities;
 
@@ -30,7 +26,7 @@ blockquote {
 code[class*='language-'],
 pre[class*='language-'] {
   color: #ccc;
-  background: none;
+  background: #2d2d2d;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   font-size: 1em;
   text-align: left;
@@ -160,6 +156,14 @@ pre.language-text {
   @apply z-0 -mb-2 mt-4 px-4 py-2 text-white font-mono font-sans font-serif bg-black;
 }
 
+.post-content blockquote {
+  @apply border-l-[5px] my-3 p-4 text-gray-500 border-solid border-gray-300;
+}
+
+.post-content a {
+  @apply text-blue-600 underline;
+}
+
 /* NOTE: ダークモードで上書きする方法がわからず暫定対応 */
 @media (prefers-color-scheme: light) {
   .box-outline {
@@ -180,12 +184,12 @@ pre.language-text {
     background: #2d2d2d;
   }
 
+  pre[class*='language-'] {
+    background: #2d2d2d;
+  }
+
   :not(pre) > code.language-text {
     background: #3c3c3c;
     @apply m-0 text-white;
   }
-}
-
-.post-content a {
-  @apply text-blue-600 underline;
 }
