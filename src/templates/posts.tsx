@@ -25,7 +25,11 @@ const PostsTemplate = ({ data, pageContext, location }: PageProps<IProps>) => {
 
 export const BlogIndexPageQuery = graphql`
   query Posts($skip: Int, $limit: Int) {
-    allContentfulPost(sort: { fields: createdAt }, skip: $skip, limit: $limit) {
+    allContentfulPost(
+      sort: { fields: createdAt, order: DESC }
+      skip: $skip
+      limit: $limit
+    ) {
       nodes {
         date(formatString: "YYYY.MM.DD")
         slug

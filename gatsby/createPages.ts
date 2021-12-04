@@ -16,6 +16,7 @@ exports.createPages = ({ actions, graphql }) => {
           node {
             slug
             id
+            createdAt
           }
           next {
             slug
