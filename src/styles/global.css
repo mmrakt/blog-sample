@@ -14,6 +14,10 @@ ul {
   @apply pl-6;
 }
 
+p {
+  @apply whitespace-pre-wrap;
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -156,15 +160,22 @@ pre.language-text {
   @apply z-0 -mb-2 mt-4 px-4 py-2 text-white font-mono font-sans font-serif bg-black;
 }
 
+/* inside post contents */
+
 .post-content blockquote {
   @apply border-l-[5px] my-3 p-4 text-gray-500 border-solid border-gray-300;
+}
+
+.post-content p + p {
+  @apply mt-6;
 }
 
 .post-content a {
   @apply text-blue-600 underline;
 }
 
-/* NOTE: ダークモードで上書きする方法がわからず暫定対応 */
+/* end of inside post contents */
+
 @media (prefers-color-scheme: light) {
   .box-outline {
     @apply border-2 border-solid rounded-md;
