@@ -47,7 +47,6 @@ module.exports = {
               noInlineHighlight: false,
             },
           },
-          { resolve: 'gatsby-remark-line-breaks' },
           {
             resolve: 'gatsby-remark-external-links',
             options: {
