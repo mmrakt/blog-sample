@@ -64,18 +64,18 @@ const PostTemplate = ({ data, pageContext, location }: IProps) => {
         </div>
       </section>
       <div className="flex items-center mt-10">
-        {prev && (
-          <div className="w-1/2">
+        <div className="w-1/2">
+          {prev && (
             <Link to={`/${prev.slug}`} className="flex items-center">
               <span className="text-link underline">
                 <ChevronLeftIcon />
                 {useStringTrim(prev.title, 50)}
               </span>
             </Link>
-          </div>
-        )}
-        {next && (
-          <div className="w-1/2">
+          )}
+        </div>
+        <div className="w-1/2">
+          {next && (
             <Link
               to={`/${next.slug}`}
               className="flex items-center float-right"
@@ -85,8 +85,8 @@ const PostTemplate = ({ data, pageContext, location }: IProps) => {
                 <ChevronRightIcon />
               </span>
             </Link>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </Layout>
   )
