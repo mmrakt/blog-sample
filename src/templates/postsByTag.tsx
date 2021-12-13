@@ -2,9 +2,9 @@ import { graphql, PageProps } from 'gatsby'
 import React from 'react'
 
 import Head from '../components/Head'
-import Layout from '../components/Layout'
 import Pagination from '../components/Pagination'
 import PostList from '../components/PostList'
+import PostListLayout from '../components/PostListLayout'
 
 type IProps = {
   posts: GatsbyTypes.ContentfulPostConnection
@@ -19,7 +19,7 @@ export const PostsByTagTemplate = ({
   const { nodes: postList } = data.posts
 
   return (
-    <Layout>
+    <PostListLayout>
       <Head pageUrl={location.pathname} />
       <p className="mb-7 text-center">
         <b className="mr-2 text-lg">#{data.tags.edges[0].node.title}</b>
@@ -27,7 +27,7 @@ export const PostsByTagTemplate = ({
       </p>
       <PostList nodes={postList} />
       <Pagination pageContext={pageContext} />
-    </Layout>
+    </PostListLayout>
   )
 }
 

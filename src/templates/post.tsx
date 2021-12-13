@@ -7,7 +7,7 @@ import { PageContextProps } from '../../types/gatsby-awesome-pagination'
 import Content from '../components/Content'
 import CustomImage from '../components/CustomImage'
 import Head from '../components/Head'
-import Layout from '../components/Layout'
+import PostLayout from '../components/PostLayout'
 import useStringTrim from '../hooks/useStringTrim'
 
 type IProps = {
@@ -21,9 +21,10 @@ type IProps = {
 const PostTemplate = ({ data, pageContext, location }: IProps) => {
   const { contentfulPost } = data
   const { prev, next } = pageContext
+  const url = location.origin + contentfulPost.slug
 
   return (
-    <Layout>
+    <PostLayout title={contentfulPost.title} url={url}>
       <Head
         pageTitle={contentfulPost.title}
         pageDescription={contentfulPost.excerpt.excerpt}
@@ -62,6 +63,7 @@ const PostTemplate = ({ data, pageContext, location }: IProps) => {
             />
           </div>
         </div>
+        <div>hoge</div>
       </section>
       <div className="flex items-center mt-10">
         <div className="w-1/2">
@@ -88,7 +90,7 @@ const PostTemplate = ({ data, pageContext, location }: IProps) => {
           )}
         </div>
       </div>
-    </Layout>
+    </PostLayout>
   )
 }
 
