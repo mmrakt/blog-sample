@@ -48,13 +48,6 @@ pre[class*='language-'] {
   hyphens: none;
 }
 
-/* Code blocks */
-pre[class*='language-'] {
-  padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
-}
-
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
   background: #2d2d2d;
@@ -143,24 +136,14 @@ pre[class*='language-'] {
 
 /* end prismjs */
 
-pre.language-text {
-  @apply block bg-gray-200 rounded;
-}
-
-:not(pre) > code.language-text {
-  @apply m-0 text-black bg-gray-200;
-}
-
 .gatsby-highlight {
-  @apply block mb-4 bg-black;
+  @apply mb-4;
 }
 
 .gatsby-code-title {
   width: 600px;
   @apply z-0 -mb-2 mt-4 px-4 py-2 text-white font-mono font-sans font-serif bg-black;
 }
-
-/* inside post contents */
 
 .post-content blockquote {
   @apply border-l-[5px] my-3 p-4 text-gray-500 border-solid border-gray-300;
@@ -174,7 +157,14 @@ pre.language-text {
   @apply text-blue-600 underline;
 }
 
-/* end of inside post contents */
+/* code block */
+pre[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  background: #2d2d2d;
+  @apply mb-4;
+}
 
 @media (prefers-color-scheme: light) {
   .box-outline {
@@ -184,6 +174,11 @@ pre.language-text {
   .text-link:hover {
     @apply text-gray-500;
   }
+
+  /* inline code */
+  :not(pre) > code.language-text {
+    @apply m-0 text-black bg-gray-200;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -191,14 +186,7 @@ pre.language-text {
     @apply text-gray-400;
   }
 
-  pre.language-text {
-    background: #2d2d2d;
-  }
-
-  pre[class*='language-'] {
-    background: #2d2d2d;
-  }
-
+  /* inline code */
   :not(pre) > code.language-text {
     background: #3c3c3c;
     @apply m-0 text-white;
