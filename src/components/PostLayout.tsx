@@ -19,9 +19,9 @@ const PostLayout: React.FC<IProps> = ({ children, title, url }) => (
       </div>
     </MediaQuery>
     <MediaQuery minWidth={981}>
-      <div className="relative flex mx-auto max-w-7xl">
+      <div className="relative flex mx-auto max-w-6xl">
         <SocialButtons title={title} url={url} />
-        <div className="ml-10 w-full max-w-3xl">{children}</div>
+        <div className="max-w-[824px]">{children}</div>
         <div className="ml-10">
           <SideBar />
         </div>

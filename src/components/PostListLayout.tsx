@@ -14,8 +14,8 @@ const PostListLayout: React.FC = ({ children }) => (
     </MediaQuery>
     <MediaQuery minWidth={981}>
       <div className="flex mx-auto max-w-6xl">
-        <div className="w-full max-w-3xl">{children}</div>
-        <div className="ml-16">
+        <div className="w-full">{children}</div>
+        <div className="ml-10">
           <SideBar />
         </div>
       </div>
