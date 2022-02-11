@@ -8,7 +8,8 @@ static/admin/*.bundle.*
 .DS_Store
 yarn-error.log
 .eslintcache
-.env*
+.env.development
+.env.production
 todo
 graphql-types.ts
 launch.json
