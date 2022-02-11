@@ -2,10 +2,6 @@ import path from 'path'
 
 import { paginate } from 'gatsby-awesome-pagination'
 
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
