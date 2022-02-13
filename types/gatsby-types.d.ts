@@ -806,14 +806,14 @@ type ContentfulPost = ContentfulReference & ContentfulEntry & Node & {
   readonly title: Maybe<Scalars['String']>;
   readonly slug: Maybe<Scalars['String']>;
   readonly date: Maybe<Scalars['Date']>;
+  readonly tags: Maybe<ReadonlyArray<Maybe<ContentfulTag>>>;
+  readonly coverImage: Maybe<ContentfulAsset>;
   readonly content: Maybe<contentfulPostContentTextNode>;
   readonly excerpt: Maybe<contentfulPostExcerptTextNode>;
   readonly spaceId: Maybe<Scalars['String']>;
   readonly createdAt: Maybe<Scalars['Date']>;
   readonly updatedAt: Maybe<Scalars['Date']>;
   readonly sys: Maybe<ContentfulPostSys>;
-  readonly tags: Maybe<ReadonlyArray<Maybe<ContentfulTag>>>;
-  readonly coverImage: Maybe<ContentfulAsset>;
   /** Returns all children nodes filtered by type contentfulPostExcerptTextNode */
   readonly childrenContentfulPostExcerptTextNode: Maybe<ReadonlyArray<Maybe<contentfulPostExcerptTextNode>>>;
   /** Returns the first child node of type contentfulPostExcerptTextNode or null if there are no children of given type on this node */
@@ -1308,14 +1308,14 @@ type Query_contentfulPostArgs = {
   title: Maybe<StringQueryOperatorInput>;
   slug: Maybe<StringQueryOperatorInput>;
   date: Maybe<DateQueryOperatorInput>;
+  tags: Maybe<ContentfulTagFilterListInput>;
+  coverImage: Maybe<ContentfulAssetFilterInput>;
   content: Maybe<contentfulPostContentTextNodeFilterInput>;
   excerpt: Maybe<contentfulPostExcerptTextNodeFilterInput>;
   spaceId: Maybe<StringQueryOperatorInput>;
   createdAt: Maybe<DateQueryOperatorInput>;
   updatedAt: Maybe<DateQueryOperatorInput>;
   sys: Maybe<ContentfulPostSysFilterInput>;
-  tags: Maybe<ContentfulTagFilterListInput>;
-  coverImage: Maybe<ContentfulAssetFilterInput>;
   childrenContentfulPostExcerptTextNode: Maybe<contentfulPostExcerptTextNodeFilterListInput>;
   childContentfulPostExcerptTextNode: Maybe<contentfulPostExcerptTextNodeFilterInput>;
   childrenContentfulPostContentTextNode: Maybe<contentfulPostContentTextNodeFilterListInput>;
@@ -4136,6 +4136,54 @@ type ContentfulAssetSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type ContentfulTagFilterListInput = {
+  readonly elemMatch: Maybe<ContentfulTagFilterInput>;
+};
+
+type ContentfulTagFilterInput = {
+  readonly contentful_id: Maybe<StringQueryOperatorInput>;
+  readonly id: Maybe<StringQueryOperatorInput>;
+  readonly node_locale: Maybe<StringQueryOperatorInput>;
+  readonly title: Maybe<StringQueryOperatorInput>;
+  readonly slug: Maybe<StringQueryOperatorInput>;
+  readonly post: Maybe<ContentfulPostFilterListInput>;
+  readonly spaceId: Maybe<StringQueryOperatorInput>;
+  readonly createdAt: Maybe<DateQueryOperatorInput>;
+  readonly updatedAt: Maybe<DateQueryOperatorInput>;
+  readonly sys: Maybe<ContentfulTagSysFilterInput>;
+  readonly parent: Maybe<NodeFilterInput>;
+  readonly children: Maybe<NodeFilterListInput>;
+  readonly internal: Maybe<InternalFilterInput>;
+};
+
+type ContentfulPostFilterListInput = {
+  readonly elemMatch: Maybe<ContentfulPostFilterInput>;
+};
+
+type ContentfulPostFilterInput = {
+  readonly contentful_id: Maybe<StringQueryOperatorInput>;
+  readonly id: Maybe<StringQueryOperatorInput>;
+  readonly node_locale: Maybe<StringQueryOperatorInput>;
+  readonly title: Maybe<StringQueryOperatorInput>;
+  readonly slug: Maybe<StringQueryOperatorInput>;
+  readonly date: Maybe<DateQueryOperatorInput>;
+  readonly tags: Maybe<ContentfulTagFilterListInput>;
+  readonly coverImage: Maybe<ContentfulAssetFilterInput>;
+  readonly content: Maybe<contentfulPostContentTextNodeFilterInput>;
+  readonly excerpt: Maybe<contentfulPostExcerptTextNodeFilterInput>;
+  readonly spaceId: Maybe<StringQueryOperatorInput>;
+  readonly createdAt: Maybe<DateQueryOperatorInput>;
+  readonly updatedAt: Maybe<DateQueryOperatorInput>;
+  readonly sys: Maybe<ContentfulPostSysFilterInput>;
+  readonly childrenContentfulPostExcerptTextNode: Maybe<contentfulPostExcerptTextNodeFilterListInput>;
+  readonly childContentfulPostExcerptTextNode: Maybe<contentfulPostExcerptTextNodeFilterInput>;
+  readonly childrenContentfulPostContentTextNode: Maybe<contentfulPostContentTextNodeFilterListInput>;
+  readonly childContentfulPostContentTextNode: Maybe<contentfulPostContentTextNodeFilterInput>;
+  readonly parent: Maybe<NodeFilterInput>;
+  readonly children: Maybe<NodeFilterListInput>;
+  readonly internal: Maybe<InternalFilterInput>;
+};
+
 type contentfulPostContentTextNodeFilterInput = {
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly parent: Maybe<NodeFilterInput>;
@@ -4184,54 +4232,6 @@ type ContentfulPostSysContentTypeSysFilterInput = {
   readonly type: Maybe<StringQueryOperatorInput>;
   readonly linkType: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
-};
-
-type ContentfulTagFilterListInput = {
-  readonly elemMatch: Maybe<ContentfulTagFilterInput>;
-};
-
-type ContentfulTagFilterInput = {
-  readonly contentful_id: Maybe<StringQueryOperatorInput>;
-  readonly id: Maybe<StringQueryOperatorInput>;
-  readonly node_locale: Maybe<StringQueryOperatorInput>;
-  readonly title: Maybe<StringQueryOperatorInput>;
-  readonly slug: Maybe<StringQueryOperatorInput>;
-  readonly post: Maybe<ContentfulPostFilterListInput>;
-  readonly spaceId: Maybe<StringQueryOperatorInput>;
-  readonly createdAt: Maybe<DateQueryOperatorInput>;
-  readonly updatedAt: Maybe<DateQueryOperatorInput>;
-  readonly sys: Maybe<ContentfulTagSysFilterInput>;
-  readonly parent: Maybe<NodeFilterInput>;
-  readonly children: Maybe<NodeFilterListInput>;
-  readonly internal: Maybe<InternalFilterInput>;
-};
-
-type ContentfulPostFilterListInput = {
-  readonly elemMatch: Maybe<ContentfulPostFilterInput>;
-};
-
-type ContentfulPostFilterInput = {
-  readonly contentful_id: Maybe<StringQueryOperatorInput>;
-  readonly id: Maybe<StringQueryOperatorInput>;
-  readonly node_locale: Maybe<StringQueryOperatorInput>;
-  readonly title: Maybe<StringQueryOperatorInput>;
-  readonly slug: Maybe<StringQueryOperatorInput>;
-  readonly date: Maybe<DateQueryOperatorInput>;
-  readonly content: Maybe<contentfulPostContentTextNodeFilterInput>;
-  readonly excerpt: Maybe<contentfulPostExcerptTextNodeFilterInput>;
-  readonly spaceId: Maybe<StringQueryOperatorInput>;
-  readonly createdAt: Maybe<DateQueryOperatorInput>;
-  readonly updatedAt: Maybe<DateQueryOperatorInput>;
-  readonly sys: Maybe<ContentfulPostSysFilterInput>;
-  readonly tags: Maybe<ContentfulTagFilterListInput>;
-  readonly coverImage: Maybe<ContentfulAssetFilterInput>;
-  readonly childrenContentfulPostExcerptTextNode: Maybe<contentfulPostExcerptTextNodeFilterListInput>;
-  readonly childContentfulPostExcerptTextNode: Maybe<contentfulPostExcerptTextNodeFilterInput>;
-  readonly childrenContentfulPostContentTextNode: Maybe<contentfulPostContentTextNodeFilterListInput>;
-  readonly childContentfulPostContentTextNode: Maybe<contentfulPostContentTextNodeFilterInput>;
-  readonly parent: Maybe<NodeFilterInput>;
-  readonly children: Maybe<NodeFilterListInput>;
-  readonly internal: Maybe<InternalFilterInput>;
 };
 
 type contentfulPostExcerptTextNodeFilterListInput = {
@@ -4310,6 +4310,178 @@ type ContentfulPostFieldsEnum =
   | 'title'
   | 'slug'
   | 'date'
+  | 'tags'
+  | 'tags.contentful_id'
+  | 'tags.id'
+  | 'tags.node_locale'
+  | 'tags.title'
+  | 'tags.slug'
+  | 'tags.post'
+  | 'tags.post.contentful_id'
+  | 'tags.post.id'
+  | 'tags.post.node_locale'
+  | 'tags.post.title'
+  | 'tags.post.slug'
+  | 'tags.post.date'
+  | 'tags.post.tags'
+  | 'tags.post.tags.contentful_id'
+  | 'tags.post.tags.id'
+  | 'tags.post.tags.node_locale'
+  | 'tags.post.tags.title'
+  | 'tags.post.tags.slug'
+  | 'tags.post.tags.post'
+  | 'tags.post.tags.spaceId'
+  | 'tags.post.tags.createdAt'
+  | 'tags.post.tags.updatedAt'
+  | 'tags.post.tags.children'
+  | 'tags.post.coverImage.contentful_id'
+  | 'tags.post.coverImage.id'
+  | 'tags.post.coverImage.spaceId'
+  | 'tags.post.coverImage.createdAt'
+  | 'tags.post.coverImage.updatedAt'
+  | 'tags.post.coverImage.title'
+  | 'tags.post.coverImage.description'
+  | 'tags.post.coverImage.node_locale'
+  | 'tags.post.coverImage.gatsbyImageData'
+  | 'tags.post.coverImage.children'
+  | 'tags.post.content.id'
+  | 'tags.post.content.children'
+  | 'tags.post.content.content'
+  | 'tags.post.content.childrenMarkdownRemark'
+  | 'tags.post.excerpt.id'
+  | 'tags.post.excerpt.children'
+  | 'tags.post.excerpt.excerpt'
+  | 'tags.post.excerpt.childrenMarkdownRemark'
+  | 'tags.post.spaceId'
+  | 'tags.post.createdAt'
+  | 'tags.post.updatedAt'
+  | 'tags.post.sys.type'
+  | 'tags.post.sys.revision'
+  | 'tags.post.childrenContentfulPostExcerptTextNode'
+  | 'tags.post.childrenContentfulPostExcerptTextNode.id'
+  | 'tags.post.childrenContentfulPostExcerptTextNode.children'
+  | 'tags.post.childrenContentfulPostExcerptTextNode.excerpt'
+  | 'tags.post.childrenContentfulPostExcerptTextNode.childrenMarkdownRemark'
+  | 'tags.post.childContentfulPostExcerptTextNode.id'
+  | 'tags.post.childContentfulPostExcerptTextNode.children'
+  | 'tags.post.childContentfulPostExcerptTextNode.excerpt'
+  | 'tags.post.childContentfulPostExcerptTextNode.childrenMarkdownRemark'
+  | 'tags.post.childrenContentfulPostContentTextNode'
+  | 'tags.post.childrenContentfulPostContentTextNode.id'
+  | 'tags.post.childrenContentfulPostContentTextNode.children'
+  | 'tags.post.childrenContentfulPostContentTextNode.content'
+  | 'tags.post.childrenContentfulPostContentTextNode.childrenMarkdownRemark'
+  | 'tags.post.childContentfulPostContentTextNode.id'
+  | 'tags.post.childContentfulPostContentTextNode.children'
+  | 'tags.post.childContentfulPostContentTextNode.content'
+  | 'tags.post.childContentfulPostContentTextNode.childrenMarkdownRemark'
+  | 'tags.post.parent.id'
+  | 'tags.post.parent.children'
+  | 'tags.post.children'
+  | 'tags.post.children.id'
+  | 'tags.post.children.children'
+  | 'tags.post.internal.content'
+  | 'tags.post.internal.contentDigest'
+  | 'tags.post.internal.description'
+  | 'tags.post.internal.fieldOwners'
+  | 'tags.post.internal.ignoreType'
+  | 'tags.post.internal.mediaType'
+  | 'tags.post.internal.owner'
+  | 'tags.post.internal.type'
+  | 'tags.spaceId'
+  | 'tags.createdAt'
+  | 'tags.updatedAt'
+  | 'tags.sys.type'
+  | 'tags.sys.revision'
+  | 'tags.parent.id'
+  | 'tags.parent.parent.id'
+  | 'tags.parent.parent.children'
+  | 'tags.parent.children'
+  | 'tags.parent.children.id'
+  | 'tags.parent.children.children'
+  | 'tags.parent.internal.content'
+  | 'tags.parent.internal.contentDigest'
+  | 'tags.parent.internal.description'
+  | 'tags.parent.internal.fieldOwners'
+  | 'tags.parent.internal.ignoreType'
+  | 'tags.parent.internal.mediaType'
+  | 'tags.parent.internal.owner'
+  | 'tags.parent.internal.type'
+  | 'tags.children'
+  | 'tags.children.id'
+  | 'tags.children.parent.id'
+  | 'tags.children.parent.children'
+  | 'tags.children.children'
+  | 'tags.children.children.id'
+  | 'tags.children.children.children'
+  | 'tags.children.internal.content'
+  | 'tags.children.internal.contentDigest'
+  | 'tags.children.internal.description'
+  | 'tags.children.internal.fieldOwners'
+  | 'tags.children.internal.ignoreType'
+  | 'tags.children.internal.mediaType'
+  | 'tags.children.internal.owner'
+  | 'tags.children.internal.type'
+  | 'tags.internal.content'
+  | 'tags.internal.contentDigest'
+  | 'tags.internal.description'
+  | 'tags.internal.fieldOwners'
+  | 'tags.internal.ignoreType'
+  | 'tags.internal.mediaType'
+  | 'tags.internal.owner'
+  | 'tags.internal.type'
+  | 'coverImage.contentful_id'
+  | 'coverImage.id'
+  | 'coverImage.spaceId'
+  | 'coverImage.createdAt'
+  | 'coverImage.updatedAt'
+  | 'coverImage.file.url'
+  | 'coverImage.file.details.size'
+  | 'coverImage.file.fileName'
+  | 'coverImage.file.contentType'
+  | 'coverImage.title'
+  | 'coverImage.description'
+  | 'coverImage.node_locale'
+  | 'coverImage.sys.type'
+  | 'coverImage.sys.revision'
+  | 'coverImage.gatsbyImageData'
+  | 'coverImage.parent.id'
+  | 'coverImage.parent.parent.id'
+  | 'coverImage.parent.parent.children'
+  | 'coverImage.parent.children'
+  | 'coverImage.parent.children.id'
+  | 'coverImage.parent.children.children'
+  | 'coverImage.parent.internal.content'
+  | 'coverImage.parent.internal.contentDigest'
+  | 'coverImage.parent.internal.description'
+  | 'coverImage.parent.internal.fieldOwners'
+  | 'coverImage.parent.internal.ignoreType'
+  | 'coverImage.parent.internal.mediaType'
+  | 'coverImage.parent.internal.owner'
+  | 'coverImage.parent.internal.type'
+  | 'coverImage.children'
+  | 'coverImage.children.id'
+  | 'coverImage.children.parent.id'
+  | 'coverImage.children.parent.children'
+  | 'coverImage.children.children'
+  | 'coverImage.children.children.id'
+  | 'coverImage.children.children.children'
+  | 'coverImage.children.internal.content'
+  | 'coverImage.children.internal.contentDigest'
+  | 'coverImage.children.internal.description'
+  | 'coverImage.children.internal.fieldOwners'
+  | 'coverImage.children.internal.ignoreType'
+  | 'coverImage.children.internal.mediaType'
+  | 'coverImage.children.internal.owner'
+  | 'coverImage.children.internal.type'
+  | 'coverImage.internal.content'
+  | 'coverImage.internal.contentDigest'
+  | 'coverImage.internal.description'
+  | 'coverImage.internal.fieldOwners'
+  | 'coverImage.internal.ignoreType'
+  | 'coverImage.internal.mediaType'
+  | 'coverImage.internal.owner'
+  | 'coverImage.internal.type'
   | 'content.id'
   | 'content.parent.id'
   | 'content.parent.parent.id'
@@ -4516,178 +4688,6 @@ type ContentfulPostFieldsEnum =
   | 'sys.contentType.sys.type'
   | 'sys.contentType.sys.linkType'
   | 'sys.contentType.sys.id'
-  | 'tags'
-  | 'tags.contentful_id'
-  | 'tags.id'
-  | 'tags.node_locale'
-  | 'tags.title'
-  | 'tags.slug'
-  | 'tags.post'
-  | 'tags.post.contentful_id'
-  | 'tags.post.id'
-  | 'tags.post.node_locale'
-  | 'tags.post.title'
-  | 'tags.post.slug'
-  | 'tags.post.date'
-  | 'tags.post.content.id'
-  | 'tags.post.content.children'
-  | 'tags.post.content.content'
-  | 'tags.post.content.childrenMarkdownRemark'
-  | 'tags.post.excerpt.id'
-  | 'tags.post.excerpt.children'
-  | 'tags.post.excerpt.excerpt'
-  | 'tags.post.excerpt.childrenMarkdownRemark'
-  | 'tags.post.spaceId'
-  | 'tags.post.createdAt'
-  | 'tags.post.updatedAt'
-  | 'tags.post.sys.type'
-  | 'tags.post.sys.revision'
-  | 'tags.post.tags'
-  | 'tags.post.tags.contentful_id'
-  | 'tags.post.tags.id'
-  | 'tags.post.tags.node_locale'
-  | 'tags.post.tags.title'
-  | 'tags.post.tags.slug'
-  | 'tags.post.tags.post'
-  | 'tags.post.tags.spaceId'
-  | 'tags.post.tags.createdAt'
-  | 'tags.post.tags.updatedAt'
-  | 'tags.post.tags.children'
-  | 'tags.post.coverImage.contentful_id'
-  | 'tags.post.coverImage.id'
-  | 'tags.post.coverImage.spaceId'
-  | 'tags.post.coverImage.createdAt'
-  | 'tags.post.coverImage.updatedAt'
-  | 'tags.post.coverImage.title'
-  | 'tags.post.coverImage.description'
-  | 'tags.post.coverImage.node_locale'
-  | 'tags.post.coverImage.gatsbyImageData'
-  | 'tags.post.coverImage.children'
-  | 'tags.post.childrenContentfulPostExcerptTextNode'
-  | 'tags.post.childrenContentfulPostExcerptTextNode.id'
-  | 'tags.post.childrenContentfulPostExcerptTextNode.children'
-  | 'tags.post.childrenContentfulPostExcerptTextNode.excerpt'
-  | 'tags.post.childrenContentfulPostExcerptTextNode.childrenMarkdownRemark'
-  | 'tags.post.childContentfulPostExcerptTextNode.id'
-  | 'tags.post.childContentfulPostExcerptTextNode.children'
-  | 'tags.post.childContentfulPostExcerptTextNode.excerpt'
-  | 'tags.post.childContentfulPostExcerptTextNode.childrenMarkdownRemark'
-  | 'tags.post.childrenContentfulPostContentTextNode'
-  | 'tags.post.childrenContentfulPostContentTextNode.id'
-  | 'tags.post.childrenContentfulPostContentTextNode.children'
-  | 'tags.post.childrenContentfulPostContentTextNode.content'
-  | 'tags.post.childrenContentfulPostContentTextNode.childrenMarkdownRemark'
-  | 'tags.post.childContentfulPostContentTextNode.id'
-  | 'tags.post.childContentfulPostContentTextNode.children'
-  | 'tags.post.childContentfulPostContentTextNode.content'
-  | 'tags.post.childContentfulPostContentTextNode.childrenMarkdownRemark'
-  | 'tags.post.parent.id'
-  | 'tags.post.parent.children'
-  | 'tags.post.children'
-  | 'tags.post.children.id'
-  | 'tags.post.children.children'
-  | 'tags.post.internal.content'
-  | 'tags.post.internal.contentDigest'
-  | 'tags.post.internal.description'
-  | 'tags.post.internal.fieldOwners'
-  | 'tags.post.internal.ignoreType'
-  | 'tags.post.internal.mediaType'
-  | 'tags.post.internal.owner'
-  | 'tags.post.internal.type'
-  | 'tags.spaceId'
-  | 'tags.createdAt'
-  | 'tags.updatedAt'
-  | 'tags.sys.type'
-  | 'tags.sys.revision'
-  | 'tags.parent.id'
-  | 'tags.parent.parent.id'
-  | 'tags.parent.parent.children'
-  | 'tags.parent.children'
-  | 'tags.parent.children.id'
-  | 'tags.parent.children.children'
-  | 'tags.parent.internal.content'
-  | 'tags.parent.internal.contentDigest'
-  | 'tags.parent.internal.description'
-  | 'tags.parent.internal.fieldOwners'
-  | 'tags.parent.internal.ignoreType'
-  | 'tags.parent.internal.mediaType'
-  | 'tags.parent.internal.owner'
-  | 'tags.parent.internal.type'
-  | 'tags.children'
-  | 'tags.children.id'
-  | 'tags.children.parent.id'
-  | 'tags.children.parent.children'
-  | 'tags.children.children'
-  | 'tags.children.children.id'
-  | 'tags.children.children.children'
-  | 'tags.children.internal.content'
-  | 'tags.children.internal.contentDigest'
-  | 'tags.children.internal.description'
-  | 'tags.children.internal.fieldOwners'
-  | 'tags.children.internal.ignoreType'
-  | 'tags.children.internal.mediaType'
-  | 'tags.children.internal.owner'
-  | 'tags.children.internal.type'
-  | 'tags.internal.content'
-  | 'tags.internal.contentDigest'
-  | 'tags.internal.description'
-  | 'tags.internal.fieldOwners'
-  | 'tags.internal.ignoreType'
-  | 'tags.internal.mediaType'
-  | 'tags.internal.owner'
-  | 'tags.internal.type'
-  | 'coverImage.contentful_id'
-  | 'coverImage.id'
-  | 'coverImage.spaceId'
-  | 'coverImage.createdAt'
-  | 'coverImage.updatedAt'
-  | 'coverImage.file.url'
-  | 'coverImage.file.details.size'
-  | 'coverImage.file.fileName'
-  | 'coverImage.file.contentType'
-  | 'coverImage.title'
-  | 'coverImage.description'
-  | 'coverImage.node_locale'
-  | 'coverImage.sys.type'
-  | 'coverImage.sys.revision'
-  | 'coverImage.gatsbyImageData'
-  | 'coverImage.parent.id'
-  | 'coverImage.parent.parent.id'
-  | 'coverImage.parent.parent.children'
-  | 'coverImage.parent.children'
-  | 'coverImage.parent.children.id'
-  | 'coverImage.parent.children.children'
-  | 'coverImage.parent.internal.content'
-  | 'coverImage.parent.internal.contentDigest'
-  | 'coverImage.parent.internal.description'
-  | 'coverImage.parent.internal.fieldOwners'
-  | 'coverImage.parent.internal.ignoreType'
-  | 'coverImage.parent.internal.mediaType'
-  | 'coverImage.parent.internal.owner'
-  | 'coverImage.parent.internal.type'
-  | 'coverImage.children'
-  | 'coverImage.children.id'
-  | 'coverImage.children.parent.id'
-  | 'coverImage.children.parent.children'
-  | 'coverImage.children.children'
-  | 'coverImage.children.children.id'
-  | 'coverImage.children.children.children'
-  | 'coverImage.children.internal.content'
-  | 'coverImage.children.internal.contentDigest'
-  | 'coverImage.children.internal.description'
-  | 'coverImage.children.internal.fieldOwners'
-  | 'coverImage.children.internal.ignoreType'
-  | 'coverImage.children.internal.mediaType'
-  | 'coverImage.children.internal.owner'
-  | 'coverImage.children.internal.type'
-  | 'coverImage.internal.content'
-  | 'coverImage.internal.contentDigest'
-  | 'coverImage.internal.description'
-  | 'coverImage.internal.fieldOwners'
-  | 'coverImage.internal.ignoreType'
-  | 'coverImage.internal.mediaType'
-  | 'coverImage.internal.owner'
-  | 'coverImage.internal.type'
   | 'childrenContentfulPostExcerptTextNode'
   | 'childrenContentfulPostExcerptTextNode.id'
   | 'childrenContentfulPostExcerptTextNode.parent.id'
@@ -5276,6 +5276,71 @@ type ContentfulTagFieldsEnum =
   | 'post.title'
   | 'post.slug'
   | 'post.date'
+  | 'post.tags'
+  | 'post.tags.contentful_id'
+  | 'post.tags.id'
+  | 'post.tags.node_locale'
+  | 'post.tags.title'
+  | 'post.tags.slug'
+  | 'post.tags.post'
+  | 'post.tags.post.contentful_id'
+  | 'post.tags.post.id'
+  | 'post.tags.post.node_locale'
+  | 'post.tags.post.title'
+  | 'post.tags.post.slug'
+  | 'post.tags.post.date'
+  | 'post.tags.post.tags'
+  | 'post.tags.post.spaceId'
+  | 'post.tags.post.createdAt'
+  | 'post.tags.post.updatedAt'
+  | 'post.tags.post.childrenContentfulPostExcerptTextNode'
+  | 'post.tags.post.childrenContentfulPostContentTextNode'
+  | 'post.tags.post.children'
+  | 'post.tags.spaceId'
+  | 'post.tags.createdAt'
+  | 'post.tags.updatedAt'
+  | 'post.tags.sys.type'
+  | 'post.tags.sys.revision'
+  | 'post.tags.parent.id'
+  | 'post.tags.parent.children'
+  | 'post.tags.children'
+  | 'post.tags.children.id'
+  | 'post.tags.children.children'
+  | 'post.tags.internal.content'
+  | 'post.tags.internal.contentDigest'
+  | 'post.tags.internal.description'
+  | 'post.tags.internal.fieldOwners'
+  | 'post.tags.internal.ignoreType'
+  | 'post.tags.internal.mediaType'
+  | 'post.tags.internal.owner'
+  | 'post.tags.internal.type'
+  | 'post.coverImage.contentful_id'
+  | 'post.coverImage.id'
+  | 'post.coverImage.spaceId'
+  | 'post.coverImage.createdAt'
+  | 'post.coverImage.updatedAt'
+  | 'post.coverImage.file.url'
+  | 'post.coverImage.file.fileName'
+  | 'post.coverImage.file.contentType'
+  | 'post.coverImage.title'
+  | 'post.coverImage.description'
+  | 'post.coverImage.node_locale'
+  | 'post.coverImage.sys.type'
+  | 'post.coverImage.sys.revision'
+  | 'post.coverImage.gatsbyImageData'
+  | 'post.coverImage.parent.id'
+  | 'post.coverImage.parent.children'
+  | 'post.coverImage.children'
+  | 'post.coverImage.children.id'
+  | 'post.coverImage.children.children'
+  | 'post.coverImage.internal.content'
+  | 'post.coverImage.internal.contentDigest'
+  | 'post.coverImage.internal.description'
+  | 'post.coverImage.internal.fieldOwners'
+  | 'post.coverImage.internal.ignoreType'
+  | 'post.coverImage.internal.mediaType'
+  | 'post.coverImage.internal.owner'
+  | 'post.coverImage.internal.type'
   | 'post.content.id'
   | 'post.content.parent.id'
   | 'post.content.parent.children'
@@ -5355,71 +5420,6 @@ type ContentfulTagFieldsEnum =
   | 'post.updatedAt'
   | 'post.sys.type'
   | 'post.sys.revision'
-  | 'post.tags'
-  | 'post.tags.contentful_id'
-  | 'post.tags.id'
-  | 'post.tags.node_locale'
-  | 'post.tags.title'
-  | 'post.tags.slug'
-  | 'post.tags.post'
-  | 'post.tags.post.contentful_id'
-  | 'post.tags.post.id'
-  | 'post.tags.post.node_locale'
-  | 'post.tags.post.title'
-  | 'post.tags.post.slug'
-  | 'post.tags.post.date'
-  | 'post.tags.post.spaceId'
-  | 'post.tags.post.createdAt'
-  | 'post.tags.post.updatedAt'
-  | 'post.tags.post.tags'
-  | 'post.tags.post.childrenContentfulPostExcerptTextNode'
-  | 'post.tags.post.childrenContentfulPostContentTextNode'
-  | 'post.tags.post.children'
-  | 'post.tags.spaceId'
-  | 'post.tags.createdAt'
-  | 'post.tags.updatedAt'
-  | 'post.tags.sys.type'
-  | 'post.tags.sys.revision'
-  | 'post.tags.parent.id'
-  | 'post.tags.parent.children'
-  | 'post.tags.children'
-  | 'post.tags.children.id'
-  | 'post.tags.children.children'
-  | 'post.tags.internal.content'
-  | 'post.tags.internal.contentDigest'
-  | 'post.tags.internal.description'
-  | 'post.tags.internal.fieldOwners'
-  | 'post.tags.internal.ignoreType'
-  | 'post.tags.internal.mediaType'
-  | 'post.tags.internal.owner'
-  | 'post.tags.internal.type'
-  | 'post.coverImage.contentful_id'
-  | 'post.coverImage.id'
-  | 'post.coverImage.spaceId'
-  | 'post.coverImage.createdAt'
-  | 'post.coverImage.updatedAt'
-  | 'post.coverImage.file.url'
-  | 'post.coverImage.file.fileName'
-  | 'post.coverImage.file.contentType'
-  | 'post.coverImage.title'
-  | 'post.coverImage.description'
-  | 'post.coverImage.node_locale'
-  | 'post.coverImage.sys.type'
-  | 'post.coverImage.sys.revision'
-  | 'post.coverImage.gatsbyImageData'
-  | 'post.coverImage.parent.id'
-  | 'post.coverImage.parent.children'
-  | 'post.coverImage.children'
-  | 'post.coverImage.children.id'
-  | 'post.coverImage.children.children'
-  | 'post.coverImage.internal.content'
-  | 'post.coverImage.internal.contentDigest'
-  | 'post.coverImage.internal.description'
-  | 'post.coverImage.internal.fieldOwners'
-  | 'post.coverImage.internal.ignoreType'
-  | 'post.coverImage.internal.mediaType'
-  | 'post.coverImage.internal.owner'
-  | 'post.coverImage.internal.type'
   | 'post.childrenContentfulPostExcerptTextNode'
   | 'post.childrenContentfulPostExcerptTextNode.id'
   | 'post.childrenContentfulPostExcerptTextNode.parent.id'
@@ -6521,20 +6521,15 @@ type ContentfulContentTypeSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type TagsQueryVariables = Exact<{ [key: string]: never; }>;
+type SiteDescriptionQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type TagsQuery = { readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title' | 'slug'> }> }, readonly postsGroupByTag: { readonly group: ReadonlyArray<Pick<ContentfulPostGroupConnection, 'totalCount' | 'fieldValue'>> } };
+type SiteDescriptionQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
 
 type SiteMetaQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SiteMetaQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteName' | 'description' | 'siteUrl' | 'lang' | 'locale' | 'type'>> }> };
-
-type SiteDescriptionQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SiteDescriptionQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
 
 type PostsByTagQueryVariables = Exact<{
   skip: Maybe<Scalars['Int']>;
@@ -6548,6 +6543,19 @@ type PostsByTagQuery = { readonly posts: { readonly nodes: ReadonlyArray<(
       & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>> }
     )> }, readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title'> }> } };
 
+type PostQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
+
+
+type PostQuery = { readonly contentfulPost: Maybe<(
+    Pick<ContentfulPost, 'date' | 'slug' | 'title'>
+    & { readonly content: Maybe<{ readonly childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<(
+      Pick<ContentfulAsset, 'gatsbyImageData'>
+      & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
+    )>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>> }
+  )> };
+
 type PostsQueryVariables = Exact<{
   skip: Maybe<Scalars['Int']>;
   limit: Maybe<Scalars['Int']>;
@@ -6556,8 +6564,16 @@ type PostsQueryVariables = Exact<{
 
 type PostsQuery = { readonly allContentfulPost: { readonly nodes: ReadonlyArray<(
       Pick<ContentfulPost, 'date' | 'slug' | 'title'>
-      & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>> }
+      & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<(
+        Pick<ContentfulAsset, 'gatsbyImageData'>
+        & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
+      )> }
     )> } };
+
+type TagsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type TagsQuery = { readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title' | 'slug'> }> }, readonly postsGroupByTag: { readonly group: ReadonlyArray<Pick<ContentfulPostGroupConnection, 'totalCount' | 'fieldValue'>> } };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -6584,19 +6600,6 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
-
-type PostQueryVariables = Exact<{
-  slug: Scalars['String'];
-}>;
-
-
-type PostQuery = { readonly contentfulPost: Maybe<(
-    Pick<ContentfulPost, 'date' | 'slug' | 'title'>
-    & { readonly content: Maybe<{ readonly childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<(
-      Pick<ContentfulAsset, 'gatsbyImageData'>
-      & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
-    )>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>> }
-  )> };
 
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
