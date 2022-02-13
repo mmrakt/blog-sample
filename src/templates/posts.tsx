@@ -15,10 +15,8 @@ const PostsTemplate = ({ data, pageContext, location }: PageProps<IProps>) => {
   return (
     <PostListLayout>
       <Head pageUrl={location.pathname} />
-      <div>
-        <PostList nodes={posts} />
-        <Pagination pageContext={pageContext} />
-      </div>
+      <PostList nodes={posts} />
+      <Pagination pageContext={pageContext} />
     </PostListLayout>
   )
 }
@@ -43,6 +41,12 @@ export const BlogIndexPageQuery = graphql`
         tags {
           title
           slug
+        }
+        coverImage {
+          gatsbyImageData
+          file {
+            url
+          }
         }
       }
     }
