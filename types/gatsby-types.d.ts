@@ -6531,10 +6531,18 @@ type SiteMetaQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 type SiteMetaQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteName' | 'description' | 'siteUrl' | 'lang' | 'locale' | 'type'>> }> };
 
-type TagsQueryVariables = Exact<{ [key: string]: never; }>;
+type PostQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
 
 
-type TagsQuery = { readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title' | 'slug'> }> }, readonly postsGroupByTag: { readonly group: ReadonlyArray<Pick<ContentfulPostGroupConnection, 'totalCount' | 'fieldValue'>> } };
+type PostQuery = { readonly contentfulPost: Maybe<(
+    Pick<ContentfulPost, 'date' | 'slug' | 'title'>
+    & { readonly content: Maybe<{ readonly childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<(
+      Pick<ContentfulAsset, 'gatsbyImageData'>
+      & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
+    )>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>> }
+  )> };
 
 type PostsQueryVariables = Exact<{
   skip: Maybe<Scalars['Int']>;
@@ -6562,18 +6570,10 @@ type PostsByTagQuery = { readonly posts: { readonly nodes: ReadonlyArray<(
       & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>> }
     )> }, readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title'> }> } };
 
-type PostQueryVariables = Exact<{
-  slug: Scalars['String'];
-}>;
+type TagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type PostQuery = { readonly contentfulPost: Maybe<(
-    Pick<ContentfulPost, 'date' | 'slug' | 'title'>
-    & { readonly content: Maybe<{ readonly childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<(
-      Pick<ContentfulAsset, 'gatsbyImageData'>
-      & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
-    )>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>> }
-  )> };
+type TagsQuery = { readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title' | 'slug'> }> }, readonly postsGroupByTag: { readonly group: ReadonlyArray<Pick<ContentfulPostGroupConnection, 'totalCount' | 'fieldValue'>> } };
 
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
