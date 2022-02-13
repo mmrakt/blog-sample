@@ -12,7 +12,7 @@ const PostList = ({
       <Link to={`/${node.slug}`} key={node.slug}>
         <div
           key={node.slug}
-          className="h-full dark:bg-dark-gray bg-white transition ease-in-out  hover:scale-105  duration-200"
+          className="box-outline h-full dark:bg-dark-gray bg-white transition ease-in-out  hover:scale-105  duration-200"
         >
           <div className="aspect-[2/1]">
             {node?.coverImage ? (
@@ -22,13 +22,12 @@ const PostList = ({
               />
             ) : (
               <StaticImage
-                src="../../static/img/sample.jpeg"
+                src="../../static/img/thumb2.png"
                 alt="その他カバー画像"
-                aspectRatio={2 / 1}
               />
             )}
           </div>
-          <div className="box-outline p-5 text-sm">
+          <div className="p-5 text-sm">
             <p className="text-base mb-3">{node.date}</p>
             <div className="mb-3 text-lg font-bold">
               <span className="text-link">{node.title}</span>
