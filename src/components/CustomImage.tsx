@@ -5,7 +5,7 @@ import React from 'react'
 const CustomImage = (props) => {
   const { image, ...rest } = props
   const imageData = getImage(image)
-  return <GatsbyImage image={imageData} {...rest} />
+  return <GatsbyImage image={imageData} {...rest} className="h-full w-auto" />
 }
 
 export default CustomImage

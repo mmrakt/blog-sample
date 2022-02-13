@@ -1,9 +1,9 @@
 @tailwind base;
 h1 {
-  @apply mb-3 mt-5 text-2xl pc:text-3xl font-black;
+  @apply mb-3 mt-5 text-2xl font-black pc:text-3xl;
 }
 h2 {
-  @apply mb-3 mt-5 pc:text-2xl text-xl font-bold;
+  @apply mb-3 mt-5 text-xl font-bold pc:text-2xl;
 }
 h3 {
   @apply mb-2 mt-3 text-lg pc:text-xl;
@@ -141,11 +141,11 @@ pre[class*='language-'] {
 
 .gatsby-code-title {
   width: 600px;
-  @apply z-0 -mb-2 mt-4 px-4 py-2 text-white font-mono font-sans font-serif bg-black;
+  @apply z-0 -mb-2 mt-4 bg-black px-4 py-2 font-mono font-sans font-serif text-white;
 }
 
 .post-content blockquote {
-  @apply border-l-[5px] my-3 p-4 text-gray-500 border-solid border-gray-300;
+  @apply my-3 border-l-[5px] border-solid border-gray-300 p-4 text-gray-500;
 }
 
 .post-content p + p {
@@ -167,7 +167,7 @@ pre[class*='language-'] {
 
 @media (prefers-color-scheme: light) {
   .box-outline {
-    @apply border-2 border-solid rounded-md;
+    @apply rounded-md border-2 border-solid;
   }
 
   .text-link:hover {
@@ -176,7 +176,7 @@ pre[class*='language-'] {
 
   /* inline code */
   :not(pre) > code.language-text {
-    @apply m-0 text-black bg-gray-200;
+    @apply m-0 bg-gray-200 text-black;
   }
 }
 

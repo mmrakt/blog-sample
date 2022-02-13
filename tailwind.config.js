@@ -13,6 +13,9 @@ module.exports = {
       gridTemplateColumns: {
         'auto-fit': 'repeat(auto-fit, minmax(380px, 1fr))',
       },
+      gridTemplateRows: {
+        'auto-fit': 'repeat(auto-fit, minmax(380px, 1fr))',
+      },
     },
     screens: {
       pc: '980px',
