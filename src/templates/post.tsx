@@ -31,7 +31,7 @@ const PostTemplate = ({ data, pageContext, location }: IProps) => {
         pageUrl={location.pathname}
         pageType="article"
       />
-      <section className="box-outline pc:p-10 p-5 w-full dark:bg-dark-gray bg-white">
+      <section className="box-outline pc:p-10 p-5 w-full dark:bg-dark-gray bg-white animate-slide-in">
         <p className="text-sm">
           <span className="text-lg">{contentfulPost.date}</span>
         </p>
