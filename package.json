@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "author": "Mimura Akito",
   "scripts": {
-    "c": "gatsby clean",
-    "d": "gatsby clean && gatsby develop",
+    "c": "gatsby clean && gatsby develop",
+    "d": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
