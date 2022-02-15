@@ -22,8 +22,9 @@ const PostList = ({
               />
             ) : (
               <StaticImage
-                src="../../static/img/thumb.png"
+                src="../../static/img/thumb2.png"
                 alt="その他カバー画像"
+                aspectRatio={2 / 1}
               />
             )}
           </div>

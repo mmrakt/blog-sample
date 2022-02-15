@@ -6521,16 +6521,6 @@ type ContentfulContentTypeSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type SiteDescriptionQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SiteDescriptionQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
-
-type SiteMetaQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SiteMetaQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteName' | 'description' | 'siteUrl' | 'lang' | 'locale' | 'type'>> }> };
-
 type TagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -6549,6 +6539,16 @@ type PostsQuery = { readonly allContentfulPost: { readonly nodes: ReadonlyArray<
         & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
       )> }
     )> } };
+
+type SiteMetaQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteMetaQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteName' | 'description' | 'siteUrl' | 'lang' | 'locale' | 'type'>> }> };
+
+type SiteDescriptionQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteDescriptionQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
 
 type PostQueryVariables = Exact<{
   slug: Scalars['String'];
