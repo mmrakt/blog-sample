@@ -21,15 +21,11 @@ const Profile: React.VFC = () => (
     </div>
     <div className="description mt-3">大阪出身の文系エンジニアです</div>
     <div className="mt-3">
-      <a
-        href={`https://github.com/${process.env.GITHUB_ID}`}
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href="https://github.com/mmrakt" target="_blank" rel="noreferrer">
         <FontAwesomeIcon size="2x" icon={faGithub} />
       </a>
       <a
-        href={`https://twitter.com/${process.env.TWITTER_ID}`}
+        href="https://twitter.com/mmrakt0716"
         className="ml-3"
         target="_blank"
         rel="noreferrer"
