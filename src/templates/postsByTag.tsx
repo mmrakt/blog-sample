@@ -16,7 +16,7 @@ export const PostsByTagTemplate = ({
   pageContext,
   location,
 }: PageProps<IProps>) => {
-  const { nodes: postList } = data.posts
+  const { nodes: posts } = data.posts
 
   return (
     <PostListLayout>
@@ -25,7 +25,7 @@ export const PostsByTagTemplate = ({
         <b className="mr-2 text-lg">#{data.tags.edges[0].node.title}</b>
         の記事
       </p>
-      <PostList nodes={postList} />
+      <PostList nodes={posts} />
       <Pagination pageContext={pageContext} />
     </PostListLayout>
   )
@@ -52,6 +52,12 @@ export const TagPostIndexPageQuery = graphql`
         tags {
           title
           slug
+        }
+        coverImage {
+          gatsbyImageData
+          file {
+            url
+          }
         }
       }
     }
