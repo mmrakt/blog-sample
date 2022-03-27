@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: template
+    about: template
+    url: https://github.com/mimu-memo/issues/new?template=issue.md&projects={ORGANIZATION OR REPO}mmrakt/mimu-memo/2
