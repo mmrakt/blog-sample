@@ -155,6 +155,19 @@ pre[class*='language-'] {
   @apply text-blue-600 underline;
 }
 
+.post-content table {
+  @apply table-auto border-collapse border-[1px] my-2;
+}
+
+th {
+  @apply bg-gray-100;
+}
+
+th,
+td {
+  @apply border-gray-300 border-[1px] p-2;
+}
+
 /* code block */
 pre[class*='language-'] {
   padding: 1em;
@@ -180,6 +193,15 @@ pre[class*='language-'] {
 }
 
 @media (prefers-color-scheme: dark) {
+  th {
+    @apply bg-gray-800;
+  }
+
+  th,
+  td {
+    @apply border-gray-500;
+  }
+
   .text-link:hover {
     @apply text-gray-400;
   }
