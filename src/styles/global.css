@@ -191,6 +191,10 @@ pre[class*='language-'] {
 }
 
 @media (prefers-color-scheme: dark) {
+  .box-outline {
+    @apply border-black;
+  }
+
   th {
     @apply bg-gray-800;
   }
