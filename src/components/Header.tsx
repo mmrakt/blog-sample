@@ -15,7 +15,7 @@ const Header: React.VFC = () => {
   )
 
   return (
-    <div className="dark:bg-dark-black bg-gray-800">
+    <div className="dark:bg-dark-black bg-primary">
       <div className="items-center shadow-md">
         <div className="p-4 text-center text-white">
           <Link to="/" className="navbar-item" title="Logo">

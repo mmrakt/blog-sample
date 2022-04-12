@@ -1,4 +1,9 @@
 @tailwind base;
+
+:root {
+  --color-primary: #1f2937;
+}
+
 h1 {
   @apply mb-3 mt-5 text-2xl font-black pc:text-3xl;
 }
@@ -196,7 +201,7 @@ pre[class*='language-'] {
   }
 
   th {
-    @apply bg-gray-800;
+    @apply bg-primary;
   }
 
   th,

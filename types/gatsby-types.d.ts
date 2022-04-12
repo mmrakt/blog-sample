@@ -6521,10 +6521,23 @@ type ContentfulContentTypeSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type TagsQueryVariables = Exact<{ [key: string]: never; }>;
+type PostQueryVariables = Exact<{
+  slug: Scalars['String'];
+}>;
 
 
-type TagsQuery = { readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title' | 'slug'> }> }, readonly postsGroupByTag: { readonly group: ReadonlyArray<Pick<ContentfulPostGroupConnection, 'totalCount' | 'fieldValue'>> } };
+type PostQuery = { readonly contentfulPost: Maybe<(
+    Pick<ContentfulPost, 'date' | 'slug' | 'title'>
+    & { readonly content: Maybe<{ readonly childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<(
+      Pick<ContentfulAsset, 'gatsbyImageData'>
+      & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
+    )>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>> }
+  )> };
+
+type SiteDescriptionQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteDescriptionQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
 
 type PostsQueryVariables = Exact<{
   skip: Maybe<Scalars['Int']>;
@@ -6539,6 +6552,11 @@ type PostsQuery = { readonly allContentfulPost: { readonly nodes: ReadonlyArray<
         & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
       )> }
     )> } };
+
+type TagsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type TagsQuery = { readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title' | 'slug'> }> }, readonly postsGroupByTag: { readonly group: ReadonlyArray<Pick<ContentfulPostGroupConnection, 'totalCount' | 'fieldValue'>> } };
 
 type PostsByTagQueryVariables = Exact<{
   skip: Maybe<Scalars['Int']>;
@@ -6581,32 +6599,14 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
-
 type SiteMetaQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SiteMetaQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteName' | 'description' | 'siteUrl' | 'lang' | 'locale' | 'type'>> }> };
 
-type SiteDescriptionQueryVariables = Exact<{ [key: string]: never; }>;
+type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SiteDescriptionQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
-
-type PostQueryVariables = Exact<{
-  slug: Scalars['String'];
-}>;
-
-
-type PostQuery = { readonly contentfulPost: Maybe<(
-    Pick<ContentfulPost, 'date' | 'slug' | 'title'>
-    & { readonly content: Maybe<{ readonly childMarkdownRemark: Maybe<Pick<MarkdownRemark, 'html'>> }>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<(
-      Pick<ContentfulAsset, 'gatsbyImageData'>
-      & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
-    )>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>> }
-  )> };
+type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
 
 }

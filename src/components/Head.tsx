@@ -40,7 +40,7 @@ const Head: React.VFC<IProps> = ({
 
   return (
     <Helmet>
-      <html lang="ja" />
+      <html lang="ja" className="bg-primary dark:bg-dark-black" />
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={siteUrl} />
