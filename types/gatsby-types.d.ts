@@ -803,7 +803,6 @@ type ContentfulPost = ContentfulReference & ContentfulEntry & Node & {
   readonly contentful_id: Scalars['String'];
   readonly id: Scalars['ID'];
   readonly node_locale: Scalars['String'];
-  readonly coverImage: Maybe<ContentfulAsset>;
   readonly title: Maybe<Scalars['String']>;
   readonly slug: Maybe<Scalars['String']>;
   readonly date: Maybe<Scalars['Date']>;
@@ -814,6 +813,7 @@ type ContentfulPost = ContentfulReference & ContentfulEntry & Node & {
   readonly createdAt: Maybe<Scalars['Date']>;
   readonly updatedAt: Maybe<Scalars['Date']>;
   readonly sys: Maybe<ContentfulPostSys>;
+  readonly coverImage: Maybe<ContentfulAsset>;
   /** Returns all children nodes filtered by type contentfulPostExcerptTextNode */
   readonly childrenContentfulPostExcerptTextNode: Maybe<ReadonlyArray<Maybe<contentfulPostExcerptTextNode>>>;
   /** Returns the first child node of type contentfulPostExcerptTextNode or null if there are no children of given type on this node */
@@ -1305,7 +1305,6 @@ type Query_contentfulPostArgs = {
   contentful_id: Maybe<StringQueryOperatorInput>;
   id: Maybe<StringQueryOperatorInput>;
   node_locale: Maybe<StringQueryOperatorInput>;
-  coverImage: Maybe<ContentfulAssetFilterInput>;
   title: Maybe<StringQueryOperatorInput>;
   slug: Maybe<StringQueryOperatorInput>;
   date: Maybe<DateQueryOperatorInput>;
@@ -1316,6 +1315,7 @@ type Query_contentfulPostArgs = {
   createdAt: Maybe<DateQueryOperatorInput>;
   updatedAt: Maybe<DateQueryOperatorInput>;
   sys: Maybe<ContentfulPostSysFilterInput>;
+  coverImage: Maybe<ContentfulAssetFilterInput>;
   childrenContentfulPostExcerptTextNode: Maybe<contentfulPostExcerptTextNodeFilterListInput>;
   childContentfulPostExcerptTextNode: Maybe<contentfulPostExcerptTextNodeFilterInput>;
   childrenContentfulPostContentTextNode: Maybe<contentfulPostContentTextNodeFilterListInput>;
@@ -4164,7 +4164,6 @@ type ContentfulPostFilterInput = {
   readonly contentful_id: Maybe<StringQueryOperatorInput>;
   readonly id: Maybe<StringQueryOperatorInput>;
   readonly node_locale: Maybe<StringQueryOperatorInput>;
-  readonly coverImage: Maybe<ContentfulAssetFilterInput>;
   readonly title: Maybe<StringQueryOperatorInput>;
   readonly slug: Maybe<StringQueryOperatorInput>;
   readonly date: Maybe<DateQueryOperatorInput>;
@@ -4175,6 +4174,7 @@ type ContentfulPostFilterInput = {
   readonly createdAt: Maybe<DateQueryOperatorInput>;
   readonly updatedAt: Maybe<DateQueryOperatorInput>;
   readonly sys: Maybe<ContentfulPostSysFilterInput>;
+  readonly coverImage: Maybe<ContentfulAssetFilterInput>;
   readonly childrenContentfulPostExcerptTextNode: Maybe<contentfulPostExcerptTextNodeFilterListInput>;
   readonly childContentfulPostExcerptTextNode: Maybe<contentfulPostExcerptTextNodeFilterInput>;
   readonly childrenContentfulPostContentTextNode: Maybe<contentfulPostContentTextNodeFilterListInput>;
@@ -4307,58 +4307,6 @@ type ContentfulPostFieldsEnum =
   | 'contentful_id'
   | 'id'
   | 'node_locale'
-  | 'coverImage.contentful_id'
-  | 'coverImage.id'
-  | 'coverImage.spaceId'
-  | 'coverImage.createdAt'
-  | 'coverImage.updatedAt'
-  | 'coverImage.file.url'
-  | 'coverImage.file.details.size'
-  | 'coverImage.file.fileName'
-  | 'coverImage.file.contentType'
-  | 'coverImage.title'
-  | 'coverImage.description'
-  | 'coverImage.node_locale'
-  | 'coverImage.sys.type'
-  | 'coverImage.sys.revision'
-  | 'coverImage.gatsbyImageData'
-  | 'coverImage.parent.id'
-  | 'coverImage.parent.parent.id'
-  | 'coverImage.parent.parent.children'
-  | 'coverImage.parent.children'
-  | 'coverImage.parent.children.id'
-  | 'coverImage.parent.children.children'
-  | 'coverImage.parent.internal.content'
-  | 'coverImage.parent.internal.contentDigest'
-  | 'coverImage.parent.internal.description'
-  | 'coverImage.parent.internal.fieldOwners'
-  | 'coverImage.parent.internal.ignoreType'
-  | 'coverImage.parent.internal.mediaType'
-  | 'coverImage.parent.internal.owner'
-  | 'coverImage.parent.internal.type'
-  | 'coverImage.children'
-  | 'coverImage.children.id'
-  | 'coverImage.children.parent.id'
-  | 'coverImage.children.parent.children'
-  | 'coverImage.children.children'
-  | 'coverImage.children.children.id'
-  | 'coverImage.children.children.children'
-  | 'coverImage.children.internal.content'
-  | 'coverImage.children.internal.contentDigest'
-  | 'coverImage.children.internal.description'
-  | 'coverImage.children.internal.fieldOwners'
-  | 'coverImage.children.internal.ignoreType'
-  | 'coverImage.children.internal.mediaType'
-  | 'coverImage.children.internal.owner'
-  | 'coverImage.children.internal.type'
-  | 'coverImage.internal.content'
-  | 'coverImage.internal.contentDigest'
-  | 'coverImage.internal.description'
-  | 'coverImage.internal.fieldOwners'
-  | 'coverImage.internal.ignoreType'
-  | 'coverImage.internal.mediaType'
-  | 'coverImage.internal.owner'
-  | 'coverImage.internal.type'
   | 'title'
   | 'slug'
   | 'date'
@@ -4372,16 +4320,6 @@ type ContentfulPostFieldsEnum =
   | 'tags.post.contentful_id'
   | 'tags.post.id'
   | 'tags.post.node_locale'
-  | 'tags.post.coverImage.contentful_id'
-  | 'tags.post.coverImage.id'
-  | 'tags.post.coverImage.spaceId'
-  | 'tags.post.coverImage.createdAt'
-  | 'tags.post.coverImage.updatedAt'
-  | 'tags.post.coverImage.title'
-  | 'tags.post.coverImage.description'
-  | 'tags.post.coverImage.node_locale'
-  | 'tags.post.coverImage.gatsbyImageData'
-  | 'tags.post.coverImage.children'
   | 'tags.post.title'
   | 'tags.post.slug'
   | 'tags.post.date'
@@ -4409,6 +4347,16 @@ type ContentfulPostFieldsEnum =
   | 'tags.post.updatedAt'
   | 'tags.post.sys.type'
   | 'tags.post.sys.revision'
+  | 'tags.post.coverImage.contentful_id'
+  | 'tags.post.coverImage.id'
+  | 'tags.post.coverImage.spaceId'
+  | 'tags.post.coverImage.createdAt'
+  | 'tags.post.coverImage.updatedAt'
+  | 'tags.post.coverImage.title'
+  | 'tags.post.coverImage.description'
+  | 'tags.post.coverImage.node_locale'
+  | 'tags.post.coverImage.gatsbyImageData'
+  | 'tags.post.coverImage.children'
   | 'tags.post.childrenContentfulPostExcerptTextNode'
   | 'tags.post.childrenContentfulPostExcerptTextNode.id'
   | 'tags.post.childrenContentfulPostExcerptTextNode.children'
@@ -4688,6 +4636,58 @@ type ContentfulPostFieldsEnum =
   | 'sys.contentType.sys.type'
   | 'sys.contentType.sys.linkType'
   | 'sys.contentType.sys.id'
+  | 'coverImage.contentful_id'
+  | 'coverImage.id'
+  | 'coverImage.spaceId'
+  | 'coverImage.createdAt'
+  | 'coverImage.updatedAt'
+  | 'coverImage.file.url'
+  | 'coverImage.file.details.size'
+  | 'coverImage.file.fileName'
+  | 'coverImage.file.contentType'
+  | 'coverImage.title'
+  | 'coverImage.description'
+  | 'coverImage.node_locale'
+  | 'coverImage.sys.type'
+  | 'coverImage.sys.revision'
+  | 'coverImage.gatsbyImageData'
+  | 'coverImage.parent.id'
+  | 'coverImage.parent.parent.id'
+  | 'coverImage.parent.parent.children'
+  | 'coverImage.parent.children'
+  | 'coverImage.parent.children.id'
+  | 'coverImage.parent.children.children'
+  | 'coverImage.parent.internal.content'
+  | 'coverImage.parent.internal.contentDigest'
+  | 'coverImage.parent.internal.description'
+  | 'coverImage.parent.internal.fieldOwners'
+  | 'coverImage.parent.internal.ignoreType'
+  | 'coverImage.parent.internal.mediaType'
+  | 'coverImage.parent.internal.owner'
+  | 'coverImage.parent.internal.type'
+  | 'coverImage.children'
+  | 'coverImage.children.id'
+  | 'coverImage.children.parent.id'
+  | 'coverImage.children.parent.children'
+  | 'coverImage.children.children'
+  | 'coverImage.children.children.id'
+  | 'coverImage.children.children.children'
+  | 'coverImage.children.internal.content'
+  | 'coverImage.children.internal.contentDigest'
+  | 'coverImage.children.internal.description'
+  | 'coverImage.children.internal.fieldOwners'
+  | 'coverImage.children.internal.ignoreType'
+  | 'coverImage.children.internal.mediaType'
+  | 'coverImage.children.internal.owner'
+  | 'coverImage.children.internal.type'
+  | 'coverImage.internal.content'
+  | 'coverImage.internal.contentDigest'
+  | 'coverImage.internal.description'
+  | 'coverImage.internal.fieldOwners'
+  | 'coverImage.internal.ignoreType'
+  | 'coverImage.internal.mediaType'
+  | 'coverImage.internal.owner'
+  | 'coverImage.internal.type'
   | 'childrenContentfulPostExcerptTextNode'
   | 'childrenContentfulPostExcerptTextNode.id'
   | 'childrenContentfulPostExcerptTextNode.parent.id'
@@ -5273,33 +5273,6 @@ type ContentfulTagFieldsEnum =
   | 'post.contentful_id'
   | 'post.id'
   | 'post.node_locale'
-  | 'post.coverImage.contentful_id'
-  | 'post.coverImage.id'
-  | 'post.coverImage.spaceId'
-  | 'post.coverImage.createdAt'
-  | 'post.coverImage.updatedAt'
-  | 'post.coverImage.file.url'
-  | 'post.coverImage.file.fileName'
-  | 'post.coverImage.file.contentType'
-  | 'post.coverImage.title'
-  | 'post.coverImage.description'
-  | 'post.coverImage.node_locale'
-  | 'post.coverImage.sys.type'
-  | 'post.coverImage.sys.revision'
-  | 'post.coverImage.gatsbyImageData'
-  | 'post.coverImage.parent.id'
-  | 'post.coverImage.parent.children'
-  | 'post.coverImage.children'
-  | 'post.coverImage.children.id'
-  | 'post.coverImage.children.children'
-  | 'post.coverImage.internal.content'
-  | 'post.coverImage.internal.contentDigest'
-  | 'post.coverImage.internal.description'
-  | 'post.coverImage.internal.fieldOwners'
-  | 'post.coverImage.internal.ignoreType'
-  | 'post.coverImage.internal.mediaType'
-  | 'post.coverImage.internal.owner'
-  | 'post.coverImage.internal.type'
   | 'post.title'
   | 'post.slug'
   | 'post.date'
@@ -5420,6 +5393,33 @@ type ContentfulTagFieldsEnum =
   | 'post.updatedAt'
   | 'post.sys.type'
   | 'post.sys.revision'
+  | 'post.coverImage.contentful_id'
+  | 'post.coverImage.id'
+  | 'post.coverImage.spaceId'
+  | 'post.coverImage.createdAt'
+  | 'post.coverImage.updatedAt'
+  | 'post.coverImage.file.url'
+  | 'post.coverImage.file.fileName'
+  | 'post.coverImage.file.contentType'
+  | 'post.coverImage.title'
+  | 'post.coverImage.description'
+  | 'post.coverImage.node_locale'
+  | 'post.coverImage.sys.type'
+  | 'post.coverImage.sys.revision'
+  | 'post.coverImage.gatsbyImageData'
+  | 'post.coverImage.parent.id'
+  | 'post.coverImage.parent.children'
+  | 'post.coverImage.children'
+  | 'post.coverImage.children.id'
+  | 'post.coverImage.children.children'
+  | 'post.coverImage.internal.content'
+  | 'post.coverImage.internal.contentDigest'
+  | 'post.coverImage.internal.description'
+  | 'post.coverImage.internal.fieldOwners'
+  | 'post.coverImage.internal.ignoreType'
+  | 'post.coverImage.internal.mediaType'
+  | 'post.coverImage.internal.owner'
+  | 'post.coverImage.internal.type'
   | 'post.childrenContentfulPostExcerptTextNode'
   | 'post.childrenContentfulPostExcerptTextNode.id'
   | 'post.childrenContentfulPostExcerptTextNode.parent.id'
@@ -6521,6 +6521,11 @@ type ContentfulContentTypeSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
+type SiteMetaQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteMetaQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteName' | 'description' | 'siteUrl' | 'lang' | 'locale' | 'type'>> }> };
+
 type PostQueryVariables = Exact<{
   slug: Scalars['String'];
 }>;
@@ -6533,45 +6538,6 @@ type PostQuery = { readonly contentfulPost: Maybe<(
       & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
     )>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>> }
   )> };
-
-type SiteDescriptionQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type SiteDescriptionQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
-
-type PostsQueryVariables = Exact<{
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-}>;
-
-
-type PostsQuery = { readonly allContentfulPost: { readonly nodes: ReadonlyArray<(
-      Pick<ContentfulPost, 'date' | 'slug' | 'title'>
-      & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<(
-        Pick<ContentfulAsset, 'gatsbyImageData'>
-        & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
-      )> }
-    )> } };
-
-type TagsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type TagsQuery = { readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title' | 'slug'> }> }, readonly postsGroupByTag: { readonly group: ReadonlyArray<Pick<ContentfulPostGroupConnection, 'totalCount' | 'fieldValue'>> } };
-
-type PostsByTagQueryVariables = Exact<{
-  skip: Maybe<Scalars['Int']>;
-  limit: Maybe<Scalars['Int']>;
-  tagSlug: Maybe<Scalars['String']>;
-}>;
-
-
-type PostsByTagQuery = { readonly posts: { readonly nodes: ReadonlyArray<(
-      Pick<ContentfulPost, 'date' | 'slug' | 'title'>
-      & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<(
-        Pick<ContentfulAsset, 'gatsbyImageData'>
-        & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
-      )> }
-    )> }, readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title'> }> } };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
@@ -6599,14 +6565,48 @@ type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
 
-type SiteMetaQueryQueryVariables = Exact<{ [key: string]: never; }>;
+type TagsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type SiteMetaQueryQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteName' | 'description' | 'siteUrl' | 'lang' | 'locale' | 'type'>> }> };
+type TagsQuery = { readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title' | 'slug'> }> }, readonly postsGroupByTag: { readonly group: ReadonlyArray<Pick<ContentfulPostGroupConnection, 'totalCount' | 'fieldValue'>> } };
+
+type PostsByTagQueryVariables = Exact<{
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+  tagSlug: Maybe<Scalars['String']>;
+}>;
+
+
+type PostsByTagQuery = { readonly posts: { readonly nodes: ReadonlyArray<(
+      Pick<ContentfulPost, 'date' | 'slug' | 'title'>
+      & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<(
+        Pick<ContentfulAsset, 'gatsbyImageData'>
+        & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
+      )> }
+    )> }, readonly tags: { readonly edges: ReadonlyArray<{ readonly node: Pick<ContentfulTag, 'title'> }> } };
+
+type PostsQueryVariables = Exact<{
+  skip: Maybe<Scalars['Int']>;
+  limit: Maybe<Scalars['Int']>;
+}>;
+
+
+type PostsQuery = { readonly allContentfulPost: { readonly nodes: ReadonlyArray<(
+      Pick<ContentfulPost, 'date' | 'slug' | 'title'>
+      & { readonly content: Maybe<Pick<contentfulPostContentTextNode, 'content'>>, readonly excerpt: Maybe<Pick<contentfulPostExcerptTextNode, 'excerpt'>>, readonly tags: Maybe<ReadonlyArray<Maybe<Pick<ContentfulTag, 'title' | 'slug'>>>>, readonly coverImage: Maybe<(
+        Pick<ContentfulAsset, 'gatsbyImageData'>
+        & { readonly file: Maybe<Pick<ContentfulAssetFile, 'url'>> }
+      )> }
+    )> } };
 
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type PagesQueryQuery = { readonly allSiteFunction: { readonly nodes: ReadonlyArray<Pick<SiteFunction, 'functionRoute'>> }, readonly allSitePage: { readonly nodes: ReadonlyArray<Pick<SitePage, 'path'>> } };
+
+type SiteDescriptionQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type SiteDescriptionQuery = { readonly site: Maybe<{ readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'description'>> }> };
 
 }

@@ -1,5 +1,5 @@
 export type PageContextProps = {
-  humabPageNumber: number
+  humanPageNumber: number
   limit: number
   next?: {
     title: string
