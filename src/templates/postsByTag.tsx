@@ -53,12 +53,6 @@ export const TagPostIndexPageQuery = graphql`
           title
           slug
         }
-        coverImage {
-          gatsbyImageData
-          file {
-            url
-          }
-        }
       }
     }
     tags: allContentfulTag(filter: { slug: { eq: $tagSlug } }) {

@@ -42,12 +42,6 @@ export const BlogIndexPageQuery = graphql`
           title
           slug
         }
-        coverImage {
-          gatsbyImageData
-          file {
-            url
-          }
-        }
       }
     }
   }
