@@ -5,7 +5,6 @@ import React from 'react'
 
 import { PageContextProps } from '../../types/gatsby-awesome-pagination'
 import Content from '../components/Content'
-import CustomImage from '../components/CustomImage'
 import Head from '../components/Head'
 import PostLayout from '../components/PostLayout'
 import useStringTrim from '../hooks/useStringTrim'
@@ -48,14 +47,6 @@ const PostTemplate = ({ data, pageContext, location }: IProps) => {
               </Link>
             ))}
         </p>
-        {contentfulPost?.coverImage && (
-          <div className="mt-10">
-            <CustomImage
-              image={contentfulPost?.coverImage}
-              alt={`「${contentfulPost.title}」のカバー画像`}
-            />
-          </div>
-        )}
         <div className="mt-10">
           <div className="text-left leading-loose">
             <Content
@@ -107,12 +98,6 @@ export const pageQuery = graphql`
       tags {
         title
         slug
-      }
-      coverImage {
-        gatsbyImageData
-        file {
-          url
-        }
       }
       excerpt {
         excerpt
