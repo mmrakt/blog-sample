@@ -16,9 +16,7 @@ const IndexPage: React.VFC = () => {
 
   return (
     <Layout>
-      <div className="className">
-        <GatsbyImage image={gatsbyImageData} alt="カバー画像" />
-      </div>
+      <GatsbyImage image={gatsbyImageData} alt="カバー画像" />
     </Layout>
   )
 }
