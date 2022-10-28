@@ -57,7 +57,6 @@ const client = contentful.createClient({
         },
       })
       const publishedEntry = draftEntry.publish()
-      console.log(`${publishedEntry}  is published!`)
     }
   } catch (err) {
     console.error(err)
