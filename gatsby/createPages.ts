@@ -7,7 +7,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   return graphql(`
     {
-      allContentfulPost(sort: { fields: createdAt, order: DESC }) {
+      allContentfulPost(sort: { createdAt: DESC }) {
         edges {
           node {
             slug
@@ -25,7 +25,7 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
       postsByTag: allContentfulPost {
-        group(field: tags___slug) {
+        group(field: { tags: { slug: SELECT } }) {
           edges {
             node {
               slug

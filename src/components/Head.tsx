@@ -68,4 +68,14 @@ const Head: React.VFC<IProps> = ({
   )
 }
 
+Head.defaultProps = {
+  pageTitle: '',
+  pageDescription: '',
+  pageUrl: '',
+  pageImage: '',
+  pageImageWidth: '',
+  pageImageHeight: '',
+  pageType: '',
+}
+
 export default Head

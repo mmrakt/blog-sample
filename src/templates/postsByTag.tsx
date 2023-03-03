@@ -34,7 +34,7 @@ export const PostsByTagTemplate = ({
 export const TagPostIndexPageQuery = graphql`
   query PostsByTag($skip: Int, $limit: Int, $tagSlug: String) {
     posts: allContentfulPost(
-      sort: { fields: createdAt }
+      sort: { createdAt: ASC }
       skip: $skip
       limit: $limit
       filter: { tags: { elemMatch: { slug: { eq: $tagSlug } } } }
