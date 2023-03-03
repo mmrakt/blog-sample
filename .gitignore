@@ -15,3 +15,4 @@ graphql-types.ts
 launch.json
 NOTE
 migrations/export.json
+.yarn/
