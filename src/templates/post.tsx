@@ -1,5 +1,3 @@
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
-import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import { graphql, Link, PageProps } from 'gatsby'
 import React from 'react'
 
@@ -7,6 +5,8 @@ import { PageContextProps } from '../../types/gatsby-awesome-pagination'
 import Content from '../components/Content'
 import Head from '../components/Head'
 import PostLayout from '../components/PostLayout'
+import ChevronLeft from '../components/common/ChevronLeft'
+import ChevronRight from '../components/common/ChevronRight'
 import useStringTrim from '../hooks/useStringTrim'
 
 type IProps = {
@@ -60,7 +60,7 @@ const PostTemplate = ({ data, pageContext, location }: IProps) => {
           {prev && (
             <Link to={`/${prev.slug}`} className="flex items-center">
               <div className="text-link flex items-center underline">
-                <ChevronLeftIcon />
+                <ChevronLeft />
                 {useStringTrim(prev.title, 50)}
               </div>
             </Link>
@@ -74,7 +74,7 @@ const PostTemplate = ({ data, pageContext, location }: IProps) => {
             >
               <div className="text-link flex items-center underline">
                 {useStringTrim(next.title, 50)}
-                <ChevronRightIcon />
+                <ChevronRight />
               </div>
             </Link>
           )}
