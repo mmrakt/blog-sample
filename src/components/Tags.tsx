@@ -14,7 +14,7 @@ const Tags: React.VFC = () => {
           }
         }
         postsGroupByTag: allContentfulPost {
-          group(field: tags___slug) {
+          group(field: { tags: { slug: SELECT } }) {
             totalCount
             fieldValue
           }

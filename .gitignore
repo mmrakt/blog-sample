@@ -15,3 +15,5 @@ graphql-types.ts
 launch.json
 NOTE
 migrations/export.json
+.yarn/install-state.gz
+types/gatsby-types.d.ts

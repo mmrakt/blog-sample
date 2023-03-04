@@ -1,7 +1,8 @@
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
-import ChevronRightIcon from '@material-ui/icons/ChevronRight'
 import { Link } from 'gatsby'
 import React from 'react'
+
+import ChevronLeft from './common/ChevronLeft'
+import ChevronRight from './common/ChevronRight'
 
 type IProps = {
   pageContext: {
@@ -22,7 +23,7 @@ export const Pagination: React.VFC<IProps> = ({ pageContext }) => {
           rel="prev"
           className="box-outline text-link flex items-center pr-2 py-2 dark:text-white underline text-sm font-medium dark:bg-dark-gray bg-white"
         >
-          <ChevronLeftIcon />
+          <ChevronLeft />
           <span className="">Prev</span>
         </Link>
       )}
@@ -33,7 +34,7 @@ export const Pagination: React.VFC<IProps> = ({ pageContext }) => {
           className="box-outline text-link flex items-center ml-auto pl-2 py-2 dark:text-white underline text-sm font-medium dark:bg-dark-gray bg-white"
         >
           <span>Next</span>
-          <ChevronRightIcon />
+          <ChevronRight />
         </Link>
       )}
     </div>

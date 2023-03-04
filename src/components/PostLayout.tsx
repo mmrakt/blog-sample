@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import MediaQuery from 'react-responsive'
 
 import Settings from '../utils/settings'
@@ -10,6 +10,7 @@ import SocialButtons from './SocialButtons'
 type IProps = {
   title: string
   url: string
+  children: ReactElement[]
 }
 
 const PostLayout: React.FC<IProps> = ({ children, title, url }) => (
