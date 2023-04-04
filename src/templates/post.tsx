@@ -85,7 +85,7 @@ const PostTemplate = ({ data, pageContext, location }: IProps) => {
 }
 
 export const pageQuery = graphql`
-  query Post($slug: String!) {
+  query Post($slug: String) {
     contentfulPost(slug: { eq: $slug }) {
       content {
         childMarkdownRemark {

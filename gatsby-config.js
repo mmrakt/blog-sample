@@ -112,6 +112,27 @@ module.exports = {
         devMode: false,
       },
     },
+    {
+      resolve: 'gatsby-source-rss-feed',
+      options: {
+        url: 'https://qiita.com/mmrakt/feed',
+        name: 'Qiita',
+      },
+    },
+    {
+      resolve: 'gatsby-source-rss-feed',
+      options: {
+        url: 'https://note.com/mmrakt/rss',
+        name: 'note',
+      },
+    },
+    {
+      resolve: 'gatsby-source-rss-feed',
+      options: {
+        url: 'https://zenn.dev/mmrakt/feed',
+        name: 'Zenn',
+      },
+    },
     // TODO: 既存のスタイルを崩さないような設定を行う
     // {
     //   resolve: 'gatsby-plugin-purgecss',

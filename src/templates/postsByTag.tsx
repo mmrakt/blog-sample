@@ -16,7 +16,7 @@ export const PostsByTagTemplate = ({
   pageContext,
   location,
 }: PageProps<IProps>) => {
-  const { nodes: posts } = data.posts
+  const { edges: posts } = data.posts
 
   return (
     <PostListLayout>
@@ -30,7 +30,7 @@ export const PostsByTagTemplate = ({
     </PostListLayout>
   )
 }
-
+// NOTE: qiita等他のプラットフォームではフィード内にタグが含まれない可能性があるため、contentful経由の記事のみ取得する
 export const TagPostIndexPageQuery = graphql`
   query PostsByTag($skip: Int, $limit: Int, $tagSlug: String) {
     posts: allContentfulPost(
@@ -39,19 +39,21 @@ export const TagPostIndexPageQuery = graphql`
       limit: $limit
       filter: { tags: { elemMatch: { slug: { eq: $tagSlug } } } }
     ) {
-      nodes {
-        date(formatString: "YYYY.MM.DD")
-        slug
-        title
-        content {
-          content
-        }
-        excerpt {
-          excerpt
-        }
-        tags {
-          title
+      edges {
+        node {
+          date(formatString: "YYYY.MM.DD")
           slug
+          title
+          content {
+            content
+          }
+          excerpt {
+            excerpt
+          }
+          tags {
+            title
+            slug
+          }
         }
       }
     }
