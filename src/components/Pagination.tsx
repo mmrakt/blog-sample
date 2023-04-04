@@ -19,8 +19,6 @@ export const Pagination: React.VFC<IProps> = ({ pageContext }) => {
   const prevPagePath = index - 1 === 1 ? '/' : `/page/${index - 1}`
   const nextPagePath = `/page/${index + 1}`
 
-  console.log(pageContext)
-
   return (
     <div className="flex py-3">
       {!first && (
