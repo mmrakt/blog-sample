@@ -1,18 +1,25 @@
 import path from 'path'
 
-import { paginate } from 'gatsby-awesome-pagination'
+const createPaginatedPages = require('gatsby-paginate')
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
+  // NOTE: 各プラットフォームの記事をまとめて件数調整するためにtemplate側ではなくここでfetchする
   return graphql(`
     {
       allContentfulPost(sort: { createdAt: DESC }) {
         edges {
           node {
+            date(formatString: "X")
             slug
+            title
             id
             createdAt
+            tags {
+              title
+              slug
+            }
           }
           next {
             slug
@@ -21,6 +28,15 @@ exports.createPages = ({ actions, graphql }) => {
           previous {
             slug
             title
+          }
+        }
+      }
+      allFeedQiita(sort: { pubDate: DESC }) {
+        edges {
+          node {
+            date: pubDate(formatString: "X")
+            title
+            link
           }
         }
       }
@@ -40,35 +56,42 @@ exports.createPages = ({ actions, graphql }) => {
       throw result.errors
     }
 
-    const posts = result.data.allContentfulPost.edges
+    const contentfulPosts = result.data.allContentfulPost.edges
+    const qiitaPosts = result.data.allFeedQiita.edges
+    const posts = contentfulPosts.concat(qiitaPosts)
     const postsPerPage = 10
     const postsByTag = result.data.postsByTag.group
 
-    paginate({
+    // NOTE: 日付の降順にソート
+    posts.sort((a, b) => b.node.date - a.node.date)
+    createPaginatedPages({
+      edges: posts,
       createPage,
-      items: posts,
-      itemsPerPage: postsPerPage,
-      pathPrefix: ({ pageNumber }) => (pageNumber === 0 ? '/' : '/page'),
-      component: path.resolve('./src/templates/posts.tsx'),
+      pageTemplate: path.resolve('./src/templates/posts.tsx'),
+      pageLength: postsPerPage,
+      pathPrefix: '',
+      buildPath: (index: number, pathPrefix: string) =>
+        index > 1 ? `${pathPrefix}/page/${index}` : `/${pathPrefix}`,
     })
 
-    postsByTag.forEach((tagPage) => {
-      paginate({
+    postsByTag.forEach((tagPage) =>
+      createPaginatedPages({
+        edges: tagPage.edges,
         createPage,
-        items: tagPage.edges,
-        itemsPerPage: postsPerPage,
-        pathPrefix: ({ pageNumber }) =>
-          pageNumber === 0
-            ? `/tag/${tagPage.fieldValue}`
-            : `/tag/${tagPage.fieldValue}/page`,
-        component: path.resolve('./src/templates/postsByTag.tsx'),
+        pageTemplate: path.resolve('./src/templates/postsByTag.tsx'),
+        pageLength: postsPerPage,
+        pathPrefix: 'tag',
+        buildPath: (index: number, pathPrefix: string) =>
+          index > 1
+            ? `${pathPrefix}/${tagPage.fieldValue}/page`
+            : `${pathPrefix}/${tagPage.fieldValue}`,
         context: {
           tagSlug: tagPage.fieldValue,
         },
       })
-    })
+    )
 
-    posts.forEach((post) => {
+    contentfulPosts.forEach((post) => {
       createPage({
         path: post.node.slug,
         component: path.resolve('./src/templates/post.tsx'),

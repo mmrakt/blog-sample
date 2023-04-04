@@ -6,20 +6,26 @@ import ChevronRight from './common/ChevronRight'
 
 type IProps = {
   pageContext: {
-    previousPagePath?: string
-    nextPagePath?: string
+    index?: number
+    first?: boolean
+    last?: boolean
+    additionalContext: any
   }
 }
 
 export const Pagination: React.VFC<IProps> = ({ pageContext }) => {
   // TODO: ページ番号も表示できるといいね
-  const { previousPagePath, nextPagePath } = pageContext
+  const { index, first, last, additionalContext } = pageContext
+  const prevPagePath = index - 1 === 1 ? '/' : `/page/${index - 1}`
+  const nextPagePath = `/page/${index + 1}`
+
+  console.log(pageContext)
 
   return (
     <div className="flex py-3">
-      {previousPagePath && (
+      {!first && (
         <Link
-          to={previousPagePath}
+          to={prevPagePath}
           rel="prev"
           className="box-outline text-link flex items-center pr-2 py-2 dark:text-white underline text-sm font-medium dark:bg-dark-gray bg-white"
         >
@@ -27,7 +33,7 @@ export const Pagination: React.VFC<IProps> = ({ pageContext }) => {
           <span className="">Prev</span>
         </Link>
       )}
-      {nextPagePath && (
+      {!last && (
         <Link
           to={nextPagePath}
           rel="next"
