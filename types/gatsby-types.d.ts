@@ -1800,6 +1800,191 @@ type FeedQiitaSortInput = {
   readonly title: InputMaybe<SortOrderEnum>;
 };
 
+type FeedZenn = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly content: Maybe<Scalars['String']>;
+  readonly contentSnippet: Maybe<Scalars['String']>;
+  readonly creator: Maybe<Scalars['String']>;
+  readonly dc: Maybe<FeedZennDc>;
+  readonly enclosure: Maybe<FeedZennEnclosure>;
+  readonly guid: Maybe<Scalars['String']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly isoDate: Maybe<Scalars['Date']>;
+  readonly link: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly pubDate: Maybe<Scalars['String']>;
+  readonly title: Maybe<Scalars['String']>;
+};
+
+
+type FeedZenn_isoDateArgs = {
+  difference: InputMaybe<Scalars['String']>;
+  formatString: InputMaybe<Scalars['String']>;
+  fromNow: InputMaybe<Scalars['Boolean']>;
+  locale: InputMaybe<Scalars['String']>;
+};
+
+type FeedZennConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<FeedZennEdge>;
+  readonly group: ReadonlyArray<FeedZennGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<FeedZenn>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type FeedZennConnection_distinctArgs = {
+  field: FeedZennFieldSelector;
+};
+
+
+type FeedZennConnection_groupArgs = {
+  field: FeedZennFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type FeedZennConnection_maxArgs = {
+  field: FeedZennFieldSelector;
+};
+
+
+type FeedZennConnection_minArgs = {
+  field: FeedZennFieldSelector;
+};
+
+
+type FeedZennConnection_sumArgs = {
+  field: FeedZennFieldSelector;
+};
+
+type FeedZennDc = {
+  readonly creator: Maybe<Scalars['String']>;
+};
+
+type FeedZennDcFieldSelector = {
+  readonly creator: InputMaybe<FieldSelectorEnum>;
+};
+
+type FeedZennDcFilterInput = {
+  readonly creator: InputMaybe<StringQueryOperatorInput>;
+};
+
+type FeedZennDcSortInput = {
+  readonly creator: InputMaybe<SortOrderEnum>;
+};
+
+type FeedZennEdge = {
+  readonly next: Maybe<FeedZenn>;
+  readonly node: FeedZenn;
+  readonly previous: Maybe<FeedZenn>;
+};
+
+type FeedZennEnclosure = {
+  readonly length: Maybe<Scalars['String']>;
+  readonly type: Maybe<Scalars['String']>;
+  readonly url: Maybe<Scalars['String']>;
+};
+
+type FeedZennEnclosureFieldSelector = {
+  readonly length: InputMaybe<FieldSelectorEnum>;
+  readonly type: InputMaybe<FieldSelectorEnum>;
+  readonly url: InputMaybe<FieldSelectorEnum>;
+};
+
+type FeedZennEnclosureFilterInput = {
+  readonly length: InputMaybe<StringQueryOperatorInput>;
+  readonly type: InputMaybe<StringQueryOperatorInput>;
+  readonly url: InputMaybe<StringQueryOperatorInput>;
+};
+
+type FeedZennEnclosureSortInput = {
+  readonly length: InputMaybe<SortOrderEnum>;
+  readonly type: InputMaybe<SortOrderEnum>;
+  readonly url: InputMaybe<SortOrderEnum>;
+};
+
+type FeedZennFieldSelector = {
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly content: InputMaybe<FieldSelectorEnum>;
+  readonly contentSnippet: InputMaybe<FieldSelectorEnum>;
+  readonly creator: InputMaybe<FieldSelectorEnum>;
+  readonly dc: InputMaybe<FeedZennDcFieldSelector>;
+  readonly enclosure: InputMaybe<FeedZennEnclosureFieldSelector>;
+  readonly guid: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly isoDate: InputMaybe<FieldSelectorEnum>;
+  readonly link: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly pubDate: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type FeedZennFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly content: InputMaybe<StringQueryOperatorInput>;
+  readonly contentSnippet: InputMaybe<StringQueryOperatorInput>;
+  readonly creator: InputMaybe<StringQueryOperatorInput>;
+  readonly dc: InputMaybe<FeedZennDcFilterInput>;
+  readonly enclosure: InputMaybe<FeedZennEnclosureFilterInput>;
+  readonly guid: InputMaybe<StringQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly isoDate: InputMaybe<DateQueryOperatorInput>;
+  readonly link: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly pubDate: InputMaybe<StringQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type FeedZennGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<FeedZennEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<FeedZennGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<FeedZenn>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type FeedZennGroupConnection_distinctArgs = {
+  field: FeedZennFieldSelector;
+};
+
+
+type FeedZennGroupConnection_groupArgs = {
+  field: FeedZennFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type FeedZennGroupConnection_maxArgs = {
+  field: FeedZennFieldSelector;
+};
+
+
+type FeedZennGroupConnection_minArgs = {
+  field: FeedZennFieldSelector;
+};
+
+
+type FeedZennGroupConnection_sumArgs = {
+  field: FeedZennFieldSelector;
+};
+
 type FeedZennMeta = Node & {
   readonly children: ReadonlyArray<Node>;
   readonly description: Maybe<Scalars['String']>;
@@ -1987,6 +2172,23 @@ type FeedZennMetaSortInput = {
   readonly link: InputMaybe<SortOrderEnum>;
   readonly paginationLinks: InputMaybe<FeedZennMetaPaginationLinksSortInput>;
   readonly parent: InputMaybe<NodeSortInput>;
+  readonly title: InputMaybe<SortOrderEnum>;
+};
+
+type FeedZennSortInput = {
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly content: InputMaybe<SortOrderEnum>;
+  readonly contentSnippet: InputMaybe<SortOrderEnum>;
+  readonly creator: InputMaybe<SortOrderEnum>;
+  readonly dc: InputMaybe<FeedZennDcSortInput>;
+  readonly enclosure: InputMaybe<FeedZennEnclosureSortInput>;
+  readonly guid: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly isoDate: InputMaybe<SortOrderEnum>;
+  readonly link: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly pubDate: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
 };
 
@@ -3383,6 +3585,7 @@ type Query = {
   readonly allDirectory: DirectoryConnection;
   readonly allFeedQiita: FeedQiitaConnection;
   readonly allFeedQiitaMeta: FeedQiitaMetaConnection;
+  readonly allFeedZenn: FeedZennConnection;
   readonly allFeedZennMeta: FeedZennMetaConnection;
   readonly allFeednoteMeta: FeednoteMetaConnection;
   readonly allFile: FileConnection;
@@ -3403,6 +3606,7 @@ type Query = {
   readonly directory: Maybe<Directory>;
   readonly feedQiita: Maybe<FeedQiita>;
   readonly feedQiitaMeta: Maybe<FeedQiitaMeta>;
+  readonly feedZenn: Maybe<FeedZenn>;
   readonly feedZennMeta: Maybe<FeedZennMeta>;
   readonly feednoteMeta: Maybe<FeednoteMeta>;
   readonly file: Maybe<File>;
@@ -3493,6 +3697,14 @@ type Query_allFeedQiitaMetaArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<FeedQiitaMetaSortInput>>>;
+};
+
+
+type Query_allFeedZennArgs = {
+  filter: InputMaybe<FeedZennFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<FeedZennSortInput>>>;
 };
 
 
@@ -3754,6 +3966,24 @@ type Query_feedQiitaMetaArgs = {
   lastBuildDate: InputMaybe<DateQueryOperatorInput>;
   link: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
+  title: InputMaybe<StringQueryOperatorInput>;
+};
+
+
+type Query_feedZennArgs = {
+  children: InputMaybe<NodeFilterListInput>;
+  content: InputMaybe<StringQueryOperatorInput>;
+  contentSnippet: InputMaybe<StringQueryOperatorInput>;
+  creator: InputMaybe<StringQueryOperatorInput>;
+  dc: InputMaybe<FeedZennDcFilterInput>;
+  enclosure: InputMaybe<FeedZennEnclosureFilterInput>;
+  guid: InputMaybe<StringQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  isoDate: InputMaybe<DateQueryOperatorInput>;
+  link: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  pubDate: InputMaybe<StringQueryOperatorInput>;
   title: InputMaybe<StringQueryOperatorInput>;
 };
 
