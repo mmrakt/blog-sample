@@ -40,6 +40,15 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
+      allFeedZenn(sort: { pubDate: DESC }) {
+        edges {
+          node {
+            date: pubDate
+            title
+            link
+          }
+        }
+      }
       postsByTag: allContentfulPost {
         group(field: { tags: { slug: SELECT } }) {
           edges {
@@ -58,14 +67,18 @@ exports.createPages = ({ actions, graphql }) => {
 
     const contentfulPosts = result.data.allContentfulPost.edges
     const qiitaPosts = result.data.allFeedQiita.edges
-    const posts = contentfulPosts.concat(qiitaPosts)
+    let zennPosts = result.data.allFeedZenn.edges
+    zennPosts = convertDateStringToUnixTimestamp(zennPosts)
+    console.log(zennPosts)
+    const allPosts = [...contentfulPosts, ...qiitaPosts, ...zennPosts]
+    console.log(allPosts)
     const postsPerPage = 10
     const postsByTag = result.data.postsByTag.group
 
     // NOTE: 日付の降順にソート
-    posts.sort((a, b) => b.node.date - a.node.date)
+    allPosts.sort((a, b) => b.node.date - a.node.date)
     createPaginatedPages({
-      edges: posts,
+      edges: allPosts,
       createPage,
       pageTemplate: path.resolve('./src/templates/posts.tsx'),
       pageLength: postsPerPage,
@@ -103,4 +116,14 @@ exports.createPages = ({ actions, graphql }) => {
       })
     })
   })
+}
+
+// NOTE: graphql側でunix timestampに変換できない場合の考慮
+function convertDateStringToUnixTimestamp(posts) {
+  return posts.map((post) => ({
+    node: {
+      ...post.node,
+      date: new Date(post.node.date).getTime() / 1000,
+    },
+  }))
 }
