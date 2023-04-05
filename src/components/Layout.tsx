@@ -1,7 +1,10 @@
+import { inject } from '@vercel/analytics'
 import React, { ReactElement } from 'react'
 
 import Footer from './Footer'
 import Header from './Header'
+
+inject()
 
 const Layout: React.FC<{ children: ReactElement[] }> = ({ children }) => (
   <div className="dark:text-white">
