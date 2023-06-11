@@ -69,9 +69,7 @@ exports.createPages = ({ actions, graphql }) => {
     const qiitaPosts = result.data.allFeedQiita.edges
     let zennPosts = result.data.allFeedZenn.edges
     zennPosts = convertDateStringToUnixTimestamp(zennPosts)
-    console.log(zennPosts)
     const allPosts = [...contentfulPosts, ...qiitaPosts, ...zennPosts]
-    console.log(allPosts)
     const postsPerPage = 10
     const postsByTag = result.data.postsByTag.group
 
