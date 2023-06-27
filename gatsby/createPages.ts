@@ -49,11 +49,23 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
-      postsByTag: allContentfulPost {
+      postsByTag: allContentfulPost(sort: { createdAt: ASC }) {
         group(field: { tags: { slug: SELECT } }) {
           edges {
             node {
+              date(formatString: "X")
               slug
+              title
+              content {
+                content
+              }
+              excerpt {
+                excerpt
+              }
+              tags {
+                title
+                slug
+              }
             }
           }
           fieldValue
@@ -96,9 +108,6 @@ exports.createPages = ({ actions, graphql }) => {
           index > 1
             ? `${pathPrefix}/${tagPage.fieldValue}/page`
             : `${pathPrefix}/${tagPage.fieldValue}`,
-        context: {
-          tagSlug: tagPage.fieldValue,
-        },
       })
     )
 
