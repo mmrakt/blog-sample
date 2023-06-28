@@ -11,14 +11,12 @@ type IProps = {
     last?: boolean
     additionalContext: any
     pathPrefix?: string
-    tagSlug?: string
   }
 }
 
-export const Pagination: React.VFC<IProps> = ({ pageContext }) => {
-  // TODO: ページ番号も表示できるといいね
-  const { index, first, last, additionalContext, pathPrefix } = pageContext
-  const pagePrefix = pathPrefix ? `/tag/${pageContext?.tagSlug}` : ''
+export const Pagination: React.FC<IProps> = ({ pageContext }) => {
+  const { index, first, last, pathPrefix } = pageContext
+  const pagePrefix = pathPrefix ? `/${pathPrefix}` : ''
   // TODO: /page/1 ⇨ / へのリダイレクト
   const prevPagePath =
     index - 1 === 1 ? `${pagePrefix}` : `${pagePrefix}/page/${index - 1}`

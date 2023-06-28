@@ -1,5 +1,7 @@
 import path from 'path'
 
+import { MEDIA } from '../src/config'
+
 const createPaginatedPages = require('gatsby-paginate')
 
 exports.createPages = ({ actions, graphql }) => {
@@ -49,28 +51,6 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
-      postsByTag: allContentfulPost(sort: { createdAt: ASC }) {
-        group(field: { tags: { slug: SELECT } }) {
-          edges {
-            node {
-              date(formatString: "X")
-              slug
-              title
-              content {
-                content
-              }
-              excerpt {
-                excerpt
-              }
-              tags {
-                title
-                slug
-              }
-            }
-          }
-          fieldValue
-        }
-      }
     }
   `).then((result) => {
     if (result.errors) {
@@ -83,7 +63,6 @@ exports.createPages = ({ actions, graphql }) => {
     zennPosts = convertDateStringToUnixTimestamp(zennPosts)
     const allPosts = [...contentfulPosts, ...qiitaPosts, ...zennPosts]
     const postsPerPage = 10
-    const postsByTag = result.data.postsByTag.group
 
     // NOTE: 日付の降順にソート
     allPosts.sort((a, b) => b.node.date - a.node.date)
@@ -97,19 +76,32 @@ exports.createPages = ({ actions, graphql }) => {
         index > 1 ? `${pathPrefix}/page/${index}` : `/${pathPrefix}`,
     })
 
-    postsByTag.forEach((tagPage) =>
+    MEDIA.forEach((media) => {
+      let edges = []
+      let slug = ''
+      if (media === 'mimu-memo') {
+        edges = contentfulPosts
+        slug = 'mimu-memo'
+      } else if (media === 'Qiita') {
+        edges = qiitaPosts
+        slug = 'qiita'
+      } else if (media === 'Zenn') {
+        edges = zennPosts
+        slug = 'zenn'
+      }
       createPaginatedPages({
-        edges: tagPage.edges,
+        edges,
         createPage,
-        pageTemplate: path.resolve('./src/templates/postsByTag.tsx'),
+        pageTemplate: path.resolve('./src/templates/postsByMedia.tsx'),
         pageLength: postsPerPage,
-        pathPrefix: 'tag',
+        pathPrefix: slug,
         buildPath: (index: number, pathPrefix: string) =>
-          index > 1
-            ? `${pathPrefix}/${tagPage.fieldValue}/page`
-            : `${pathPrefix}/${tagPage.fieldValue}`,
+          index > 1 ? `${pathPrefix}/page/${index}` : `${pathPrefix}`,
+        context: {
+          media,
+        },
       })
-    )
+    })
 
     contentfulPosts.forEach((post) => {
       createPage({

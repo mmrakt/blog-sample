@@ -10,20 +10,18 @@ type IProps = {
   tags: GatsbyTypes.ContentfulTagConnection
 }
 
-export const PostsByTagTemplate = ({ pageContext, location }: any) => {
-  const { group } = pageContext
+export const PostsByMediaTemplate = ({ pageContext, location }: any) => {
+  const {
+    group,
+    additionalContext: { media },
+  } = pageContext
   if (!group) return null
-
-  const extractTagName = (pathName: string) => {
-    const pathLength = pathName.length
-    return location.pathname.match(/tag\/.*/)[0].substring(4, pathLength - 2)
-  }
 
   return (
     <PostListLayout>
       <Head pageUrl={location.pathname} />
       <p className="mb-7 text-center">
-        <b className="mr-2 text-lg">#{extractTagName(location.pathname)}</b>
+        <b className="mr-2 text-lg">#{media}</b>
         の記事
       </p>
       <PostList nodes={group} />
@@ -32,4 +30,4 @@ export const PostsByTagTemplate = ({ pageContext, location }: any) => {
   )
 }
 
-export default PostsByTagTemplate
+export default PostsByMediaTemplate
