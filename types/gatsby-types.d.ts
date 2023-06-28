@@ -5359,6 +5359,11 @@ type PostQueryVariables = Exact<{
 
 type PostQuery = { readonly contentfulPost: { readonly date: string | null, readonly slug: string | null, readonly title: string | null, readonly content: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly tags: ReadonlyArray<{ readonly title: string | null, readonly slug: string | null } | null> | null, readonly excerpt: { readonly excerpt: string | null } | null } | null };
 
+type PostsCountByMediaQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type PostsCountByMediaQuery = { readonly postsCountByOwned: { readonly totalCount: number }, readonly postsCountByQiita: { readonly totalCount: number }, readonly postsCountByZenn: { readonly totalCount: number } };
+
 type SiteDescriptionQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -5368,11 +5373,6 @@ type SiteMetaQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type SiteMetaQueryQuery = { readonly site: { readonly siteMetadata: { readonly siteName: string | null, readonly description: string | null, readonly siteUrl: string | null, readonly lang: string | null, readonly locale: string | null, readonly type: string | null } | null } | null };
-
-type TagsQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type TagsQuery = { readonly tags: { readonly edges: ReadonlyArray<{ readonly node: { readonly title: string | null, readonly slug: string | null } }> }, readonly postsGroupByTag: { readonly group: ReadonlyArray<{ readonly totalCount: number, readonly fieldValue: string | null }> } };
 
 
 }

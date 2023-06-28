@@ -1,47 +1,51 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 
-const Tags: React.VFC = () => {
-  const { tags, postsGroupByTag } = useStaticQuery<GatsbyTypes.TagsQuery>(
-    graphql`
-      query Tags {
-        tags: allContentfulTag {
-          edges {
-            node {
-              title
-              slug
-            }
-          }
-        }
-        postsGroupByTag: allContentfulPost {
-          group(field: { tags: { slug: SELECT } }) {
+import { MEDIA, Media } from '../config'
+import { convertMediaNameToSlug } from '../utils'
+
+const Tags: React.FC = () => {
+  const { postsCountByOwned, postsCountByQiita, postsCountByZenn } =
+    useStaticQuery<GatsbyTypes.PostsCountByMediaQuery>(
+      graphql`
+        query PostsCountByMedia {
+          postsCountByOwned: allContentfulPost {
             totalCount
-            fieldValue
+          }
+          postsCountByQiita: allFeedQiita {
+            totalCount
+          }
+          postsCountByZenn: allFeedZenn {
+            totalCount
           }
         }
-      }
-    `
-  )
+      `
+    )
+
+  const postsCountByMedia = (media: Media): number => {
+    if (media === 'mimu-memo') {
+      return postsCountByOwned.totalCount
+    }
+    if (media === 'Qiita') {
+      return postsCountByQiita.totalCount
+    }
+    if (media === 'Zenn') {
+      return postsCountByZenn.totalCount
+    }
+    return 0
+  }
 
   return (
     <>
-      <h3 className="mt-6 font-black">Tags</h3>
+      <h3 className="mt-6 font-black">Media</h3>
       <div className="flex flex-wrap mt-2">
-        {tags &&
-          tags.edges.map(
-            ({ node }) =>
-              postsGroupByTag &&
-              postsGroupByTag.group.map(
-                (postGroupByTag) =>
-                  node.slug === postGroupByTag.fieldValue && (
-                    <Link to={`/tag/${node.slug}`} key={node.slug}>
-                      <span className="text-link mb-3 mr-5 underline text-sm">
-                        #{node.title}({postGroupByTag.totalCount})
-                      </span>
-                    </Link>
-                  )
-              )
-          )}
+        {MEDIA.map((media) => (
+          <Link to={`/${convertMediaNameToSlug(media)}`} key={media}>
+            <span className="text-link mb-3 mr-5 underline text-sm">
+              #{media}({postsCountByMedia(media)})
+            </span>
+          </Link>
+        ))}
       </div>
     </>
   )
