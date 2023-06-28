@@ -18,10 +18,6 @@ exports.createPages = ({ actions, graphql }) => {
             title
             id
             createdAt
-            tags {
-              title
-              slug
-            }
           }
           next {
             slug

@@ -7,7 +7,6 @@ import PostListLayout from '../components/PostListLayout'
 
 type IProps = {
   posts: GatsbyTypes.ContentfulPostConnection
-  tags: GatsbyTypes.ContentfulTagConnection
 }
 
 export const PostsByMediaTemplate = ({ pageContext, location }: any) => {

@@ -61,16 +61,6 @@ const Post = ({ node }: any) => {
         <div className="mb-3 text-lg font-bold">
           <span className="text-link">{node.title}</span>
         </div>
-        <p className="mb-3 flex flex-wrap">
-          {node.tags &&
-            node.tags.map((tag) => (
-              <Link to={`/tag/${tag.slug}`} key={tag.slug}>
-                <span className="text-link mb-3 mr-5 underline">
-                  #{tag.title}
-                </span>
-              </Link>
-            ))}
-        </p>
       </div>
     </div>
   )

@@ -5357,7 +5357,7 @@ type PostQueryVariables = Exact<{
 }>;
 
 
-type PostQuery = { readonly contentfulPost: { readonly date: string | null, readonly slug: string | null, readonly title: string | null, readonly content: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly tags: ReadonlyArray<{ readonly title: string | null, readonly slug: string | null } | null> | null, readonly excerpt: { readonly excerpt: string | null } | null } | null };
+type PostQuery = { readonly contentfulPost: { readonly date: string | null, readonly slug: string | null, readonly title: string | null, readonly content: { readonly childMarkdownRemark: { readonly html: string | null } | null } | null, readonly excerpt: { readonly excerpt: string | null } | null } | null };
 
 type PostsCountByMediaQueryVariables = Exact<{ [key: string]: never; }>;
 

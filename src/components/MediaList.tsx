@@ -4,7 +4,7 @@ import React from 'react'
 import { MEDIA, Media } from '../config'
 import { convertMediaNameToSlug } from '../utils'
 
-const Tags: React.FC = () => {
+const MediaList: React.FC = () => {
   const { postsCountByOwned, postsCountByQiita, postsCountByZenn } =
     useStaticQuery<GatsbyTypes.PostsCountByMediaQuery>(
       graphql`
@@ -51,4 +51,4 @@ const Tags: React.FC = () => {
   )
 }
 
-export default Tags
+export default MediaList
