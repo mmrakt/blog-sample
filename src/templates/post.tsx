@@ -34,20 +34,8 @@ const PostTemplate = ({ data, pageContext, location }: IProps) => {
         <p className="text-sm">
           <span className="text-lg">{contentfulPost.date}</span>
         </p>
-        <h1 className="mb-2 mt-0 text-3xl font-black">
-          {contentfulPost.title}
-        </h1>
-        <p className="flex flex-wrap">
-          {contentfulPost.tags &&
-            contentfulPost.tags.map((tag) => (
-              <Link to={`/tag/${tag.slug}`} key={tag.slug}>
-                <span className="text-link mb-3 mr-5 underline text-lg">
-                  #{tag.title}
-                </span>
-              </Link>
-            ))}
-        </p>
-        <div className="mt-10">
+        <h1 className="mt-5 text-3xl font-black">{contentfulPost.title}</h1>
+        <div className="mt-16">
           <div className="text-left leading-loose">
             <Content
               content={contentfulPost.content.childMarkdownRemark.html}
@@ -95,10 +83,6 @@ export const pageQuery = graphql`
       date(formatString: "YYYY.MM.DD")
       slug
       title
-      tags {
-        title
-        slug
-      }
       excerpt {
         excerpt
       }

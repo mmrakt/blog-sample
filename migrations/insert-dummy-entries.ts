@@ -36,24 +36,6 @@ const client = contentful.createClient({
           date: {
             'en-US': '2021-08-07T00:00+09:00',
           },
-          tags: {
-            'en-US': [
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: 't8MBaYNWwHIHqLkP7B52t',
-                },
-              },
-              {
-                sys: {
-                  type: 'Link',
-                  linkType: 'Entry',
-                  id: '24Lg0KmIRYOAkubilrXZWX',
-                },
-              },
-            ],
-          },
         },
       })
       const publishedEntry = draftEntry.publish()
