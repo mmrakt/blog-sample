@@ -34,10 +34,8 @@ const PostTemplate = ({ data, pageContext, location }: IProps) => {
         <p className="text-sm">
           <span className="text-lg">{contentfulPost.date}</span>
         </p>
-        <h1 className="mb-2 mt-0 text-3xl font-black">
-          {contentfulPost.title}
-        </h1>
-        <div className="mt-10">
+        <h1 className="mt-5 text-3xl font-black">{contentfulPost.title}</h1>
+        <div className="mt-16">
           <div className="text-left leading-loose">
             <Content
               content={contentfulPost.content.childMarkdownRemark.html}
