@@ -4506,12 +4506,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/analytics@npm:^0.1.11":
-  version: 0.1.11
-  resolution: "@vercel/analytics@npm:0.1.11"
-  peerDependencies:
-    react: ^16.8||^17||^18
-  checksum: 05b8180ac6e23ebe7c09d74c43f8ee78c408cd0b6546e676389cbf4fba44dfeeae3648c9b52e2421be64fe3aeee8b026e6ea4bdfc0589fb5780670f2b090a167
+"@vercel/analytics@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@vercel/analytics@npm:1.0.1"
+  checksum: 6876e1d0868e85198d43a17ffec7266cdee5a53d5fc797d3f7e0d64e9d76a2ade3cbdcbc0a665e2ee2389f65dfc80591f7d667e9fc981cdbaa848006cbaefe19
   languageName: node
   linkType: hard
 
@@ -5774,16 +5772,6 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0
   checksum: a091721861ea2f8d969ace8fe06570cff8f2e847dbc6e4800abacbe63f72131abde615ce0a3b6648472c97e55a5be7f8bf7ae381e2b194ad2fa1737096febcf5
-  languageName: node
-  linkType: hard
-
-"babel-runtime@npm:^6.26.0":
-  version: 6.26.0
-  resolution: "babel-runtime@npm:6.26.0"
-  dependencies:
-    core-js: "npm:^2.4.0"
-    regenerator-runtime: "npm:^0.11.0"
-  checksum: 8aeade94665e67a73c1ccc10f6fd42ba0c689b980032b70929de7a6d9a12eb87ef51902733f8fefede35afea7a5c3ef7e916a64d503446c1eedc9e3284bd3d50
   languageName: node
   linkType: hard
 
@@ -7103,13 +7091,6 @@ __metadata:
   version: 3.29.0
   resolution: "core-js-pure@npm:3.29.0"
   checksum: 281805cda717a471a15fd44a526ce873e19598ce4f2a5ac00daf4324583becc4956b1a15a266d5488668326bba420cc84fc957abe42f198796e5cf0acc62dfc8
-  languageName: node
-  linkType: hard
-
-"core-js@npm:^2.4.0":
-  version: 2.6.12
-  resolution: "core-js@npm:2.6.12"
-  checksum: 44fa9934a85f8c78d61e0c8b7b22436330471ffe59ec5076fe7f324d6e8cf7f824b14b1c81ca73608b13bdb0fef035bd820989bf059767ad6fa13123bb8bd016
   languageName: node
   linkType: hard
 
@@ -10298,18 +10279,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-remark-external-links@npm:^0.0.4":
-  version: 0.0.4
-  resolution: "gatsby-remark-external-links@npm:0.0.4"
-  dependencies:
-    babel-runtime: "npm:^6.26.0"
-    is-relative-url: "npm:^2.0.0"
-    unist-util-find: "npm:^1.0.1"
-    unist-util-visit: "npm:^1.1.3"
-  checksum: 2117ce7fa66f7c67f05765761f70a3bcca6c294843cd8503b78b62650964c8ac917dcc75aa267d18d6920cb99cf0c7b13c740be2eca93d90e0ad35f015c55eae
-  languageName: node
-  linkType: hard
-
 "gatsby-remark-images@npm:^6.3.0":
   version: 6.25.0
   resolution: "gatsby-remark-images@npm:6.25.0"
@@ -11848,13 +11817,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-absolute-url@npm:^2.0.0":
-  version: 2.1.0
-  resolution: "is-absolute-url@npm:2.1.0"
-  checksum: 781e8cf8a2af54b1b7a92f269244d96c66224030d91120e734ebeebbce044c167767e1389789d8aaf82f9e429cb20ae93d6d0acfe6c4b53d2bd6ebb47a236d76
-  languageName: node
-  linkType: hard
-
 "is-absolute-url@npm:^3.0.0":
   version: 3.0.3
   resolution: "is-absolute-url@npm:3.0.3"
@@ -12244,15 +12206,6 @@ __metadata:
   version: 1.0.0
   resolution: "is-regexp@npm:1.0.0"
   checksum: be692828e24cba479ec33644326fa98959ec68ba77965e0291088c1a741feaea4919d79f8031708f85fd25e39de002b4520622b55460660b9c369e6f7187faef
-  languageName: node
-  linkType: hard
-
-"is-relative-url@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "is-relative-url@npm:2.0.0"
-  dependencies:
-    is-absolute-url: "npm:^2.0.0"
-  checksum: 5acb66d6374a0c89fb68a770c94eeee3061b7d2e94d1fdff4d780b3054caf681ad33ed9d554eebeaedd897d90b781684c84ed85c7581d5d50767e857af3a199e
   languageName: node
   linkType: hard
 
@@ -13724,13 +13677,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash.iteratee@npm:^4.5.0":
-  version: 4.7.0
-  resolution: "lodash.iteratee@npm:4.7.0"
-  checksum: 900e8f9c2f37361aa50f880139e92a00a5c1a000a45c78f00f64f83591090ccd9644800d6869fc563ef47907d9914ec19e871433d7be8e272b7b0516b44910d7
-  languageName: node
-  linkType: hard
-
 "lodash.map@npm:^4.6.0":
   version: 4.6.0
   resolution: "lodash.map@npm:4.6.0"
@@ -14519,7 +14465,7 @@ __metadata:
     "@types/react-test-renderer": ^18.0.0
     "@typescript-eslint/eslint-plugin": ^5.2.0
     "@typescript-eslint/parser": ^5.2.0
-    "@vercel/analytics": ^0.1.11
+    "@vercel/analytics": ^1.0.1
     autoprefixer: ^10.2.5
     babel-jest: ^29.4.3
     babel-preset-gatsby: ^2.0.0
@@ -14560,7 +14506,6 @@ __metadata:
     gatsby-plugin-typescript: ^4.3.0
     gatsby-plugin-webpack-bundle-analyser-v2: ^1.1.25
     gatsby-remark-code-titles: ^1.1.0
-    gatsby-remark-external-links: ^0.0.4
     gatsby-remark-images: ^6.3.0
     gatsby-remark-prismjs: ^6.3.0
     gatsby-source-contentful: ^7.1.0
@@ -17238,13 +17183,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.11.0":
-  version: 0.11.1
-  resolution: "regenerator-runtime@npm:0.11.1"
-  checksum: 3c97bd2c7b2b3247e6f8e2147a002eb78c995323732dad5dc70fac8d8d0b758d0295e7015b90d3d444446ae77cbd24b9f9123ec3a77018e81d8999818301b4f4
-  languageName: node
-  linkType: hard
-
 "regenerator-runtime@npm:^0.13.11, regenerator-runtime@npm:^0.13.7":
   version: 0.13.11
   resolution: "regenerator-runtime@npm:0.13.11"
@@ -19745,16 +19683,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unist-util-find@npm:^1.0.1":
-  version: 1.0.2
-  resolution: "unist-util-find@npm:1.0.2"
-  dependencies:
-    lodash.iteratee: "npm:^4.5.0"
-    unist-util-visit: "npm:^1.1.0"
-  checksum: d13b92e65a94f8f8280ddddb030456e080d64179c6594e028f0a22c8c86b98744fc2336dfa322c817d7f356b42e46eab13321f7824e4529a5b51e538566587a5
-  languageName: node
-  linkType: hard
-
 "unist-util-generated@npm:^1.0.0":
   version: 1.1.6
   resolution: "unist-util-generated@npm:1.1.6"
@@ -19766,13 +19694,6 @@ __metadata:
   version: 2.1.3
   resolution: "unist-util-is@npm:2.1.3"
   checksum: 21a49b65797b8c139d1282a833c931df0a2296c482bb4808e3e189b60efe001730baf0736111cd50a05d3ace106b3f204a85cc38f88dc74b8077a220613831fe
-  languageName: node
-  linkType: hard
-
-"unist-util-is@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "unist-util-is@npm:3.0.0"
-  checksum: d24a5dd80c670f763b2ae608651cf062317456aa81be51f66f45cbd7d440a2ab18356e4f48aeac6b5e3d391c69d3c3452ade5fe5aa9574bec4a2de0b10122ed5
   languageName: node
   linkType: hard
 
@@ -19837,15 +19758,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unist-util-visit-parents@npm:^2.0.0":
-  version: 2.1.2
-  resolution: "unist-util-visit-parents@npm:2.1.2"
-  dependencies:
-    unist-util-is: "npm:^3.0.0"
-  checksum: 048edbb590a8c4bc0043eec9f50d3fe76faa58f1ac663a7e6dee5e895ddd0ce8bc52f2cfe2e633849fa93671e8de021070667acb1518e3d40220768c7f70a3d3
-  languageName: node
-  linkType: hard
-
 "unist-util-visit-parents@npm:^3.0.0, unist-util-visit-parents@npm:^3.1.1":
   version: 3.1.1
   resolution: "unist-util-visit-parents@npm:3.1.1"
@@ -19853,15 +19765,6 @@ __metadata:
     "@types/unist": "npm:^2.0.0"
     unist-util-is: "npm:^4.0.0"
   checksum: 1170e397dff88fab01e76d5154981666eb0291019d2462cff7a2961a3e76d3533b42eaa16b5b7e2d41ad42a5ea7d112301458283d255993e660511387bf67bc3
-  languageName: node
-  linkType: hard
-
-"unist-util-visit@npm:^1.1.0, unist-util-visit@npm:^1.1.3":
-  version: 1.4.1
-  resolution: "unist-util-visit@npm:1.4.1"
-  dependencies:
-    unist-util-visit-parents: "npm:^2.0.0"
-  checksum: e9395205b6908c8d0fe71bc44e65d89d4781d1bb2d453a33cb67ed4124bad0b89d6b1d526ebaecb82a7c48e211bdf6f24351449b8cc115327b345f4617c18728
   languageName: node
   linkType: hard
 
