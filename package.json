@@ -85,7 +85,7 @@
     "babel-preset-gatsby": "^2.0.0",
     "contentful-export": "^7.14.47",
     "eslint": "^7.23.0",
-    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.1.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-loader": "^4.0.2",
